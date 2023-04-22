@@ -13,6 +13,8 @@ class UsuarioController extends Controller
     public function index()
     {
         //
+        require " /resources/views/Usuario/login.blade.php";
+       // return "Prueba";
     }
 
     /**
@@ -21,6 +23,7 @@ class UsuarioController extends Controller
     public function create()
     {
         //
+        return "Prueba";
     }
 
     /**
