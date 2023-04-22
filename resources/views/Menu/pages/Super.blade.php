@@ -1,7 +1,5 @@
-<?php
- // include 'templates/header.php'
-?>
-    <!-- Main -->
+@extends('templates.header')
+<!-- Main -->
     <!--Funcional con php-->
 
    <main> 
@@ -30,8 +28,7 @@
               <h1><?php echo $oferta->Titulo ?></h1>
               <p>$<?php echo $oferta->PrecioOferta ?></p>
               <p><?php echo $oferta->Descripcion ?></p>
-              <a href="" class="btn btn-primary">Agregar al carrito</a>
-              </form>     
+              <a href="" class="btn btn-primary">Agregar al carrito</a>    
             </div>    
           </div>
         </div> 
@@ -59,13 +56,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!--SLIDER-->
     <script src="https://kit.fontawesome.com/5c72b9dab8.js" crossorigin="anonymous"></script>
-    <script src="./js/slider.js"></script>
+    <script src="{{asset('js/slider.js')}}"></script>
 
 
     <!--Pie de la pagina-->
-    <?php
-     // include 'templates/footer.php'
-    ?>
+    @extends('templates.footer')
   </body>
 
   <!--Pie de la pagina-->

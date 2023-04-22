@@ -143,7 +143,7 @@
           <i class="nav-link fa-brands fa-instagram"></i>
           <i class="nav-link fa-brands fa-twitter"></i>
           <?php 
-            //echo var_dump($_SESSION['CARRITO']);
+            //@echo var_dump($_SESSION['CARRITO']);
           ?>
           </p>
   </footer>

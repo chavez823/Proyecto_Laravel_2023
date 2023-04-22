@@ -9,11 +9,11 @@
     <title>BUYIT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!--Propio-->
-    <link rel="stylesheet" href="css/style_1.css">
-    <link rel="stylesheet" href="css/drop.css">
+    <link rel="stylesheet" href="{{asset('css/style_1.css')}}">
+    <link rel="stylesheet" href="{{asset('css/drop.css')}}">
     
     <!--Slider-->
-    <link rel="stylesheet" href="css/style_2_s.css">
+    <link rel="stylesheet" href="{{asset('css/style_2_s.css')}}">
     
   </head>
   <body >
@@ -23,7 +23,7 @@
       <div class="container-fluid">
         <!--Logo-->
         <a class="navbar-brand" href="buyit">
-          <img class="logotipo" src="img/Logo_sin_slogan_t.png" alt="">
+          <img class="logotipo" src="{{asset('img/Logo_sin_slogan_t.png')}} " alt="">
         </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
