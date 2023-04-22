@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Registro</title>
-    <link rel="stylesheet" href="css/style_signup.css">
+    <link rel="stylesheet" href="../public/css/style_signup.css">
     <!--link rel="stylesheet" href="../css/style_error.css"-->
     <!--Google Fonst-->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet"> 
@@ -21,8 +21,8 @@
     <title>BUYIT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!--Propio-->
-    <link rel="stylesheet" href="../resourcescss/style_1.css">
-    <link rel="stylesheet" href="../resourcescss/categories.css">
+    <link rel="stylesheet" href="../public/css/style_1.css">
+    <link rel="stylesheet" href="../public/css/categories.css">
 
 
 </head>
@@ -140,7 +140,7 @@
 	</script>
 
 <?php
-    include '../resources/templates/footer.php'
+    include '../public/templates/footer.php'
     /*if(preg_match('/^[76][0-9]{7}$/',$Telefono)==true){
       return var_dump(true);
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,15 +23,19 @@ Route::get('usuario', function () {
 });
 Route::get('usuario', function () {
     return view('Usuario.recuperacioncontraseña');
-});
-Route::get('cliente', function () {
+});*/
+/*Route::get('cliente', function () {
     return view('Cliente.cliente');
-});
-Route::get('cliente', function () {
+});*/
+/*Route::get('cliente', function () {
     return view('Cliente.emailverification');
 });*/
 
-Route::resource('usuario', UsuarioController::class);
+//Route::resource('usuario', UsuarioController::class);
+
+Route::resource('cliente', ClienteController::class);
+
+
 
 Route::get('/', function () {
     return view('welcome');
