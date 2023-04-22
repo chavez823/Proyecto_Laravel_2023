@@ -11,7 +11,7 @@ class Inicio extends Model
 
     protected $table="Oferta";
     protected $primaryKey="ID_Oferta";
-     protected $autoincrementing = false;
+    // protected $autoincrementing = false;
 
 
     
@@ -22,12 +22,8 @@ public function inicio()
 {
     
     $sentencia=$this->prepare("SELECT * FROM `oferta` LIMIT 3");
-    $sentencia->execute();
-    $producto =$tablprepare("select * from users where votes > 100 or (name = 'Abigail' and votes > 50)");
     
     
-    
-    return $sentencia;
 }
 
     
