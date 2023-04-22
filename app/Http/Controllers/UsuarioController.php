@@ -15,6 +15,7 @@ class UsuarioController extends Controller
         //
        // return "Prueba";
        return view('Usuario.login');
+       
     }
 
     /**
