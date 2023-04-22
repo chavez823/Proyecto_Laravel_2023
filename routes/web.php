@@ -13,12 +13,24 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('usuario', function () {
+/*Route::get('usuario', function () {
     return view('Usuario.login');
 });
 
+Route::get('usuario', function () {
+    return view('Usuario.cambiodecontraseña');
+});
+Route::get('usuario', function () {
+    return view('Usuario.recuperacioncontraseña');
+});
+Route::get('cliente', function () {
+    return view('Cliente.cliente');
+});
+Route::get('cliente', function () {
+    return view('Cliente.emailverification');
+});*/
 
-//Route::resource('usuario', UsuarioController::class);
+Route::resource('usuario', UsuarioController::class);
 
 Route::get('/', function () {
     return view('welcome');

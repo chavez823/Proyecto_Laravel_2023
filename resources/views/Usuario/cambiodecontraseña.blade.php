@@ -100,7 +100,7 @@
 	</script>
 
 <?php
-    include '../resources/templates/footer.php'
+    include '../public/templates/footer.php'
   ?>
 
 
