@@ -29,7 +29,7 @@ class UsuarioController extends Controller
        $Contrasenia=$_POST['password'];
      
         //comprueba que el usuario exista 
-      if(count($usuarios->sesion($Correo,$Contrasenia)) > 0){
+      if($usuarios->sesion($Correo,$Contrasenia) != null){
            //
          /* $usuario=$usuarios->sesion($Correo,$Contrasenia);
           //
@@ -70,7 +70,7 @@ class UsuarioController extends Controller
 
      
     
-        return view('Usuario.login' );
+       // return view('Usuario.login' );
 
       }
 
