@@ -31,9 +31,9 @@ Route::get('usuario', function () {
     return view('Cliente.emailverification');
 });*/
 
-//Route::resource('usuario', UsuarioController::class);
+Route::get('usuario', [UsuarioController::class, 'index']);
 
-Route::resource('cliente', ClienteController::class);
+//Route::resource('cliente', [ClienteController::class, 'index']);
 
 
 
