@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-<link rel="stylesheet" type="text/css" href="style_m_buyit.css">
+<link rel="stylesheet" type="text/css" href="css/style_m_buyit.css">
 </head>
 <body>
 
