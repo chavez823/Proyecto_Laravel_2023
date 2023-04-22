@@ -19,7 +19,7 @@ class Usuario extends Model
         $sentencia=DB::table('Usuario')
             ->select('*')
             ->Where('Correo', '=', $Correo, 'AND', 'Contrasenia', '=', $Contrasenia )
-            ->get();
+            ->post();
          return $sentencia;
 
         /* $sentencia = DB::table('Usuario')->where('Correo', $Correo)->first();

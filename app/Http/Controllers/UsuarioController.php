@@ -29,7 +29,7 @@ class UsuarioController extends Controller
        $Contrasenia=$_POST['password'];
      
         //comprueba que el usuario exista 
-      if($usuarios->sesion($Correo,$Contrasenia) != null){
+      //if($usuarios->sesion($Correo,$Contrasenia) != null){
            //
          /* $usuario=$usuarios->sesion($Correo,$Contrasenia);
           //
@@ -53,15 +53,15 @@ class UsuarioController extends Controller
          // require_once "views/Menu/buyit.php";	
           //echo var_dump(conunt($usuarios->sesion($Correo,$Contrasenia)));
 
-      }
+    //  }
 
-      else{					
+   //   else{					
            // echo "Usuario y/o Contraseña incorrectos";
-      $errores=array();
-      array_push($errores,"Correo y/o contraseña equivocado");	
+   //   $errores=array();
+   //   array_push($errores,"Correo y/o contraseña equivocado");	
     //  require_once "views/Usuario/login.php";	 
-    return view('Usuario.login');
-      }
+   /* return view('Usuario.login');
+      }*/
 
 
 

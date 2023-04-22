@@ -1,5 +1,5 @@
 <?php
-  include 'templates/header.php'
+  //include 'templates/header.php'
 ?>
     <!-- Main -->
     <!--Funcional con php-->
@@ -16,23 +16,25 @@
               <div class="row">
     <?php
 
-    foreach($sa as $cupones){?>
+    foreach($ofertas as $oferta){?>
          <?php
-            $info = ['ID' => $cupones['ID_Oferta'], 'vista' => 4];
-            $info_carrito = implode("/", $info);
+           // $info = ['ID' => $cupones['ID_Oferta'], 'vista' => 4];
+           // $info_carrito = implode("/", $info);
          ?>
          
-                <div class="col-md-4">
-                  <div class="card">
-                    <div class="img1"><img src="<?php echo $cupones['Imagen'] ?>" alt=""></div><!--Fondo CARD-->
-                    <!--<div class="img2"><img src="img/ramen_3.jpg" alt=""></div> -->                 
-                    <div class="main-text">
-                      <h1><?php echo $cupones['Titulo'] ?></h1>
-                      <p>$<?php echo $cupones['PrecioOferta'] ?></p>
-                      <p><?php echo $cupones['Descripcion'] ?></p>
-                      <a href="index.php?c=Inicio&a=carrito&id=<?=$info_carrito?>" class="btn btn-primary">Agregar al carrito</a>          
-                    </div>    
-                  </div>
+         <div class="col-md-4">
+          <div class="card">
+            <div class="img1"><img src="<?php echo $oferta->Imagen ?>" alt=""></div><!--Fondo CARD-->
+                              
+            <div class="main-text">
+              <h1><?php echo $oferta->Titulo ?></h1>
+              <p>$<?php echo $oferta->PrecioOferta ?></p>
+              <p><?php echo $oferta->Descripcion ?></p>
+              <a href="" class="btn btn-primary">Agregar al carrito</a>
+              </form>     
+            </div>    
+          </div>
+        </div> 
                   <br>
                 </div>
 
@@ -62,7 +64,7 @@
 
   <!--Pie de la pagina-->
     <?php
-      include 'templates/footer.php'
+     // include 'templates/footer.php'
     ?>
   </body>
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\UsuarioController;
@@ -33,8 +34,13 @@ Route::get('usuario', function () {
 });*/
 Route::get('/', [InicioController::class, 'index']);
 Route::get('buyit', [InicioController::class, 'index']);
-Route::get('form', [UsuarioController::class, 'index']);
 Route::post('login', [UsuarioController::class, 'login']);
+Route::get('form', [UsuarioController::class, 'index']);
+Route::get('Categoria', [CategoriaController::class, 'index']);
+Route::get('Categoria/belleza', [CategoriaController::class, 'Ver_belleza']);
+Route::get('Categoria/salud', [CategoriaController::class, 'Ver_salud']);
+Route::get('Categoria/restaurante', [CategoriaController::class, 'Ver_restaurante']);
+Route::get('Categoria/super', [CategoriaController::class, 'Ver_super']);
 
 //Route::resource('cliente', [ClienteController::class, 'index']);
 
