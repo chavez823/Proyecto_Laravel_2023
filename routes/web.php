@@ -33,8 +33,8 @@ Route::get('usuario', function () {
 });*/
 Route::get('/', [InicioController::class, 'index']);
 
-//Route::get('/login', [UsuarioController::class, 'index']);
-//Route::pot('/login/sesion', [UsuarioController::class, 'login']);
+Route::get('form', [UsuarioController::class, 'index']);
+Route::post('login', [UsuarioController::class, 'login']);
 
 //Route::resource('cliente', [ClienteController::class, 'index']);
 
