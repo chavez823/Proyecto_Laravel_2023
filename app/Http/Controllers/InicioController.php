@@ -18,7 +18,11 @@ class InicioController extends Controller
 		//$data["Ofertas"] = $productos->get_inicio();
        // $inicio= new Inicio();
        // $data = $inicio->get_inicio();
-        return view('Menu.buyit' );
+       $ofertas=new Inicio;
+       $data=array();
+       $data['ofertas']=$ofertas->inicio();
+    
+        return view('Menu.buyit',$data );
     }
 
     /**

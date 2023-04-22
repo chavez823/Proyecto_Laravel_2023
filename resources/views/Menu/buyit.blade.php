@@ -97,31 +97,30 @@
     
     <Main>
     <!--BUIYT - CARDS -->
-   <!-- <div class="profile-area">
+   <div class="profile-area">
             <p class="Parrafo">NUESTRAS MEJORES OFERTAS</p>
             <div class="container">
               <div class="row">
     <?php
-
-               //foreach($data["Ofertas"]  as $cupones){?>
+             
+               foreach($ofertas as $oferta){?>
         
           
                 <div class="col-md-4">
                   <div class="card">
-                    <div class="img1"><img src="<?php //echo $cupones['Imagen'] ?>" alt=""></div><!--Fondo CARD-->
+                    <div class="img1"><img src="<?php echo $oferta->Imagen ?>" alt=""></div><!--Fondo CARD-->
                                       
                     <div class="main-text">
-                      <h1><?php //echo $cupones['Titulo'] ?></h1>
-                      <p>$<?php //echo $cupones['PrecioOferta'] ?></p>
-                      <p><?php //echo $cupones['Descripcion'] ?></p>
-                   
-                      </form>
-                                    
+                      <h1><?php echo $oferta->Titulo ?></h1>
+                      <p>$<?php echo $oferta->PrecioOferta ?></p>
+                      <p><?php echo $oferta->Descripcion ?></p>
+                      <a href="" class="btn btn-primary">Agregar al carrito</a>
+                      </form>     
                     </div>    
                   </div>
                 </div> 
     <?php
-   // }
+   }
     ?>
     <!-- Ofrecemos -->
         <div class="altura-a-b"></div>
@@ -146,7 +145,7 @@
             <i class="nav-link fa-brands fa-facebook "></i>
           <i class="nav-link fa-brands fa-instagram"></i>
           <i class="nav-link fa-brands fa-twitter"></i>
-            
+          
           </p>
   </footer>
 </body>

@@ -4,6 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
+use function PHPUnit\Framework\returnCallback;
 
 class Inicio extends Model
 {
@@ -14,14 +17,13 @@ class Inicio extends Model
     // protected $autoincrementing = false;
 
 
-    
-
-    
-
 public function inicio()
 {
-    
-    $sentencia=$this->prepare("SELECT * FROM `oferta` LIMIT 3");
+    $sentencia=DB::table('oferta')
+            ->select('*')
+            ->limit(3)
+            ->get();
+    return $sentencia;
     
     
 }
