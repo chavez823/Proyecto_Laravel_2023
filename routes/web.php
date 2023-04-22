@@ -31,12 +31,12 @@ Route::get('usuario', function () {
     return view('Cliente.emailverification');
 });*/
 
-Route::get('usuario', [UsuarioController::class, 'index']);
+Route::get('/', [UsuarioController::class, 'index']);
 
 //Route::resource('cliente', [ClienteController::class, 'index']);
 
 
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
