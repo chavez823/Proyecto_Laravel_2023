@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Usuario;
+use App\Models\Inicio;
 use Illuminate\Http\Request;
 
 class UsuarioController extends Controller
@@ -12,11 +13,67 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
-       // return "Prueba";
+      
        return view('Usuario.login');
        
     }
+
+      public function login(){
+
+        //
+       // return "Prueba";
+       $usuarios=new Usuario();
+       $data=array();
+
+       $Correo = $_POST['email'];
+       $Contrasenia=$_POST['password'];
+     
+        //comprueba que el usuario exista 
+      //if($usuarios->sesion($Correo,$Contrasenia) != null){
+           //
+         /* $usuario=$usuarios->sesion($Correo,$Contrasenia);
+          //
+          $_SESSION['session']=array();
+          $_SESSION['session']["ID_Usuario"]=   $usuario[0]['ID_Usuario'];
+          $_SESSION['session']["nombre"]=   $usuario[0]['Nombres'];
+          $_SESSION['session']["apellido"]=   $usuario[0]['Apellidos'];
+          $_SESSION['session']["tipo_usuario"]=   $usuario[0]['Tipo'];
+          //capturando contrseña y corre para el cambio
+          $_SESSION['session']["Contrseña"]=   $usuario[0]['Contrasenia'];
+          $_SESSION['session']["correo"]=   $usuario[0]['Correo'];*/
+
+       
+          $inicio = new Inicio();
+          //
+          $data["Ofertas"] = $inicio->get_inicio();
+          return view('Menu.buyit',$data );
+
+          
+          
+         // require_once "views/Menu/buyit.php";	
+          //echo var_dump(conunt($usuarios->sesion($Correo,$Contrasenia)));
+
+    //  }
+
+   //   else{					
+           // echo "Usuario y/o Contraseña incorrectos";
+   //   $errores=array();
+   //   array_push($errores,"Correo y/o contraseña equivocado");	
+    //  require_once "views/Usuario/login.php";	 
+   /* return view('Usuario.login');
+      }*/
+
+
+
+
+
+
+     
+    
+       // return view('Usuario.login' );
+
+      }
+
 
     /**
      * Show the form for creating a new resource.

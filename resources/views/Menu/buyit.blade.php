@@ -36,12 +36,9 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
               <li class="nav-item">
-                <a class="nav-link" href="index.php?c=categoria">Categorias</a>
+                <a class="nav-link" href="Categoria">Categorias</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="usuario">login</a>
-              </li>
-
+          
              <li class="nav-item">
                  <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
               </li>
@@ -54,7 +51,7 @@
                 <ul class="dropdown-menu">
                   <?php if(!isset($_SESSION['session']))  { ?>
 
-                  <li> <a class="dropdown-item " href="index.php?c=usuario"> Login</a></li>
+                  <li> <a class="dropdown-item " href="form"> Login</a></li>
                   <li><hr class="dropdown-divider"></li>
 
                   <?php  } else { ?>                  

@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color: #86A3B8;">
       <div class="container-fluid">
         <!--Logo-->
-        <a class="navbar-brand" href="index.php?c=inicio">
+        <a class="navbar-brand" href="buyit">
           <img class="logotipo" src="img/Logo_sin_slogan_t.png" alt="">
         </a>
         
@@ -34,7 +34,7 @@
           
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php?c=inicio">Inicio</a>
+              <a class="nav-link" aria-current="page" href="buyit">Inicio</a>
             </li>
 
               <li class="nav-item dropdown">
@@ -63,7 +63,7 @@
                 <ul class="dropdown-menu">
                   <?php if(!isset($_SESSION['session']))  { ?>
 
-                  <li> <a class="dropdown-item " href="index.php?c=usuario"> Login</a></li>
+                  <li> <a class="dropdown-item " href="form"> Login</a></li>
                   <li><hr class="dropdown-divider"></li>
 
                   <?php  } else { ?>                  

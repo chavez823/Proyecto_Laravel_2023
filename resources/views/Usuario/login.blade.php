@@ -40,7 +40,7 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php?c=inicio">Inicio</a>
+              <a class="nav-link" aria-current="page" href="buyit">Inicio</a>
             </li>
           
           </ul> 
@@ -52,7 +52,7 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
   
     <div class="container-login"> 
 		<div class="wrap-login"> 
-			<form action="index.php?c=usuario&a=sesion" method="post"> 
+			<form action="login" method="post"> 
       <?php
                         if(isset($errores)){
                             if(count($errores)>0){

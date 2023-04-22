@@ -33,7 +33,7 @@ include '../carrito.php';*/
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php?c=inicio">Inicio</a>
+              <a class="nav-link" aria-current="page" href="buyit">Inicio</a>
             </li>
             
             <li class="nav-item">
@@ -47,7 +47,7 @@ include '../carrito.php';*/
                 <ul class="dropdown-menu">
                   <?php if(!isset($_SESSION['session']))  { ?>
 
-                  <li> <a class="dropdown-item " href="index.php?c=usuario"> Login</a></li>
+                  <li> <a class="dropdown-item " href="form"> Login</a></li>
                   <li><hr class="dropdown-divider"></li>
 
                   <?php  } else { ?>                  
@@ -92,7 +92,7 @@ include '../carrito.php';*/
                     </div>
                     <div class="flip-card-back">                                            
                           <div class="waviy title">
-                          <a href="index.php?c=categoria&a=belleza" class="a_w">
+                          <a href="Categoria/belleza" class="a_w">
                               <span style="--i:1" class="belle">B</span>
                               <span style="--i:2" class="belle">E</span>
                               <span style="--i:3" class="belle">L</span>
@@ -118,7 +118,7 @@ include '../carrito.php';*/
                     <div class="flip-card-back">
                         
                         <div class="waviy title ">                          
-                          <a href="index.php?c=categoria&a=salud" class="a_w">
+                          <a href="Categoria/salud" class="a_w">
                             <span style="--i:1" class="salu_d">S</span>
                             <span style="--i:2" class="salu_d">A</span>
                             <span style="--i:3" class="salu_d">L</span>
@@ -140,7 +140,7 @@ include '../carrito.php';*/
                     </div>
                     <div class="flip-card-back">                        
                         <div class="waviy title ">
-                          <a href="index.php?c=categoria&a=restaurante" class="a_w">
+                          <a href="Categoria/restaurante" class="a_w">
                             <span style="--i:1">R</span>
                             <span style="--i:2">E</span>
                             <span style="--i:3">S</span>
@@ -167,7 +167,7 @@ include '../carrito.php';*/
                     </div>
                     <div class="flip-card-back">                        
                         <div class="waviy title">
-                          <a href="index.php?c=categoria&a=super" class="a_w">
+                          <a href="Categoria/super" class="a_w">
                             <span style="--i:1" class="super">S</span>
                             <span style="--i:2" class="super">U</span>
                             <span style="--i:3" class="super">P</span>
@@ -193,7 +193,7 @@ include '../carrito.php';*/
 
   <!--Pie de la pagina-->
   <?php
-    include 'templates/footer.php'
+   // include 'templates/footer.php'
   ?>
   </body>
 </html>
