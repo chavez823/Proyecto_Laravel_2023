@@ -28,6 +28,16 @@ public function inicio()
     
 }
 
+public function get_promo($id='')
+		{
+            $sentencia=DB::table('oferta')
+            ->select('*')
+            ->where('ID_Oferta', $id)
+            ->get();
+            return $sentencia;
+
+		}
+
     
 
 

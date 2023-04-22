@@ -34,6 +34,8 @@ Route::get('usuario', function () {
 Route::get('/', [InicioController::class, 'index']);
 Route::get('login', [UsuarioController::class, 'index']);
 
+Route::get('/carrito/{id}&{vista}', [InicioController::class, 'carrito']);
+
 //Route::resource('cliente', [ClienteController::class, 'index']);
 
 

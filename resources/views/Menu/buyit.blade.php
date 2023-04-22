@@ -114,7 +114,7 @@
                       <h1><?php echo $oferta->Titulo ?></h1>
                       <p>$<?php echo $oferta->PrecioOferta ?></p>
                       <p><?php echo $oferta->Descripcion ?></p>
-                      <a href="" class="btn btn-primary">Agregar al carrito</a>
+                      <a href="/carrito/<?=$oferta->ID_Oferta?>&1" class="btn btn-primary">Agregar al carrito</a>
                       </form>     
                     </div>    
                   </div>
@@ -145,7 +145,9 @@
             <i class="nav-link fa-brands fa-facebook "></i>
           <i class="nav-link fa-brands fa-instagram"></i>
           <i class="nav-link fa-brands fa-twitter"></i>
-          
+          <?php 
+            //echo var_dump($_SESSION['CARRITO'][0]);
+          ?>
           </p>
   </footer>
 </body>
