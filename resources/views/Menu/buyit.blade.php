@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color: #86A3B8;">
       <div class="container-fluid">
         <!--Logo-->
-        <a class="navbar-brand" href="index.php?c=inicio">
+        <a class="navbar-brand" href="buyit">
           <img class="logotipo" src="img/Logo_sin_slogan_t.png" alt="">
         </a>
         
@@ -40,7 +40,7 @@
               </li>
           
              <li class="nav-item">
-                 <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
+                 <a class="nav-link" href="carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
               </li>
               
 
@@ -143,7 +143,7 @@
           <i class="nav-link fa-brands fa-instagram"></i>
           <i class="nav-link fa-brands fa-twitter"></i>
           <?php 
-            //echo var_dump($_SESSION['CARRITO'][0]);
+            //echo var_dump($_SESSION['CARRITO']);
           ?>
           </p>
   </footer>

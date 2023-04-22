@@ -16,7 +16,21 @@ class UsuarioController extends Controller
       
        return view('Usuario.login');
        
+    } 
+
+    public function recuperacioncontraseña(){
+
+      return view('Usuario.recuperacioncontraseña');
     }
+
+    public function cambiocontraseña(){
+
+      return view('Usuario.cambiodecontraseña');
+    }
+
+
+
+
 
       public function login(){
 

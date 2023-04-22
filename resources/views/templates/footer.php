@@ -1,6 +1,6 @@
 <footer>
       
-      <img class="logotipo-footer" src="../resources/img/Logo_sin_slogan_t.png" alt="logotipo">
+      <img class="logotipo-footer" src="img/Logo_sin_slogan_t.png" alt="logotipo">
       <br>    
       <p> © Copyright  2023 BUYIT <br>
         Pagina Creada por<br>

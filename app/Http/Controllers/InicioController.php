@@ -25,6 +25,7 @@ class InicioController extends Controller
     }
     public function carrito($id,$vista='')
     {
+       
         $inicio = new Inicio();
         $promo=$inicio->get_promo($id);
         
@@ -35,6 +36,11 @@ class InicioController extends Controller
 		$IMAGEN=$promo[0]->Imagen;
 		$PRECIO=$promo[0]->PrecioOferta;
         
+        
+
+
+
+
         if(!isset($_SESSION['CARRITO'])){ //SI NO EXITE NADA EN EL CARRITO
             $elemento=array(//CAPTURAMOS LOS DATOS DEL FORMULARIO
                 'ID'=>$ID,
@@ -78,8 +84,8 @@ class InicioController extends Controller
                 $_SESSION['CARRITO']=$carro;
                 //cargando la vista de ofertas
                 //echo var_dump($_SESSION['CARRITO']);
-                if($vista==''){
-                    echo "aqui estoy";
+                if($vista==1){
+                    redirect()->to('/')->send();
                 }else if($vista=='2'){
                     echo "aqui estoy";
                 }else if($vista=='3'){
@@ -90,7 +96,7 @@ class InicioController extends Controller
                     echo "aqui estoy";
                 }
                 else{
-                    echo "aqui estoy";
+                    echo "aqui estoy Hola";
                 }
 
             }else{
@@ -108,8 +114,8 @@ class InicioController extends Controller
             //Se almacena la oferta segun el numero de ofertas que estan actualmente en el carrito
             $_SESSION['CARRITO'][$numeroProductos]=$elemento;
             //cargando la vista de ofertas
-            if($vista==''){
-                echo "aqui estoy";
+            if($vista==1){
+                redirect()->to('/')->send();
             }else if($vista=='2'){
                 echo "aqui estoy";
             }else if($vista=='3'){
@@ -120,7 +126,7 @@ class InicioController extends Controller
                 echo "aqui estoy";
             }
             else{
-                echo "aqui estoy";
+                echo "aqui estoy HOLA";
             }
             }
             
@@ -128,7 +134,12 @@ class InicioController extends Controller
 
 
     }
+  
 
+    public function ver_carrito(){
+
+        return view('Menu/pages/mostrarCarrito' );
+    }
     /**
      * Show the form for creating a new resource.
      */
