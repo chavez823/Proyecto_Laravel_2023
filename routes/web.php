@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\InicioController;
 use App\Http\Controllers\UsuarioController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,8 +31,8 @@ Route::get('usuario', function () {
 /*Route::get('cliente', function () {
     return view('Cliente.emailverification');
 });*/
-
-Route::get('/', [UsuarioController::class, 'index']);
+Route::get('/', [InicioController::class, 'index']);
+//Route::get('/', [UsuarioController::class, 'index']);
 
 //Route::resource('cliente', [ClienteController::class, 'index']);
 

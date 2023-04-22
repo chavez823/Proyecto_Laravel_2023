@@ -38,23 +38,26 @@
               <li class="nav-item">
                 <a class="nav-link" href="index.php?c=categoria">Categorias</a>
               </li>
-
               <li class="nav-item">
-                 <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
+                <a class="nav-link" href="index.php?c=categoria">login</a>
+              </li>
+
+             <!-- <li class="nav-item">
+                 <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php //echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
               </li>
               
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <?php echo  isset($_SESSION['session'])?$_SESSION['session']['nombre']:"Login" ?> <i class="fa-solid fa-user"></i>
+                  <?php //echo  isset($_SESSION['session'])?$_SESSION['session']['nombre']:"Login" ?> <i class="fa-solid fa-user"></i>
                 </a>
                 <ul class="dropdown-menu">
-                  <?php if(!isset($_SESSION['session']))  { ?>
+                  <?php// if(!isset($_SESSION['session']))  { ?>
 
                   <li> <a class="dropdown-item " href="index.php?c=usuario"> Login</a></li>
                   <li><hr class="dropdown-divider"></li>
 
-                  <?php  } else { ?>                  
+                  <?php // } else { ?>                  
 
                   <li><a class="dropdown-item " href="index.php?c=cupon&a=ver_cupon">Ver Cupones</a></li>
                   <li><hr class="dropdown-divider"></li>
@@ -62,9 +65,9 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="index.php?c=usuario&a=logout">Log out</a></li>
 
-                  <?php } ?>
+                  <?php// } ?>
                 </ul>
-              </li>
+              </li> -->
           </ul>
       </div>
   </div>
@@ -94,38 +97,38 @@
     
     <Main>
     <!--BUIYT - CARDS -->
-    <div class="profile-area">
+   <!-- <div class="profile-area">
             <p class="Parrafo">NUESTRAS MEJORES OFERTAS</p>
             <div class="container">
               <div class="row">
     <?php
 
-               foreach($data["Ofertas"]  as $cupones){?>
+               //foreach($data["Ofertas"]  as $cupones){?>
         
           
                 <div class="col-md-4">
                   <div class="card">
-                    <div class="img1"><img src="<?php echo $cupones['Imagen'] ?>" alt=""></div><!--Fondo CARD-->
+                    <div class="img1"><img src="<?php //echo $cupones['Imagen'] ?>" alt=""></div><!--Fondo CARD-->
                                       
                     <div class="main-text">
-                      <h1><?php echo $cupones['Titulo'] ?></h1>
-                      <p>$<?php echo $cupones['PrecioOferta'] ?></p>
-                      <p><?php echo $cupones['Descripcion'] ?></p>
-                      <a href="index.php?c=Inicio&a=carrito&id=<?=$cupones['ID_Oferta']?>" class="btn btn-primary">Agregar al carrito</a>
+                      <h1><?php //echo $cupones['Titulo'] ?></h1>
+                      <p>$<?php //echo $cupones['PrecioOferta'] ?></p>
+                      <p><?php //echo $cupones['Descripcion'] ?></p>
+                   
                       </form>
                                     
                     </div>    
                   </div>
-                </div>
+                </div> 
     <?php
-    }
+   // }
     ?>
     <!-- Ofrecemos -->
         <div class="altura-a-b"></div>
         </div>
       </div>
     </div>
-</Main>
+</Main>  -->
 <!--End Main-->
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
