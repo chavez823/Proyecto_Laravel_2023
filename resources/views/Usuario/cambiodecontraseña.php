@@ -18,8 +18,8 @@
     <title>BUYIT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!--Propio-->
-    <link rel="stylesheet" href="css/style_1.css">
-    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="../resourcescss/style_1.css">
+    <link rel="stylesheet" href="../resourcescss/categories.css">
 
 </head>
 <body>
@@ -100,7 +100,7 @@
 	</script>
 
 <?php
-    include 'templates/footer.php'
+    include '../resources/templates/footer.php'
   ?>
 
 

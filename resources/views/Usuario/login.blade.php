@@ -18,10 +18,10 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
     <title>BUYIT</title>
     
     <!--Propio-->
-    <link rel="stylesheet" href="css/style_login.css">
-    <link rel="stylesheet" href="css/style_1.css">
-    <link rel="stylesheet" href="css/categories.css">
-    <link rel="stylesheet" href="css/two_c.css">
+    <link rel="stylesheet" href="../resources/css/style_login.css">
+    <link rel="stylesheet" href="../resourcescss/style_1.css">
+    <link rel="stylesheet" href="../resourcescss/categories.css">
+    <link rel="stylesheet" href="../resourcescss/two_c.css">
 
 </head>
 <body>
@@ -125,7 +125,7 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
   </script>
 
 <?php
-   // include 'templates/footer.php'
+    include '../resources/templates/footer.php'
   ?>
 
 
