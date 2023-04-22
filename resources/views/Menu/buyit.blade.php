@@ -39,25 +39,25 @@
                 <a class="nav-link" href="index.php?c=categoria">Categorias</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.php?c=categoria">login</a>
+                <a class="nav-link" href="usuario">login</a>
               </li>
 
-             <!-- <li class="nav-item">
-                 <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php //echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
+             <li class="nav-item">
+                 <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
               </li>
               
 
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <?php //echo  isset($_SESSION['session'])?$_SESSION['session']['nombre']:"Login" ?> <i class="fa-solid fa-user"></i>
+                  <?php echo  isset($_SESSION['session'])?$_SESSION['session']['nombre']:"Login" ?> <i class="fa-solid fa-user"></i>
                 </a>
                 <ul class="dropdown-menu">
-                  <?php// if(!isset($_SESSION['session']))  { ?>
+                  <?php if(!isset($_SESSION['session']))  { ?>
 
                   <li> <a class="dropdown-item " href="index.php?c=usuario"> Login</a></li>
                   <li><hr class="dropdown-divider"></li>
 
-                  <?php // } else { ?>                  
+                  <?php  } else { ?>                  
 
                   <li><a class="dropdown-item " href="index.php?c=cupon&a=ver_cupon">Ver Cupones</a></li>
                   <li><hr class="dropdown-divider"></li>
@@ -65,9 +65,9 @@
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="index.php?c=usuario&a=logout">Log out</a></li>
 
-                  <?php// } ?>
+                  <?php } ?>
                 </ul>
-              </li> -->
+              </li> 
           </ul>
       </div>
   </div>

@@ -13,7 +13,12 @@ class InicioController extends Controller
     public function index()
     {
         //
-        return view('Menu.buyit');
+        $productos=Inicio::all();
+        //echo $productos;
+       // $inicio = new Inicio_model();
+			//$data["titulo"] = "Inicio";
+		$data["Ofertas"] = $productos->get_inicio();
+        return view('Menu.buyit' );
     }
 
     /**
