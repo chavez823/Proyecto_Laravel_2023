@@ -125,7 +125,7 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
   </script>
 
 <?php
-    include 'templates/footer.php'
+    //include '{{asset(templates/footer.php)}}'
   ?>
 
 
