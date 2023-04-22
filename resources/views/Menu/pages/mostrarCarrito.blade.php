@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color: #86A3B8;">
       <div class="container-fluid">
          <!--Logo-->
-        <a class="navbar-brand" href="index.php?c=Inicio">
+        <a class="navbar-brand" href="buyit">
           <img class="logotipo" src="img/Logo_sin_slogan_t.png" alt="" width="150px" heigth="150px">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php?c=Inicio">Inicio</a>
+              <a class="nav-link" aria-current="page" href="buyit">Inicio</a>
             </li>
           <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -43,11 +43,11 @@
             <li><a class="dropdown-item" href="index.php?c=categoria&a=restaurante">Restaurante</a></li>
             <li><a class="dropdown-item" href="index.php?c=categoria&a=otros">Otros</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="index.php?c=categoria">Principal</a></li>
+            <li><a class="dropdown-item" href="categoria">Principal</a></li>
           </ul>
         </li>
               <li class="nav-item">
-                 <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
+                 <a class="nav-link" href="carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
               </li>
 
               <li class="nav-item dropdown">
@@ -57,7 +57,7 @@
                 <ul class="dropdown-menu">
                   <?php if(!isset($_SESSION['session']))  { ?>
 
-                  <li> <a class="dropdown-item " href="index.php?c=usuario"> Login</a></li>
+                  <li> <a class="dropdown-item " href="form"> Login</a></li>
                   <li><hr class="dropdown-divider"></li>
 
                   <?php  } else { ?>                  
@@ -147,7 +147,7 @@
         </div>
     <?php }?>
 <?php
-include 'templates/footer.php';
+//include 'templates/footer.php';
 ?>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!--SLIDER-->

@@ -34,8 +34,11 @@ Route::get('usuario', function () {
 });*/
 Route::get('/', [InicioController::class, 'index']);
 Route::get('buyit', [InicioController::class, 'index']);
+Route::get('carrito', [InicioController::class, 'ver_carrito']);
 Route::post('login', [UsuarioController::class, 'login']);
 Route::get('form', [UsuarioController::class, 'index']);
+Route::get('form/recuperacioncontraseña', [UsuarioController::class, 'recuperacioncontraseña']);
+Route::get('form/cambiocontraseña', [UsuarioController::class, 'cambiocontraseña']);
 Route::get('Categoria', [CategoriaController::class, 'index']);
 Route::get('Categoria/belleza', [CategoriaController::class, 'Ver_belleza']);
 Route::get('Categoria/salud', [CategoriaController::class, 'Ver_salud']);

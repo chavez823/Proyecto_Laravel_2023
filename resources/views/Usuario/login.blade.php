@@ -30,7 +30,7 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color: #86A3B8;">
       <div class="container-fluid">
          <!--Logo-->
-        <a class="navbar-brand" href="index.php?c=inicio">
+        <a class="navbar-brand" href="buyit">
           <img class="logotipo" src="img/Logo_sin_slogan_t.png" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,11 +93,11 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
                 <section class="dos-columnas">
                     <div class="columna-izquierda">
                       <h6 class="first">¿No tienes una cuenta?</h6>
-                      <h6 class="second">Regístrate<a href="index.php?c=cliente" class="">   aquí</a></h6>	
+                      <h6 class="second">Regístrate<a href="" class="">   aquí</a></h6>	
                     </div>
                     <div class="columna-derecha">
                       <h6 class="first">¿Olvidaste tu contraseña?</h6>
-                      <h6 class="second">Recuperala<a href="index.php?c=usuario&a=recuperacion" class="">   aquí</a></h6>
+                      <h6 class="second">Recuperala<a href="form/recuperacioncontraseña" class="">   aquí</a></h6>
                     </div>
                 </section>
 
@@ -125,7 +125,7 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
   </script>
 
 <?php
-    include 'templates/footer.php'
+ //   include 'templates/footer.php'
   ?>
 
 

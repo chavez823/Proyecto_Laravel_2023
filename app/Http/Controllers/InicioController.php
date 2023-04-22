@@ -24,7 +24,12 @@ class InicioController extends Controller
     
         return view('Menu.buyit',$data );
     }
+  
 
+    public function ver_carrito(){
+
+        return view('Menu/pages/mostrarCarrito' );
+    }
     /**
      * Show the form for creating a new resource.
      */
