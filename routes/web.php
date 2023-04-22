@@ -32,7 +32,9 @@ Route::get('usuario', function () {
     return view('Cliente.emailverification');
 });*/
 Route::get('/', [InicioController::class, 'index']);
-Route::get('login', [UsuarioController::class, 'index']);
+
+//Route::get('/login', [UsuarioController::class, 'index']);
+//Route::pot('/login/sesion', [UsuarioController::class, 'login']);
 
 //Route::resource('cliente', [ClienteController::class, 'index']);
 
