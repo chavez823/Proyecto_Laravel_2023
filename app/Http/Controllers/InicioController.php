@@ -21,7 +21,7 @@ class InicioController extends Controller
        $ofertas=new Inicio;
        $data=array();
        $data['ofertas']=$ofertas->inicio();
-        return view('Menu.buyit',$data);
+       return view('Menu.buyit',$data);
     }
     public function carrito($id,$vista='')
     {

@@ -50,6 +50,10 @@ Route::get('/restar/{ID}', [InicioController::class, 'restar']);
 Route::get('/delete/{ID}', [InicioController::class, 'delete']);
 Route::get('/pagar', [CuponController::class, 'index']);
 
+Route::post('/completar-compra', [CuponController::class, 'compra_completa']);
+Route::get('/gracias', [CuponController::class, 'gracias']);
+Route::get('/cupones', [CuponController::class, 'ver_cupon']);
+
 
 Route::get('nuevocliente', [ClienteController::class, 'index']);
 

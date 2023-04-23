@@ -54,7 +54,7 @@ class UsuarioController extends Controller
         Auth::login($user);
         $request->session()->regenerate();
        // $redirect->redirect('/');
-      
+       
        $ofertas=new Inicio;
        $data=array();
        $data['ofertas']=$ofertas->inicio();
