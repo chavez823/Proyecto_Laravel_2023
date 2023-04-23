@@ -36,6 +36,7 @@ Route::get('/', [InicioController::class, 'index']);
 Route::get('buyit', [InicioController::class, 'index']);
 Route::get('carrito', [InicioController::class, 'ver_carrito']);
 Route::post('login', [UsuarioController::class, 'login']);
+Route::post('logout', [UsuarioController::class, 'logout']);
 Route::get('form', [UsuarioController::class, 'index']);
 Route::get('form/recuperacioncontraseña', [UsuarioController::class, 'recuperacioncontraseña']);
 Route::get('form/cambiocontraseña', [UsuarioController::class, 'cambiocontraseña']);

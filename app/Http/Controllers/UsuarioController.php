@@ -60,18 +60,15 @@ class UsuarioController extends Controller
                  // echo "sirve";
          Auth::login($user);
          $request->session()->regenerate();
-         $_SESSION['session']["nombre"]= $request->email;
+         $_SESSION['session']["nombre"]= //$user->Nombres;
+         $request->email;
          $ofertas=new Inicio;
          $data=array();
          $data['ofertas']=$ofertas->inicio();
           return view('Menu.buyit',$data);
 
            }
-          
-         // require_once "views/Menu/buyit.php";	
-          //echo var_dump(conunt($usuarios->sesion($Correo,$Contrasenia)));
-
-    //  }
+     
 
    //   else{					
            // echo "Usuario y/o Contraseña incorrectos";
@@ -82,13 +79,25 @@ class UsuarioController extends Controller
       }*/
 
 
-
-
     }
 
      
     
        // return view('Usuario.login' );
+
+      }
+
+      public function logout(Request $request){
+        Auth::logout();
+        session_unset();
+             //destruye las varibles de  sesiones 
+             session_destroy();
+             $ofertas=new Inicio;
+             $data=array();
+             $data['ofertas']=$ofertas->inicio();
+              return view('Menu.buyit',$data);
+
+
 
       }
 
