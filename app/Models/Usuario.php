@@ -14,9 +14,9 @@ class Usuario extends Model
     protected $primaryKey="ID_Usuario";
      
    
-   public function sesion($Correo, $Contrasenia){
+   public function sesion($usuario){
 
-        $sentencia=DB::table('Usuario')
+        /*$sentencia=DB::table('Usuario')
             ->select('*')
             ->Where('Correo', '=', $Correo, 'AND', 'Contrasenia', '=', $Contrasenia )
             ->post();
@@ -24,6 +24,8 @@ class Usuario extends Model
 
         /* $sentencia = DB::table('Usuario')->where('Correo', $Correo)->first();
          return $sentencia;*/
+
+       $sentencia= DB::select('SELECT * FROM Usuario WHERE Correo = :Correo', $usuario);
 
 
 

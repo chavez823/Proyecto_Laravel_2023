@@ -1,5 +1,5 @@
 <?php
-define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
+//define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -53,6 +53,7 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
     <div class="container-login"> 
 		<div class="wrap-login"> 
 			<form action="login" method="post"> 
+        @csrf
       <?php
                         if(isset($errores)){
                             if(count($errores)>0){
@@ -74,12 +75,12 @@ define("Aqui","<a href='index.php?c=cliente' > aquí</a>");
                 <img class="avatar"src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="" align="center">
 					<!-- USUARIO --> 
 				<div class="wrap-input100"> 
-					<input class="input100" type="text" name="email" placeholder="Correo"  value="<?php if(isset($Correo)) echo  $Correo ?>">	 
+					<input class="input100" type="text" name="email" placeholder="Correo"  value="<?php //if(isset($Correo)) echo  $Correo ?>">	 
 					<span class="focus-efecto"></span> 
 				</div> 
 				<!-- CONTRASEÑA --> 
 				<div class="wrap-input100"> 
-					<input class="input100" type="password" name="password" placeholder="Contraseña" value="<?php if(isset($Contrasenia)) echo  $Contrasenia ?>"> 
+					<input class="input100" type="password" name="password" placeholder="Contraseña" value="<?php // if(isset($Contrasenia)) echo  $Contrasenia ?>"> 
 					<span class="focus-efecto"></span> 
 				</div>
         <!---Haciendo Pruebas de popover

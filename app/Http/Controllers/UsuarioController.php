@@ -32,12 +32,12 @@ class UsuarioController extends Controller
 
 
 
-      public function login(){
+      public function login(Request $request){
 
         //
        // return "Prueba";
        $usuarios=new Usuario();
-       $data=array();
+      // $data=array();
 
        $Correo = $_POST['email'];
        $Contrasenia=$_POST['password'];
@@ -55,12 +55,22 @@ class UsuarioController extends Controller
           //capturando contrseña y corre para el cambio
           $_SESSION['session']["Contrseña"]=   $usuario[0]['Contrasenia'];
           $_SESSION['session']["correo"]=   $usuario[0]['Correo'];*/
+       /*   $usuario = ['Correo'=>  $Correo,
+          //'Contrasenia'=>  $Contrasenia,
+      ];*/
 
-       
-          $inicio = new Inicio();
+
+          /* if($usuarios->sesion($usuario) > 0)
+
+           {}*/
+
+                 // echo "sirve";
+         
+         // $inicio = new Inicio();
           //
-          $data["Ofertas"] = $inicio->get_inicio();
-          return view('Menu.buyit',$data );
+         // $data["Ofertas"] = $inicio->get_inicio();
+
+        //  return view('Menu.buyit',$data );
 
           
           
