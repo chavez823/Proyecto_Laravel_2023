@@ -48,11 +48,12 @@ Route::get('Categoria/super', [CategoriaController::class, 'Ver_super']);
 Route::get('/carrito/{id}&{vista}', [InicioController::class, 'carrito']);
 Route::get('/restar/{ID}', [InicioController::class, 'restar']);
 Route::get('/delete/{ID}', [InicioController::class, 'delete']);
-Route::get('/pagar', [CuponController::class, 'index']);
 
+Route::get('/pagar', [CuponController::class, 'index']);
 Route::post('/completar-compra', [CuponController::class, 'compra_completa']);
 Route::get('/gracias', [CuponController::class, 'gracias']);
 Route::get('/cupones', [CuponController::class, 'ver_cupon']);
+Route::get('/cupon/{id_cupon}', [CuponController::class, 'generar_cupon']);
 
 
 Route::get('nuevocliente', [ClienteController::class, 'index']);

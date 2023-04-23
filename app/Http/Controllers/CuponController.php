@@ -127,13 +127,14 @@ class CuponController extends Controller
 					}
                     $pdf->loadHTML($html)->save('pdfs/'.$nombre_pdf.'.pdf');
                     //Envio de correo
+					/*
                     $archivo = $rutaGuardado.$nombre_pdf.'pdf';
 					$data='Envio del detalle de la compra';
                     Mail::raw('Text to e-mail' , function ($message) {
                         $message->from('yam182141@gmail.com', 'Laravel');
-                        $message->to('emmus.giron@gmail.com')->cc('bar@example.com');
+                        $message->to('correo del usuario')->cc('bar@example.com');
                         $message->attach('pdfs/prueba.pdf');
-                    });
+                    });*/
                     $_SESSION['CARRITO']=array();
                     redirect()->to('/gracias')->send();
     }
@@ -149,13 +150,87 @@ class CuponController extends Controller
             return view('Compras.compras',$data);
         //}
 		}
-		public function getCupon($ID_CUPON){
-
-
-
-
-
-			
+		public function generar_cupon($id_cupon){
+					$model = new Cupon();
+					$cupon_detalle=$model->getCupon($id_cupon);//se obtiene el cupon mediante el id del cupon pasado por parametro
+					//echo var_dump($cupon_detalle);
+					ob_start(); 
+					echo "<!DOCTYPE html>";
+					echo "<html lang=\"en\">";
+					echo "<head>";
+					echo " <meta charset=\"UTF-8\">";
+					echo "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">";
+					echo "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">";
+					echo "<title>PDF</title>";
+					echo "<style>";
+					echo ".img1{";
+					echo "width: 200px;";
+					echo "height: 100px;";
+					echo "}";
+					echo ".tdb{";
+					echo "border: none;";
+					echo "}";
+					echo ".center {";
+					echo "text-align: center;";
+					echo "border: 3px solid green;";
+					echo "}";
+					echo "h1{";
+					echo "text-align: center;";
+					echo "font-family: \"Lucida Console\, \"Courier New\", monospace;";
+					echo "text-decoration: underline;";
+					echo "}";
+					echo "table {";
+					echo "width: 100%;";
+					echo "border: none;";
+					echo "}";
+					echo "th, td {";
+					echo "font-family: \"Lucida Console\", \"Courier New\", monospace;";
+					echo "width: 25%;";
+					echo "text-align: center;";
+					echo "vertical-align: top;";
+					echo "border: 1px solid #000;";
+					echo " border-collapse: collapse;";
+					echo "padding: 0.3em;";
+					echo "caption-side: bottom;";
+					echo "}";
+					echo "th {";
+					echo "background: #D1F2EB;";
+					echo "font-size: 20px;";
+					echo "}";
+					echo "</style>";
+					echo "</head>";
+					echo "<body>";
+					$nombreImagen = "img/Logo_1.png";
+					$imagenBase64 =  "data:image/png;base64," .base64_encode(file_get_contents($nombreImagen));
+					echo "<img src=".$imagenBase64." class=\"img1\">";
+					echo "<h1>Cupón</h1>";
+					echo "<br/>";
+					echo "<table>";
+					echo "<thead>";
+					echo "<th>Código Cupon</th>";
+					echo "<th>Nombre</th>";
+					echo "<th>Descripción</th>";
+					echo "</thead>";
+					foreach ($cupon_detalle as $cupon) {	
+							//se imprimen todos los detalles del cupon 
+							echo "<tr>";
+							echo "<td>".$cupon->ID_Cupon."</td>";
+							echo "<td>".$cupon->Titulo."</td>";
+							echo "<td>".$cupon->Descripcion."</td>";
+					}
+					echo "</table>";
+					echo "</body>";
+					echo "</html>";
+					$html = ob_get_clean(); //ob_get_clean captura toda la información y lo amacenamos en una variable
+					$pdf = App::make('dompdf.wrapper');
+                    srand (time());
+                    $rutaGuardado = "pdfs_cupones/";
+					$nombre_pdf=rand(1,100);
+					for ($i=0; $i < 5; $i++) { 
+						$nombre_pdf .= rand(1,100);
+					}
+                    $pdf->loadHTML($html)->save('pdfs_cupon/'.$nombre_pdf.'.pdf');
+					return $pdf->stream();		
 		}
 
     /**
