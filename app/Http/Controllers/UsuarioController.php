@@ -6,9 +6,13 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Inicio;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
+
+use Illuminate\Http\Response;
+//use  App\Http\Controllers\Redirector;
+
+
+
 class UsuarioController extends Controller
 {
     /**
@@ -35,7 +39,7 @@ class UsuarioController extends Controller
 
 
 
-      public function login(Request $request, Redirector $redirect){
+      public function login(Request $request){
 
         //
        // return "Prueba";
@@ -51,36 +55,40 @@ class UsuarioController extends Controller
        $user= User::where('Correo', $request->email)->first();
        if($user->Contrasenia===($request->password)){
 
-        Auth::login($user);
-        $request->session()->regenerate();
-       // $redirect->redirect('/');
-       
-       $ofertas=new Inicio;
-       $data=array();
-       $data['ofertas']=$ofertas->inicio();
-        return view('Menu.buyit',$data);
+           {
 
-      // return view('Menu.buyit');
-       }
-       else{
+                 // echo "sirve";
+         Auth::login($user);
+         $request->session()->regenerate();
+         $_SESSION['session']["nombre"]= $request->email;
+         $ofertas=new Inicio;
+         $data=array();
+         $data['ofertas']=$ofertas->inicio();
+          return view('Menu.buyit',$data);
+
+           }
+          
+         // require_once "views/Menu/buyit.php";	
+          //echo var_dump(conunt($usuarios->sesion($Correo,$Contrasenia)));
+
+    //  }
+
+   //   else{					
+           // echo "Usuario y/o Contraseña incorrectos";
+   //   $errores=array();
+   //   array_push($errores,"Correo y/o contraseña equivocado");	
+    //  require_once "views/Usuario/login.php";	 
+   /* return view('Usuario.login');
+      }*/
 
 
 
 
+    }
 
-
-       }
-
+     
     
-
-
-
-
-      }
-
-      public function nuevo(){
-
-
+       // return view('Usuario.login' );
 
       }
 
