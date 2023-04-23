@@ -127,16 +127,18 @@ class CuponController extends Controller
 					}
                     $pdf->loadHTML($html)->save('pdfs/'.$nombre_pdf.'.pdf');
                     //Envio de correo
-					/*
+				
                     $archivo = $rutaGuardado.$nombre_pdf.'pdf';
 					$data='Envio del detalle de la compra';
+					
                     Mail::raw('Text to e-mail' , function ($message) {
                         $message->from('yam182141@gmail.com', 'Laravel');
                         $message->to('correo del usuario')->cc('bar@example.com');
                         $message->attach('pdfs/prueba.pdf');
-                    });*/
+                    });
                     $_SESSION['CARRITO']=array();
                     redirect()->to('/gracias')->send();
+
     }
 
 
