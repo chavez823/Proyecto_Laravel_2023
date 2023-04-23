@@ -49,7 +49,7 @@ Route::get('/restar/{ID}', [InicioController::class, 'restar']);
 Route::get('/delete/{ID}', [InicioController::class, 'delete']);
 
 
-Route::resource('nuevocliente', [ClienteController::class, 'index']);
+Route::get('nuevocliente', [ClienteController::class, 'index']);
 
 
 
