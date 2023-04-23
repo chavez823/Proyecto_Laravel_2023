@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <title>Registro</title>
-    <link rel="stylesheet" href="../public/css/style_signup.css">
+    <link rel="stylesheet" href="css/style_signup.css">
     <!--link rel="stylesheet" href="../css/style_error.css"-->
     <!--Google Fonst-->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet"> 
@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color: #86A3B8;">
       <div class="container-fluid">
          <!--Logo-->
-        <a class="navbar-brand" href="index.php?c=inicio">
+        <a class="navbar-brand" href="buyit">
           <img class="logotipo" src="img/Logo_sin_slogan_t.png" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.php?c=inicio">Inicio</a>
+              <a class="nav-link" aria-current="page" href="buyit">Inicio</a>
             </li>
           </ul> 
         </div>
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <h7>Ya tienes una cuenta</h7><br>
-                <h7>Inicia Sesion <a href="index.php?c=usuario">Aqui</a> </h7>	
+                <h7>Inicia Sesion <a href="form">Aqui</a> </h7>	
                 <br>
                 <button type="submit" name="enviar" class="sesion">
                     Crear Cuenta
@@ -139,16 +139,7 @@
 		})
 	</script>
 
-<?php
-    include 'templates/footer.php'
-    /*if(preg_match('/^[76][0-9]{7}$/',$Telefono)==true){
-      return var_dump(true);
-    }
-    else{
-      var_dump("false");
-    }*/
-    
-  ?>
+@extends('templates/footer')
  
 </body>
 </html>

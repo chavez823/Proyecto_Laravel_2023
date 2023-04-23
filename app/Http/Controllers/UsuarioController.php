@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario;
+//use App\Models\Usuario;
+use App\Models\User;
 use App\Models\Inicio;
 use Illuminate\Http\Request;
-
+use Illuminate\Routing\Redirector;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 class UsuarioController extends Controller
 {
     /**
@@ -32,69 +35,52 @@ class UsuarioController extends Controller
 
 
 
-      public function login(Request $request){
+      public function login(Request $request, Redirector $redirect){
 
         //
        // return "Prueba";
-       $usuarios=new Usuario();
+       //$usuarios=new User();
       // $data=array();
 
-       $Correo = $_POST['email'];
-       $Contrasenia=$_POST['password'];
-     
-        //comprueba que el usuario exista 
-      //if($usuarios->sesion($Correo,$Contrasenia) != null){
-           //
-         /* $usuario=$usuarios->sesion($Correo,$Contrasenia);
-          //
-          $_SESSION['session']=array();
-          $_SESSION['session']["ID_Usuario"]=   $usuario[0]['ID_Usuario'];
-          $_SESSION['session']["nombre"]=   $usuario[0]['Nombres'];
-          $_SESSION['session']["apellido"]=   $usuario[0]['Apellidos'];
-          $_SESSION['session']["tipo_usuario"]=   $usuario[0]['Tipo'];
-          //capturando contrseña y corre para el cambio
-          $_SESSION['session']["Contrseña"]=   $usuario[0]['Contrasenia'];
-          $_SESSION['session']["correo"]=   $usuario[0]['Correo'];*/
-       /*   $usuario = ['Correo'=>  $Correo,
-          //'Contrasenia'=>  $Contrasenia,
-      ];*/
-
-
-          /* if($usuarios->sesion($usuario) > 0)
-
-           {}*/
-
-                 // echo "sirve";
-         
-         // $inicio = new Inicio();
-          //
-         // $data["Ofertas"] = $inicio->get_inicio();
-
-        //  return view('Menu.buyit',$data );
-
-          
-          
-         // require_once "views/Menu/buyit.php";	
-          //echo var_dump(conunt($usuarios->sesion($Correo,$Contrasenia)));
-
-    //  }
-
-   //   else{					
-           // echo "Usuario y/o Contraseña incorrectos";
-   //   $errores=array();
-   //   array_push($errores,"Correo y/o contraseña equivocado");	
-    //  require_once "views/Usuario/login.php";	 
-   /* return view('Usuario.login');
-      }*/
-
-
-
-
-
-
+      // $Correo = $_POST['email'];
+       //$Contrasenia=$_POST['password'];
      
     
        // return view('Usuario.login' );
+
+       $user= User::where('Correo', $request->email)->first();
+       if($user->Contrasenia===($request->password)){
+
+        Auth::login($user);
+        $request->session()->regenerate();
+       // $redirect->redirect('/');
+      
+       $ofertas=new Inicio;
+       $data=array();
+       $data['ofertas']=$ofertas->inicio();
+        return view('Menu.buyit',$data);
+
+      // return view('Menu.buyit');
+       }
+       else{
+
+
+
+
+
+
+       }
+
+    
+
+
+
+
+      }
+
+      public function nuevo(){
+
+
 
       }
 

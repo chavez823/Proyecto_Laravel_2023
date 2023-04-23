@@ -4,6 +4,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CuponController;
 use Illuminate\Support\Facades\Route;
 session_start();
 
@@ -47,9 +48,10 @@ Route::get('Categoria/super', [CategoriaController::class, 'Ver_super']);
 Route::get('/carrito/{id}&{vista}', [InicioController::class, 'carrito']);
 Route::get('/restar/{ID}', [InicioController::class, 'restar']);
 Route::get('/delete/{ID}', [InicioController::class, 'delete']);
+Route::get('/pagar', [CuponController::class, 'index']);
 
 
-//Route::resource('nuevocliente', [ClienteController::class, 'index']);
+Route::get('nuevocliente', [ClienteController::class, 'index']);
 
 
 

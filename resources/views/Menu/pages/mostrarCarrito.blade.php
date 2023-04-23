@@ -132,7 +132,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td><a href="index.php?c=Inicio&a=pagar" class="btn btn-success">>>Pagar</a></td>
+                <td><a href="/pagar" class="btn btn-success">>>Pagar</a></td>
             </tr>
         </tbody>
     </table>

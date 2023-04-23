@@ -12,7 +12,7 @@ class CuponController extends Controller
      */
     public function index()
     {
-        //
+        return view('carrito.Pago_tarjeta');
     }
 
     /**
