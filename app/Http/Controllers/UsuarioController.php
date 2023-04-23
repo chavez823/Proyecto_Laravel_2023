@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 class UsuarioController extends Controller
 {
     /**
@@ -35,7 +36,7 @@ class UsuarioController extends Controller
 
 
 
-      public function login(Request $request, Redirector $redirect){
+      public function login(Request $request){
 
         //
        // return "Prueba";
@@ -62,16 +63,22 @@ class UsuarioController extends Controller
 
       // return view('Menu.buyit');
        }
-       else{
+
+     /*  $credentials=[
+        'Correo'=>$request->email,
+        'password'=>$request->password
+      ];
+      if(Auth::attempt($credentials)){
+
+        $ofertas=new Inicio;
+        $data=array();
+        $data['ofertas']=$ofertas->inicio();
+         return view('Menu.buyit',$data);
+      }*/
+
+      return back()->with( 'error', 'Error Email or Password');
 
 
-
-
-
-
-       }
-
-    
 
 
 

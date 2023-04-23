@@ -68,6 +68,11 @@
 
                             
                     ?>
+                      @if(Session::has('error'))
+                        <div class='alert alert-danger' role='role'>
+                          {{session::get('error')}}
+                          </div>
+                          @endif
 
 				<!-- LOGO --> 
 				<span class="login-form-title">Iniciar Sesión</span> 
