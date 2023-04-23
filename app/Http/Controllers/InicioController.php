@@ -57,16 +57,16 @@ class InicioController extends Controller
             {
                 redirect()->to('/')->send();
             }else if($vista=='2'){
-                echo "aqui estoy 2";
+                redirect()->to('Categoria/belleza')->send();
             }else if($vista=='3'){
-                echo "aqui estoy 3";
+                redirect()->to('Categoria/restaurante')->send();
             }else if($vista=='4'){
-                echo "aqui estoy 4";
+                redirect()->to('Categoria/salud')->send();
             }else if($vista=='5'){
-                echo "aqui estoy 5";
+                redirect()->to('Categoria/super')->send();
             }
             else{
-                echo "aqui estoy 6";
+                redirect()->to('carrito')->send();
             }
         }else{ 
             
@@ -87,16 +87,16 @@ class InicioController extends Controller
                 if($vista==1){
                     redirect()->to('/')->send();
                 }else if($vista=='2'){
-                    echo "aqui estoy";
+                    redirect()->to('Categoria/belleza')->send();
                 }else if($vista=='3'){
-                    echo "aqui estoy";
+                    redirect()->to('Categoria/restaurante')->send();
                 }else if($vista=='4'){
-                    echo "aqui estoy";
+                    redirect()->to('Categoria/salud')->send();
                 }else if($vista=='5'){
-                    echo "aqui estoy";
+                    redirect()->to('Categoria/super')->send();
                 }
                 else{
-                    echo "aqui estoy Hola";
+                    redirect()->to('carrito')->send();
                 }
 
             }else{
@@ -117,16 +117,16 @@ class InicioController extends Controller
             if($vista==1){
                 redirect()->to('/')->send();
             }else if($vista=='2'){
-                echo "aqui estoy";
+                redirect()->to('Categoria/belleza')->send();
             }else if($vista=='3'){
-                echo "aqui estoy";
+                redirect()->to('Categoria/restaurante')->send();
             }else if($vista=='4'){
-                echo "aqui estoy";
+                redirect()->to('Categoria/salud')->send();
             }else if($vista=='5'){
-                echo "aqui estoy";
+                redirect()->to('Categoria/super')->send();
             }
             else{
-                echo "aqui estoy HOLA";
+                redirect()->to('carrito')->send();
             }
             }
             
@@ -134,6 +134,35 @@ class InicioController extends Controller
 
 
     }
+    public function delete($ID){
+                //Aqui se define cada objeto del carrito mediante del indice
+                foreach ($_SESSION['CARRITO'] as $indice => $producto) {
+                    if($producto['ID']==$ID){//cuando el indice en el arreglo del carrito coicide con el que se paso por parametro se procede a la eliminacion
+                        //un vaciado dependiendo el id de oferta 
+                        unset($_SESSION['CARRITO'][$indice]);
+                        //echo "<script>alert('Elemento borrado...');</script>";
+                    }
+                }
+                redirect()->to('carrito')->send();
+        }
+        public function restar($ID, $CANTIDAD=1){
+            
+            $carro=$_SESSION['CARRITO'];//almacenamos el arreglo del carrito en la variable carro para poder comparar los elementos
+            foreach ($carro as $indice => $producto) {
+            if($producto['ID']==$ID){//cuando el ID coicida con el indice pasado por parametro 
+                $identificador=$indice;//se guarda el indice 
+                $cantidadActual=$producto['CANTIDAD'];//se guarda la cantidad actual
+                }
+            }
+            if($cantidadActual==1){
+                unset($_SESSION['CARRITO'][$identificador]);//si la cantidad corresponde a 1 se elimina el elemento
+            }
+            else{
+                $carro[$identificador]['CANTIDAD'] -= $CANTIDAD;//si es mayor a uno solo se resta un elementos
+                $_SESSION['CARRITO']=$carro; //el arreglo carro se alamcena en la variable de sesion del carrito
+            }
+            redirect()->to('carrito')->send();
+}
   
 
     public function ver_carrito(){

@@ -47,6 +47,8 @@ Route::get('Categoria/restaurante', [CategoriaController::class, 'Ver_restaurant
 Route::get('Categoria/super', [CategoriaController::class, 'Ver_super']);
 
 Route::get('/carrito/{id}&{vista}', [InicioController::class, 'carrito']);
+Route::get('/restar/{ID}', [InicioController::class, 'restar']);
+Route::get('/delete/{ID}', [InicioController::class, 'delete']);
 
 //Route::resource('cliente', [ClienteController::class, 'index']);
 

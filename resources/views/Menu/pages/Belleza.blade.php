@@ -33,7 +33,7 @@
               <h1><?php echo $oferta->Titulo ?></h1>
               <p>$<?php echo $oferta->PrecioOferta ?></p>
               <p><?php echo $oferta->Descripcion ?></p>
-              <a href="" class="btn btn-primary">Agregar al carrito</a>
+              <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>
               </form>     
             </div>    
           </div>
