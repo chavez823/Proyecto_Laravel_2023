@@ -6,10 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Inicio;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
+
 class UsuarioController extends Controller
 {
     /**
@@ -36,7 +33,7 @@ class UsuarioController extends Controller
 
 
 
-      public function login(Request $request){
+      public function login(Request $request, Redirector $redirect){
 
         //
        // return "Prueba";
@@ -52,42 +49,39 @@ class UsuarioController extends Controller
        $user= User::where('Correo', $request->email)->first();
        if($user->Contrasenia===($request->password)){
 
-        Auth::login($user);
-        $request->session()->regenerate();
-       // $redirect->redirect('/');
-       
-       $ofertas=new Inicio;
-       $data=array();
-       $data['ofertas']=$ofertas->inicio();
-        return view('Menu.buyit',$data);
+           {}*/
 
-      // return view('Menu.buyit');
-       }
+                 // echo "sirve";
+         
+         // $inicio = new Inicio();
+          //
+         // $data["Ofertas"] = $inicio->get_inicio();
 
-     /*  $credentials=[
-        'Correo'=>$request->email,
-        'password'=>$request->password
-      ];
-      if(Auth::attempt($credentials)){
+        //  return view('Menu.buyit',$data );
 
-        $ofertas=new Inicio;
-        $data=array();
-        $data['ofertas']=$ofertas->inicio();
-         return view('Menu.buyit',$data);
+          
+          
+         // require_once "views/Menu/buyit.php";	
+          //echo var_dump(conunt($usuarios->sesion($Correo,$Contrasenia)));
+
+    //  }
+
+   //   else{					
+           // echo "Usuario y/o Contraseña incorrectos";
+   //   $errores=array();
+   //   array_push($errores,"Correo y/o contraseña equivocado");	
+    //  require_once "views/Usuario/login.php";	 
+   /* return view('Usuario.login');
       }*/
 
-      return back()->with( 'error', 'Error Email or Password');
 
 
 
 
 
-
-      }
-
-      public function nuevo(){
-
-
+     
+    
+       // return view('Usuario.login' );
 
       }
 
