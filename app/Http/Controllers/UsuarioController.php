@@ -58,8 +58,8 @@ class UsuarioController extends Controller
            {
 
                  // echo "sirve";
-         Auth::login($user);
-         $request->session()->regenerate();
+        // Auth::login($user);
+        // $request->session()->regenerate();
          $_SESSION['session']["nombre"]= $user->Nombres;
         // $request->email;
          $ofertas=new Inicio;
@@ -88,7 +88,7 @@ class UsuarioController extends Controller
       }
 
       public function logout(Request $request){
-        Auth::logout();
+       // Auth::logout();
         session_unset();
              //destruye las varibles de  sesiones 
              session_destroy();
