@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use App\Models\Usuario;
+use App\Models\Inicio;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ClienteController extends Controller
 {
@@ -15,6 +19,22 @@ class ClienteController extends Controller
         //
         return view('Cliente.cliente');
     }
+ 
+
+    public function nuevo(Request $request)
+    {
+        //
+        return view('Cliente.cliente');
+    }
+
+
+
+
+
+
+
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -23,6 +43,11 @@ class ClienteController extends Controller
     {
         //
         return "prueba";
+
+
+
+
+
     }
 
     /**

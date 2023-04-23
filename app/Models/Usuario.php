@@ -10,11 +10,11 @@ class Usuario extends Model
 {
     use HasFactory;
 
-   // protected $table="Usuario";
+    protected $table="Usuario";
     protected $primaryKey="ID_Usuario";
      
    
-   public function sesion($usuario){
+   //public function sesion($usuario){
 
         /*$sentencia=DB::table('Usuario')
             ->select('*')
@@ -25,10 +25,10 @@ class Usuario extends Model
         /* $sentencia = DB::table('Usuario')->where('Correo', $Correo)->first();
          return $sentencia;*/
 
-       $sentencia= DB::select('SELECT * FROM Usuario WHERE Correo = :Correo', $usuario);
+     /*  $sentencia= DB::select('SELECT * FROM Usuario WHERE Correo = :Correo', $usuario);
 
-
+*/
 
     
-      }
+    //  }*/
 }
