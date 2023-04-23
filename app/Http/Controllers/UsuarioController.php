@@ -60,8 +60,8 @@ class UsuarioController extends Controller
                  // echo "sirve";
          Auth::login($user);
          $request->session()->regenerate();
-         $_SESSION['session']["nombre"]= //$user->Nombres;
-         $request->email;
+         $_SESSION['session']["nombre"]= $user->Nombres;
+        // $request->email;
          $ofertas=new Inicio;
          $data=array();
          $data['ofertas']=$ofertas->inicio();
