@@ -94,7 +94,7 @@
                 <section class="dos-columnas">
                     <div class="columna-izquierda">
                       <h6 class="first">¿No tienes una cuenta?</h6>
-                      <h6 class="second">Regístrate<a href="" class="">   aquí</a></h6>	
+                      <h6 class="second">Regístrate<a href="nuevocliente" class="">   aquí</a></h6>	
                     </div>
                     <div class="columna-derecha">
                       <h6 class="first">¿Olvidaste tu contraseña?</h6>

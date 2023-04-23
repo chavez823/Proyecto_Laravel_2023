@@ -30,9 +30,7 @@ Route::get('usuario', function () {
 /*Route::get('cliente', function () {
     return view('Cliente.cliente');
 });*/
-/*Route::get('cliente', function () {
-    return view('Cliente.emailverification');
-});*/
+
 Route::get('/', [InicioController::class, 'index']);
 Route::get('buyit', [InicioController::class, 'index']);
 Route::get('carrito', [InicioController::class, 'ver_carrito']);
@@ -50,7 +48,8 @@ Route::get('/carrito/{id}&{vista}', [InicioController::class, 'carrito']);
 Route::get('/restar/{ID}', [InicioController::class, 'restar']);
 Route::get('/delete/{ID}', [InicioController::class, 'delete']);
 
-//Route::resource('cliente', [ClienteController::class, 'index']);
+
+Route::resource('nuevocliente', [ClienteController::class, 'index']);
 
 
 
