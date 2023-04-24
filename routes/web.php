@@ -58,6 +58,8 @@ Route::get('/cupon/{id_cupon}', [CuponController::class, 'generar_cupon']);
 
 
 Route::get('nuevocliente', [ClienteController::class, 'index']);
+Route::post('/nuevocliente', [ClienteController::class, 'agregar_cliente']);
+
 
 
 

@@ -55,7 +55,7 @@
 
         <!--OJO-->
 		<div class="wrap-login"> 
-			<form action="index.php?c=cliente&a=nuevo" method="post"> 
+			<form action="/nuevocliente" method="post"> 
       <?php
 
 

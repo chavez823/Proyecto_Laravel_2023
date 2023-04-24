@@ -8,6 +8,13 @@ use App\Models\Inicio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use Hamcrest\Core\HasToString;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Mail;
+
+
+
 use Illuminate\Http\Response;
 //use  App\Http\Controllers\Redirector;
 
@@ -75,6 +82,7 @@ class UsuarioController extends Controller
          $data=array();
          $data['ofertas']=$ofertas->inicio();
           return view('Menu.buyit',$data);
+       //  redirect()->to('/')->send();
 
            }
 
@@ -106,7 +114,8 @@ class UsuarioController extends Controller
              $ofertas=new Inicio;
              $data=array();
              $data['ofertas']=$ofertas->inicio();
-              return view('Menu.buyit',$data);
+             // return view('Menu.buyit',$data);
+              redirect()->to('/')->send();
 
 
 

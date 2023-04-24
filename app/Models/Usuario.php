@@ -29,6 +29,14 @@ class Usuario extends Model
 
 */
 
+public function insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo ){
+    DB::table('Usuario')->insert([
+        ['Nombres'=>$Nombres,'Apellidos'=>$Apellidos,'Contrasenia'=>$Contrasenia,'Correo'=>$Correo,'ID_Usuario'=>$ID_Usuario,'Tipo'=>$Tipo ]
+
+    ]);
+
+}
+
     
     //  }*/
 }
