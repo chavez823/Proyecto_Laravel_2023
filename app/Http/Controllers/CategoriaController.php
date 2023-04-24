@@ -49,13 +49,6 @@ class CategoriaController extends Controller
          return view('Menu/pages/Restaurante',$data );
      }
 
-
-
-
-
-
-
-
     public function index()
     {
         //

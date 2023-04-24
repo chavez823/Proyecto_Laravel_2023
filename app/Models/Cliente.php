@@ -16,5 +16,29 @@ class Cliente extends Model
         ]);
     }
 
+    public function verificacion($Correo, $Token){
+
+  
+//DB::update('UPDATE cliente SET Token=$Token WHERE Correo=$Correo');
+
+$setencia=DB::table('Cliente')
+//->update('Cliente')
+//->Set('Token', $Token)
+->where('Correo', $Correo)
+->update(['Token', $Token]);
+//->get();
+
+return $setencia;
+
+
+
+
+
+
+
+
+
+    
+    }
     
 }

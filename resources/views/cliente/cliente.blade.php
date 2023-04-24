@@ -56,6 +56,7 @@
         <!--OJO-->
 		<div class="wrap-login"> 
 			<form action="/nuevocliente" method="post"> 
+            @csrf
       <?php
 
 

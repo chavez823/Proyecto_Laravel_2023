@@ -51,6 +51,7 @@
     <div class="container-login"> 
 		<div class="wrap-login"> 
 			<form action="index.php?c=usuario&a=cambiocontraseña" method="post"> 
+      @csrf
       <?php
                         if(isset($errores)){
                             if(count($errores)>0){

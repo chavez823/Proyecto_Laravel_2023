@@ -55,6 +55,7 @@
     <div class="container-login"> 
 		<div class="wrap-login"> 
 			<form action="index.php?c=usuario&a=recuperar" method="post"> 
+      @csrf
       <?php
                         if(isset($errores)){
                             if(count($errores)>0){

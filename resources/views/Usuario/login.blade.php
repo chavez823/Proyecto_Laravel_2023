@@ -54,20 +54,7 @@
 		<div class="wrap-login"> 
 			<form action="login" method="post"> 
         @csrf
-      <?php
-                        if(isset($errores)){
-                            if(count($errores)>0){
-                                echo "<div class='alert alert-danger'><ul>";
-                                foreach ($errores as $error) {
-                                    echo "<li>$error</li>";
-                                }
-                                echo "</ul></div>";
-
-                            }
-                        }
-
-                            
-                    ?>
+     
                       @if(Session::has('error'))
                         <div class='alert alert-danger' role='role'>
                           {{session::get('error')}}
