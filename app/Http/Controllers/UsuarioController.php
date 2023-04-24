@@ -52,14 +52,23 @@ class UsuarioController extends Controller
     
        // return view('Usuario.login' );
 
-       $user= User::where('Correo', $request->email)->first();
-       if($user->Contrasenia===($request->password)){
+       $user= User::where('Correo', $request->email )->first();
+      // $user=  new User();
+      $correo= $user;
+        
+    /* if($request->password=== null){
+        return back()->with( 'error', 'llenalo');
+       }*/
+        /* if($correo == null){
+        return back()->with( 'error', 'no existe');
+       }
+     else*/  if ($correo != null && $user->Contrasenia===($request->password)){
 
            {
 
                  // echo "sirve";
-        // Auth::login($user);
-        // $request->session()->regenerate();
+         Auth::login($user);
+         $request->session()->regenerate();
          $_SESSION['session']["nombre"]= $user->Nombres;
         // $request->email;
          $ofertas=new Inicio;
@@ -68,6 +77,8 @@ class UsuarioController extends Controller
           return view('Menu.buyit',$data);
 
            }
+
+           return back()->with( 'error', 'Error Email or Password');
      
 
    //   else{					
@@ -80,7 +91,7 @@ class UsuarioController extends Controller
 
 
     }
-
+    return back()->with( 'error', 'Error Email or Password');
      
     
        // return view('Usuario.login' );
