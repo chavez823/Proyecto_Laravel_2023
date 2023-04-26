@@ -58,7 +58,7 @@
 
                   <li><a class="dropdown-item " href="/cupones">Ver Cupones</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li> <a class="dropdown-item " href="index.php?c=usuario&a=cambio">Ajustes</a></li>
+                  <li> <a class="dropdown-item " href="form/cambio/contraseña">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li> <form action="logout" method="post">
                     @csrf

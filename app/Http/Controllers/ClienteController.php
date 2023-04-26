@@ -100,13 +100,16 @@ class ClienteController extends Controller
      if ($clientes != null &&  $Token==$_SESSION['registro_nuevo_cliente'][7]){
 
         {
-            $clientes->Token===($request->password);
-             $clientes->save();
+           // $user= Usuario::where('Correo',  $_SESSION['session']["correo"] )->first();
+            // $user->Dui;
+             $clientes->update([
+             'Token'=>/*($request->password)*/$Token]);
              redirect()->to('form')->send();
+
    
         }
 
-        return back()->with( 'errorveri', 'Error Email or Password');
+       // return back()->with( 'errorveri', 'Correo y/o  token equivocados');
 
  }
  return back()->with( 'errorveri', 'Error Email or Password');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 //use App\Models\Usuario;
 use App\Models\User;
 use App\Models\Inicio;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -48,17 +49,7 @@ class UsuarioController extends Controller
 
       public function login(Request $request){
 
-        //
-       // return "Prueba";
-       //$usuarios=new User();
-      // $data=array();
-
-      // $Correo = $_POST['email'];
-       //$Contrasenia=$_POST['password'];
-     
-    
-       // return view('Usuario.login' );
-
+   
        $user= User::where('Correo', $request->email )->first();
       // $user=  new User();
       $correo= $user;
@@ -77,29 +68,20 @@ class UsuarioController extends Controller
          Auth::login($user);
          $request->session()->regenerate();
          $_SESSION['session']["nombre"]= $user->Nombres;
-        // $request->email;
-         $ofertas=new Inicio;
+         $_SESSION['session']["correo"]= $request->email;
+        /* $ofertas=new Inicio;
          $data=array();
          $data['ofertas']=$ofertas->inicio();
-          return view('Menu.buyit',$data);
-       //  redirect()->to('/')->send();
+         // return view('Menu.buyit',$data);*/
+         redirect()->to('/')->send();
 
            }
 
-           return back()->with( 'error', 'Error Email or Password');
+          // return back()->with( 'error', ' ');
      
 
-   //   else{					
-           // echo "Usuario y/o Contraseña incorrectos";
-   //   $errores=array();
-   //   array_push($errores,"Correo y/o contraseña equivocado");	
-    //  require_once "views/Usuario/login.php";	 
-   /* return view('Usuario.login');
-      }*/
-
-
     }
-    return back()->with( 'error', 'Error Email or Password');
+    return back()->with( 'error', 'Correo y/o  Contraseña incorrectos');
      
     
        // return view('Usuario.login' );
@@ -116,10 +98,52 @@ class UsuarioController extends Controller
              $data['ofertas']=$ofertas->inicio();
              // return view('Menu.buyit',$data);
               redirect()->to('/')->send();
-
-
-
       }
+
+
+      public function  cambiopassword(Request $request){
+
+       
+
+        if ($request->password != null ){
+
+          {
+            
+       $user= Usuario::where('Correo',  $_SESSION['session']["correo"] )->first();
+       // $user->Dui;
+        $user->update([
+          'Contrasenia'=>($request->password)]);
+           
+               //   $useru= User::update(['Contrasenia'=>($request->password)]);
+
+
+
+            redirect()->to('/')->send();
+         
+
+    
+          }
+
+         
+
+   }
+   return back()->with( 'error', 'Debe completar el campo  Contraseña ');
+    
+   
+    
+
+     }
+
+
+
+
+
+
+
+
+
+      
+     
 
 
     /**
