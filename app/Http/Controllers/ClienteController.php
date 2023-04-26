@@ -89,47 +89,44 @@ class ClienteController extends Controller
 
     public function verificacion(Request $request){
 
-        $clientes = new Cliente();
+       // $clientes = new Cliente();
        // $clientes=Cliente::find('email');
        $Token=$request->password;
-     //  $clientes=Cliente::where('Correo', $request->email )->first();
+      
      $Correo=$request->email;
 
+     $clientes=Cliente::where('Correo', $request->email )->first();
+
+     if ($clientes != null &&  $Token==$_SESSION['registro_nuevo_cliente'][7]){
+
+        {
+            $clientes->Token===($request->password);
+             $clientes->save();
+             redirect()->to('form')->send();
+   
+        }
+
+        return back()->with( 'errorveri', 'Error Email or Password');
+
+ }
+ return back()->with( 'errorveri', 'Error Email or Password');
+  
+ 
+    // return view('Usuario.login' );
+
+   }
+   //  if
 
 
-       if($Correo==$_SESSION['registro_nuevo_cliente'][4]  &&   $Token==$_SESSION['registro_nuevo_cliente'][7])
-       {
+      // if($Correo==$_SESSION['registro_nuevo_cliente'][4]  &&  )
+      // {
        
 
-       $clientes->verificacion($Correo, $Token);
+      // $clientes->verificacion($Correo, $Token);
 
-         redirect()->to('form')->send();
+       //  
 
-       }
-    
-      
-    
-       return back()->with( 'error', 'Error Email or Password');
-    
-
-
-   // }
-
-        
-
-
-   // return back()->with( 'error', 'Error Email or Password');
-
-
-
-    
-   
-    }
-
-
-
-
-
+ 
 
 
 

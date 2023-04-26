@@ -53,7 +53,7 @@
     <!--INICIO-->
     <div class="container"> 
         <form class="form" method="POST"  action="/nuevocliente/verificacion/verificacion">
-        @csrf
+        @csrf   @method('PATCH')
             <p class="heading">VERIFICA TU EMAIL</p>
             <svg class="check" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="60px" height="60px" viewBox="0 0 60 60" xml:space="preserve">  <image id="image0" width="60" height="60" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAQAAACQ9RH5AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
             AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
@@ -88,9 +88,9 @@
                     ?>
 
 
-@if(Session::has('error'))
+@if(Session::has('errorveri'))
                         <div class='alert alert-danger' role='role'>
-                          {{session::get('error')}}
+                          {{session::get('errorveri')}}
                           </div>
                           @endif
             <div class="box">
