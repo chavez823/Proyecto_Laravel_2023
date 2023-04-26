@@ -54,7 +54,7 @@
   
     <div class="container-login"> 
 		<div class="wrap-login"> 
-			<form action="index.php?c=usuario&a=recuperar" method="post"> 
+			<form action="/recuperacion" method="post"> 
       @csrf   @method('PATCH')
       <?php
                         if(isset($errores)){
@@ -70,6 +70,11 @@
 
                             
                     ?>
+                     @if(Session::has('errorcambio'))
+                        <div class='alert alert-danger' role='role'>
+                          {{session::get('errorcambio')}}
+                          </div>
+                          @endif
 
 				<!-- LOGO --> 
 				<span class="login-form-title">Recuperación de Contraseña</span> 

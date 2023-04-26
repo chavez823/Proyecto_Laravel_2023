@@ -58,9 +58,9 @@ class ClienteController extends Controller
         $ID_Usuario=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
         $Tipo="Cliente";
         $usuario= new Usuario();
-        $usuario->insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo );
+        $usuario->insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo);
 
-        $clientes->insertarcliente($Dui,$Nombres, $Apellidos,$Contrasenia, $Correo, $Telefono, $Direccion, Null, $ID_Usuario);
+        $clientes->insertarcliente($Dui,$Nombres, $Apellidos, $Correo, $Telefono, $Direccion, $ID_Usuario,$Token);
 
         //redirect()->to('form')->send();
        // return view('Usuario.login');
@@ -72,7 +72,8 @@ class ClienteController extends Controller
       //  $clientes->insertarcliente($_SESSION['registro_nuevo_cliente'][0], $_SESSION['registro_nuevo_cliente'][1], $_SESSION['registro_nuevo_cliente'][2], $_SESSION['registro_nuevo_cliente'][3], $_SESSION['registro_nuevo_cliente'][4], $_SESSION['registro_nuevo_cliente'][5], $_SESSION['registro_nuevo_cliente'][6], NULL/*$_SESSION['registro_nuevo_cliente'][7]*/, $_SESSION['registro_nuevo_cliente'][8]);
       //llamamos al metodo login 
  
-       $_SESSION['registro_nuevo_cliente'] = array();
+
+      /* $_SESSION['registro_nuevo_cliente'] = array();
        $_SESSION['registro_nuevo_cliente'][0] = $Dui;
        $_SESSION['registro_nuevo_cliente'][1] = $Nombres;
        $_SESSION['registro_nuevo_cliente'][2] = $Apellidos;
@@ -81,7 +82,15 @@ class ClienteController extends Controller
        $_SESSION['registro_nuevo_cliente'][5] = $Telefono;
        $_SESSION['registro_nuevo_cliente'][6] = $Direccion;
        $_SESSION['registro_nuevo_cliente'][7] = $Token;
-       $_SESSION['registro_nuevo_cliente'][8] = $ID_Usuario;
+       $_SESSION['registro_nuevo_cliente'][8] = $ID_Usuario;*/
+
+      // Mail::raw('Text to e-mail' , function ($message) {
+       // $message->from('buyitbuyit3@gmail.com', 'Laravel');
+      //  $message->to( Request('email'))->cc('bar@example.com');
+        //$message->attach('15');
+  //  });
+
+       
 
         redirect()->to('/nuevocliente/verificacion/')->send();
     }
@@ -89,46 +98,31 @@ class ClienteController extends Controller
 
     public function verificacion(Request $request){
 
-       // $clientes = new Cliente();
-       // $clientes=Cliente::find('email');
        $Token=$request->password;
       
      $Correo=$request->email;
 
-     $clientes=Cliente::where('Correo', $request->email )->first();
+     $cliente=Cliente::where('Correo', $request->email )->first();
 
-     if ($clientes != null &&  $Token==$_SESSION['registro_nuevo_cliente'][7]){
+     if ($cliente != null &&  $Token===($request->password)){
 
         {
-           // $user= Usuario::where('Correo',  $_SESSION['session']["correo"] )->first();
-            // $user->Dui;
-             $clientes->update([
+            $cliente=Usuario::where('Correo', $request->email )->first();
+             $cliente->update([
              'Token'=>/*($request->password)*/$Token]);
              redirect()->to('form')->send();
 
-   
         }
 
-       // return back()->with( 'errorveri', 'Correo y/o  token equivocados');
-
- }
- return back()->with( 'errorveri', 'Error Email or Password');
-  
- 
-    // return view('Usuario.login' );
-
-   }
-   //  if
-
-
-      // if($Correo==$_SESSION['registro_nuevo_cliente'][4]  &&  )
-      // {
        
 
-      // $clientes->verificacion($Correo, $Token);
-
-       //  
-
+ }
+ return back()->with( 'errorveri', 'Correo y/o  token equivocados');
+  
+ 
+ 
+   }
+  
  
 
 

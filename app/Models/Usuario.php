@@ -62,6 +62,7 @@ use Illuminate\Support\Facades\DB;
  * @property string $Contrasenia
  * @property string $Correo
  * @property string $Tipo
+ *  * @property string $Token
  * 
  * @property Collection|Cliente[] $clientes
  * @property Collection|Empleado[] $empleados
@@ -87,13 +88,14 @@ class Usuario extends Model
 		'Apellidos',
 		'Contrasenia',
 		'Correo',
-		'Tipo'
+		'Tipo',
+		'Token'
 	];
 
 
 public function insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo ){
     DB::table('Usuario')->insert([
-        ['Nombres'=>$Nombres,'Apellidos'=>$Apellidos,'Contrasenia'=>$Contrasenia,'Correo'=>$Correo,'ID_Usuario'=>$ID_Usuario,'Tipo'=>$Tipo ]
+        ['Nombres'=>$Nombres,'Apellidos'=>$Apellidos,'Contrasenia'=>$Contrasenia,'Correo'=>$Correo,'ID_Usuario'=>$ID_Usuario,'Tipo'=>$Tipo, 'Token'=>Null ]
 
     ]);
 

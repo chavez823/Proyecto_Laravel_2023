@@ -79,9 +79,9 @@ class Cliente extends Model
 
 
 
-    public function insertarcliente($Dui,$Nombres, $Apellidos,$Contrasenia, $Correo, $Telefono, $Direccion, $Token, $ID_Usuario){
+    public function insertarcliente($Dui,$Nombres, $Apellidos, $Correo, $Telefono, $Direccion, $ID_Usuario,$Token){
         DB::table('Cliente')->insert([
-            ['DUI' => $Dui,'Nombres'=>$Nombres,'Apellidos'=>$Apellidos,'Contrasenia'=>$Contrasenia,'Correo'=>$Correo,'Telefono'=>$Telefono,'Direccion'=>$Direccion,'Token'=>$Token,'ID_Usuario'=>$ID_Usuario]
+            ['DUI' => $Dui,'Nombres'=>$Nombres,'Apellidos'=>$Apellidos,'Correo'=>$Correo,'Telefono'=>$Telefono,'Direccion'=>$Direccion,'ID_Usuario'=>$ID_Usuario, 'Token'=>$Token]
         ]);
     }
 

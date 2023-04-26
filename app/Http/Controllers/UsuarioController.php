@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 //use App\Models\Usuario;
+
+use App\Models\Cliente;
 use App\Models\User;
 use App\Models\Inicio;
 use App\Models\Usuario;
@@ -50,37 +52,57 @@ class UsuarioController extends Controller
       public function login(Request $request){
 
    
-       $user= User::where('Correo', $request->email )->first();
-      // $user=  new User();
-      $correo= $user;
+     $user= Usuario::where('Correo', $request->email )->first();
+   //  $cliente=Cliente::Where('Correo', $request->email )->Where('Token', Null )->first();
         
-    /* if($request->password=== null){
-        return back()->with( 'error', 'llenalo');
-       }*/
-        /* if($correo == null){
-        return back()->with( 'error', 'no existe');
+    if($request->mail== null && $request->password== null){
+        return back()->with( 'error', 'Completa los campos');
        }
-     else*/  if ($correo != null && $user->Contrasenia===($request->password)){
+        
+     else if ($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Cliente' && $user->Token !=null )
+           {{
 
-           {
+             /* if(){{
+                redirect()->to('/nuevocliente/verificacion')->send();}}
+                
+              else{*/
+               // Auth::login($user);
+                $request->session()->regenerate();
+                $_SESSION['session']["nombre"]= $user->Nombres;
+                $_SESSION['session']["correo"]= $request->email;
+                redirect()->to('/')->send();
+               /* $ofertas=new Inicio;
+                $data=array();
+                $data['ofertas']=$ofertas->inicio();
+                // return view('Menu.buyit',$data);*/
+                
+              }
+              
+            }
+            else if ($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Cliente' && $user->Token ==null )
+            {{
+              redirect()->to('/nuevocliente/verificacion')->send();}}
+ 
 
-                 // echo "sirve";
-         Auth::login($user);
-         $request->session()->regenerate();
-         $_SESSION['session']["nombre"]= $user->Nombres;
-         $_SESSION['session']["correo"]= $request->email;
-        /* $ofertas=new Inicio;
-         $data=array();
-         $data['ofertas']=$ofertas->inicio();
-         // return view('Menu.buyit',$data);*/
-         redirect()->to('/')->send();
 
-           }
+            elseif(($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Administrador' && $user->Token ==null))
+{{
+             //($user->Tipo=='Administrador')
+              //Auth::login($user);
+                $request->session()->regenerate();
+                $_SESSION['session']["nombre"]= $user->Nombres;
+                $_SESSION['session']["correo"]= $request->email;
+       
+               /* $ofertas=new Inicio;
+                $data=array();
+                $data['ofertas']=$ofertas->inicio();
+                // return view('Menu.buyit',$data);*/
+                redirect()->to('/')->send();
+            
 
-          // return back()->with( 'error', ' ');
-     
+}}
 
-    }
+            
     return back()->with( 'error', 'Correo y/o  Contraseña incorrectos');
      
     
@@ -133,6 +155,52 @@ class UsuarioController extends Controller
     
 
      }
+
+
+     public function recuperacion(Request $request){
+
+      $user= Usuario::where('Correo', $request->email )->first();
+
+      $contrsenia=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+
+      if($user != null ){{
+
+        $user->update([
+          'Contrasenia'=>$contrsenia]);
+           
+               //   $useru= User::update(['Contrasenia'=>($request->password)]);
+
+
+
+            redirect()->to('form')->send();
+         
+
+    
+          }
+
+         
+
+   }
+   return back()->with( 'errorcambio', 'Debe completar el campo  Contraseña ');
+    
+   
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
 
 
 

@@ -39,6 +39,7 @@ Route::post('login', [UsuarioController::class, 'login']);
 Route::post('logout', [UsuarioController::class, 'logout']);
 Route::get('form', [UsuarioController::class, 'index']);
 Route::get('form/recuperacioncontraseña', [UsuarioController::class, 'recuperacioncontraseña']);
+Route::patch('/recuperacion', [UsuarioController::class, 'recuperacion']);
 Route::get('form/cambio/contraseña', [UsuarioController::class, 'cambiocontraseña']);
 Route::patch('/actualizacion', [UsuarioController::class, 'cambiopassword']);
 Route::get('Categoria', [CategoriaController::class, 'index']);
