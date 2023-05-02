@@ -8,14 +8,16 @@ use App\Models\Cliente;
 use App\Models\User;
 use App\Models\Inicio;
 use App\Models\Usuario;
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Mail\Message;
 
 use Hamcrest\Core\HasToString;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
-
 
 
 use Illuminate\Http\Response;
@@ -170,8 +172,28 @@ class UsuarioController extends Controller
            
                //   $useru= User::update(['Contrasenia'=>($request->password)]);
 
+              // $subject="Nueva contraseña de buyit";
+              // $for=$request->email;
+             /*  Mail::raw($contrsenia , function ($message,$for) {
+                $message->from('yam182141@gmail.com', 'Laravel');
+                $message->to('jacquelinechavez623@gmail.com')->cc('bar@example.com');
+               // $message->attach('pdfs/prueba.pdf');
+            });*/
+           // Mail::to($request->email)->send($contrsenia);
+
+               
+ 
+
+ 
 
 
+
+
+
+
+
+
+        
             redirect()->to('form')->send();
          
 

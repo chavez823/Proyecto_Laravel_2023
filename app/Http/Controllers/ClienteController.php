@@ -84,11 +84,12 @@ class ClienteController extends Controller
        $_SESSION['registro_nuevo_cliente'][7] = $Token;
        $_SESSION['registro_nuevo_cliente'][8] = $ID_Usuario;*/
 
-      // Mail::raw('Text to e-mail' , function ($message) {
-       // $message->from('buyitbuyit3@gmail.com', 'Laravel');
-      //  $message->to( Request('email'))->cc('bar@example.com');
-        //$message->attach('15');
-  //  });
+      
+       Mail::raw($Token , function ($message) {
+        $message->from('yam182141@gmail.com', 'Laravel');
+        $message->to('email')->cc('bar@example.com');
+        $message->attach('pdfs/prueba.pdf');
+    });
 
        
 
