@@ -133,7 +133,7 @@ class CuponController extends Controller
                     $archivo = $rutaGuardado.$nombre_pdf.'pdf';
 					$data='Envio del detalle de la compra';
 					
-                    Mail::raw('Text to e-mail' , function ($message) {
+                    Mail::raw('nota ' , function ($message) {
                         $message->from('yam182141@gmail.com', 'Laravel');
                         $message->to($this->correo)->cc('bar@example.com');
                         $message->attach('pdfs/prueba.pdf');
