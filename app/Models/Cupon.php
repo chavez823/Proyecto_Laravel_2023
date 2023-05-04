@@ -32,7 +32,8 @@ class Cupon extends Model
 
     public function insertar_cupon($ID_Cupon, $DUI,$ID_Oferta, $ID_Estado_Cupon){
         DB::table('cupon')->insert([
-            ['ID_Cupon' => $ID_Cupon, 'DUI' => $DUI,'ID_Oferta'=>$ID_Oferta,'ID_Estado_Cupon'=>$ID_Estado_Cupon]
+            ['ID_Cupon' => $ID_Cupon, 'DUI' => $DUI,'ID_Oferta'=>$ID_Oferta,
+            'ID_Estado_Cupon'=>$ID_Estado_Cupon]
         ]);
     }
     public function  getCupones($DUI){

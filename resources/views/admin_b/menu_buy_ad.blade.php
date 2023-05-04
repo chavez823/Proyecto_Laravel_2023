@@ -6,7 +6,7 @@
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-<link rel="stylesheet" type="text/css" href="css/style_m_buyit.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/style_m_buyit.css')}}">
 </head>
 <body>
 
@@ -18,14 +18,16 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="payment-card rounded-lg shadow bg-white text-center h-100">
           <div class="payment-card__type px-4 py-3 d-flex justify-content-center align-items-center"> 
-            <img src="img/pngwing.com (11).png" alt="Card"> 
+            <img src="{{asset('img/pngwing.com (11).png')}}" alt="Card"> 
           </div>
           <div class="payment-card__info p-4">
             <h5>GESTION DE EMPRESAS</h5>
             <button class="btn_add">
+              <a href="/Empresa/create">
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Agregar
               </span>
+              </a>
             </button>
             <br>
             <button class="btn_edit">
@@ -46,7 +48,7 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="payment-card rounded-lg shadow bg-white text-center h-100">
           <div class="payment-card__type px-4 py-3 d-flex justify-content-center align-items-center"> 
-            <img src="img/carpetas.png" alt="Bank"> 
+            <img src="{{asset('img/carpetas.png')}}" alt="Bank"> 
           </div>
           <div class="payment-card__info p-4">
             <h5>GESTION DE RUBROS</h5>
@@ -74,7 +76,7 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="payment-card rounded-lg shadow bg-white text-center h-100">
           <div class="payment-card__type px-4 py-3 d-flex justify-content-center align-items-center"> 
-            <img src="img/cliente.png" alt="Bank"> 
+            <img src="{{asset('img/cliente.png')}}" alt="Bank"> 
           </div>
           <div class="payment-card__info p-4">
             <h5>GESTION DE CLIENTES</h5>

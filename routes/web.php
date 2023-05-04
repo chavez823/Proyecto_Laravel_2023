@@ -5,6 +5,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CuponController;
+use App\Http\Controllers\EmpresaController;
 use Illuminate\Support\Facades\Route;
 session_start();
 
@@ -63,6 +64,14 @@ Route::get('nuevocliente', [ClienteController::class, 'index']);
 Route::post('/nuevocliente', [ClienteController::class, 'agregar_cliente']);
 Route::get('/nuevocliente/verificacion', [ClienteController::class, 'verificacionpagina']);
 Route::patch('/nuevocliente/verificacion/verificacion', [ClienteController::class, 'verificacion']);
+
+
+
+//Rutas para la gestion de la empresa
+Route::get('/Empresa', [EmpresaController::class, 'index']);
+Route::get('/Empresa/create', [EmpresaController::class, 'create']);
+Route::post('/Empresa/create', [EmpresaController::class,'store']);
+
 
 
 

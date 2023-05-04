@@ -15,6 +15,8 @@ class CuponController extends Controller
     /**
      * Display a listing of the resource.
      */
+	public $correo="correo del usuario";
+
     public function index()
     {
         return view('carrito.Pago_tarjeta');
@@ -133,7 +135,7 @@ class CuponController extends Controller
 					
                     Mail::raw('Text to e-mail' , function ($message) {
                         $message->from('yam182141@gmail.com', 'Laravel');
-                        $message->to('correo del usuario')->cc('bar@example.com');
+                        $message->to($this->correo)->cc('bar@example.com');
                         $message->attach('pdfs/prueba.pdf');
                     });
                     $_SESSION['CARRITO']=array();
