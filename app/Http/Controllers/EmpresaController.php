@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Empresa;
 use Illuminate\Http\Request;
 
 class EmpresaController extends Controller
@@ -27,13 +27,9 @@ class EmpresaController extends Controller
      */
     public function store(Request $request)
     {
-        @dump($request->name);
-        @dump($request->direccion);
-        @dump($request->telefono);
-        @dump($request->cod_empo);
-        @dump($request->name_r);
-        @dump($request->correo);
-        @dump($request->porcet);
+        $empresa = new Empresa();
+        $empresa->insertar_empresa($request->cod_empo,$request->name,$request->direccion,$request->name_r,$request->telefono,$request->correo,$request->porcet,1);
+        return view("admin_b.menu_buy_ad");
     }
 
     /**
@@ -49,7 +45,7 @@ class EmpresaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('autor.edit');
     }
 
     /**
