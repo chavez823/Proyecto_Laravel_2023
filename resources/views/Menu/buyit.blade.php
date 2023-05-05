@@ -146,7 +146,7 @@
           <br>    
           <p>
           © Copyright  2023 BUYIT <br>
-            Pagina Creada por<br>
+            Pagina Creada por JAM<br>
             <i class="nav-link fa-brands fa-facebook "></i>
           <i class="nav-link fa-brands fa-instagram"></i>
           <i class="nav-link fa-brands fa-twitter"></i>
