@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Menu Administrativo</title>
+<link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
@@ -22,6 +23,7 @@
           </div>
           <div class="payment-card__info p-4">
             <h5>GESTION DE EMPRESAS</h5>
+            
             <button class="btn_add">
               <a href="/Empresa/create">
               <span>
@@ -30,9 +32,9 @@
               </a>
             </button>
             <br>
-            <button class="btn_edit">
+            <button class="btn_edit2">
               <span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"></path></svg> Ajustes
+                 Empresas
               </span>
             </button>
             <br>
