@@ -166,17 +166,17 @@ public $correo;
       
       $_SESSION['core']= $request->email;
      $correo=$_SESSION['core'];
-      $contrsenia=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+      $contrasenia=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
 
       if($user != null ){{
 
         $user->update([
-          'Contrasenia'=>$contrsenia]);
+          'Contrasenia'=>$contrasenia]);
            
                
 
             
-              Mail::raw($contrsenia , function ($message) use($correo) {
+              Mail::raw($contrasenia , function ($message) use($correo) {
                 $message->from('yam182141@gmail.com', 'Laravel');
                 $message->to($correo)->cc('buyit@example.com');
                // $message->attach('pdfs/prueba.pdf');
