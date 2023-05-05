@@ -175,14 +175,13 @@ public $correo;
            
                
 
-              // $subject="Nueva contraseña de buyit";
-              // $for=$request->email;
+            
               Mail::raw($contrsenia , function ($message) use($correo) {
                 $message->from('yam182141@gmail.com', 'Laravel');
-                $message->to($correo)->cc('bar@example.com');
+                $message->to($correo)->cc('buyit@example.com');
                // $message->attach('pdfs/prueba.pdf');
             });
-           // Mail::to($request->email)->send($contrsenia);
+   
 
                
  
