@@ -27,6 +27,7 @@ use Illuminate\Http\Response;
 
 class UsuarioController extends Controller
 {
+public $correo;
     /**
      * Display a listing of the resource.
      */
@@ -162,7 +163,9 @@ class UsuarioController extends Controller
      public function recuperacion(Request $request){
 
       $user= Usuario::where('Correo', $request->email )->first();
-
+      
+      $_SESSION['core']= $request->email;
+     $correo=$_SESSION['core'];
       $contrsenia=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
 
       if($user != null ){{
@@ -170,15 +173,15 @@ class UsuarioController extends Controller
         $user->update([
           'Contrasenia'=>$contrsenia]);
            
-               //   $useru= User::update(['Contrasenia'=>($request->password)]);
+               
 
               // $subject="Nueva contraseña de buyit";
               // $for=$request->email;
-             /*  Mail::raw($contrsenia , function ($message,$for) {
+              Mail::raw($contrsenia , function ($message) use($correo) {
                 $message->from('yam182141@gmail.com', 'Laravel');
-                $message->to('jacquelinechavez623@gmail.com')->cc('bar@example.com');
+                $message->to($correo)->cc('bar@example.com');
                // $message->attach('pdfs/prueba.pdf');
-            });*/
+            });
            // Mail::to($request->email)->send($contrsenia);
 
                
