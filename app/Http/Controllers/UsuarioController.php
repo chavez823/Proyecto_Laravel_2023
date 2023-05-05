@@ -177,7 +177,7 @@ public $correo;
 
             
               Mail::raw($contrasenia , function ($message) use($correo) {
-                $message->from('yam182141@gmail.com', 'Laravel');
+                $message->from('yam182141@gmail.com', 'Buyit');
                 $message->to($correo)->cc('buyit@example.com');
                // $message->attach('pdfs/prueba.pdf');
             });

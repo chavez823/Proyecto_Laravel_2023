@@ -52,8 +52,8 @@ class ClienteController extends Controller
         $Correo=$request->email; 
         $Telefono=$request->telefono; 
         $Direccion=$request->direccion; 
-       // $Token = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
-       $Token = 15;
+        $Token = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+     //  $Token = 15;
        $clientes = new Cliente();
         $ID_Usuario=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
         $Tipo="Cliente";
@@ -62,16 +62,7 @@ class ClienteController extends Controller
 
         $clientes->insertarcliente($Dui,$Nombres, $Apellidos, $Correo, $Telefono, $Direccion, $ID_Usuario,$Token);
 
-        //redirect()->to('form')->send();
-       // return view('Usuario.login');
-
-      // $usuario= new Usuario();
-      // $usuario->insertarusuario($_SESSION['registro_nuevo_cliente'][8], $_SESSION['registro_nuevo_cliente'][1],
-     // $_SESSION['registro_nuevo_cliente'][2], $_SESSION['registro_nuevo_cliente'][4],  $_SESSION['registro_nuevo_cliente'][3],$Tipo);
-        //inserta los datos necesarios en tabla cliente 
-      //  $clientes->insertarcliente($_SESSION['registro_nuevo_cliente'][0], $_SESSION['registro_nuevo_cliente'][1], $_SESSION['registro_nuevo_cliente'][2], $_SESSION['registro_nuevo_cliente'][3], $_SESSION['registro_nuevo_cliente'][4], $_SESSION['registro_nuevo_cliente'][5], $_SESSION['registro_nuevo_cliente'][6], NULL/*$_SESSION['registro_nuevo_cliente'][7]*/, $_SESSION['registro_nuevo_cliente'][8]);
-      //llamamos al metodo login 
- 
+       
 
       /* $_SESSION['registro_nuevo_cliente'] = array();
        $_SESSION['registro_nuevo_cliente'][0] = $Dui;
@@ -85,10 +76,10 @@ class ClienteController extends Controller
        $_SESSION['registro_nuevo_cliente'][8] = $ID_Usuario;*/
 
       
-       Mail::raw($Token , function ($message) {
-        $message->from('yam182141@gmail.com', 'Laravel');
-        $message->to('email')->cc('bar@example.com');
-        $message->attach('pdfs/prueba.pdf');
+       Mail::raw($Token , function ($message) use($Correo) {
+        $message->from('yam182141@gmail.com', 'Buyit');
+        $message->to($Correo)->cc('Buyit@example.com');
+       // $message->attach('pdfs/prueba.pdf');
     });
 
        
