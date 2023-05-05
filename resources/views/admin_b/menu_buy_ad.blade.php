@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Menu Administrativo</title>
+<!--Logo-->
 <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
