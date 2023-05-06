@@ -113,13 +113,13 @@
                             </g>
                             <path class="darkcolor greydark" d="M750,431V193.2c-217.6-57.5-556.4-13.5-750,24.9V431c0,22.1,17.9,40,40,40h670C732.1,471,750,453.1,750,431z" />
                         </g>
-                        <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">{{old('Numero_t')}}</text>
-                        <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">{{old('Nombre_t')}}</text>
+                        <text transform="matrix(1 0 0 1 60.106 295.0121)" id="svgnumber" class="st2 st3 st4">{{old('Numero')}}</text>
+                        <text transform="matrix(1 0 0 1 54.1064 428.1723)" id="svgname" class="st2 st5 st6">{{old('Nombre')}}</text>
                         <text transform="matrix(1 0 0 1 54.1074 389.8793)" class="st7 st5 st8">Nombre del representante</text>
                         <text transform="matrix(1 0 0 1 479.7754 388.8793)" class="st7 st5 st8">Vencimiento</text>
                         <text transform="matrix(1 0 0 1 65.1054 241.5)" class="st7 st5 st8">Numero de tarjeta</text>
                         <g>
-                            <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">{{old('fecha_exp')}}</text>
+                            <text transform="matrix(1 0 0 1 574.4219 433.8095)" id="svgexpire" class="st2 st5 st9">{{old('fecha')}}</text>
                             <text transform="matrix(1 0 0 1 479.3848 417.0097)" class="st2 st10 st11">Fecha</text>
                             <text transform="matrix(1 0 0 1 479.3848 435.6762)" class="st2 st10 st11">Valida</text>
                             <polygon class="st2" points="554.5,421 540.4,414.2 540.4,427.9" />
@@ -192,7 +192,7 @@
                         </g>
                         <rect x="58.1" y="378.6" class="st11" width="375.5" height="13.5" />
                         <rect x="58.1" y="405.6" class="st11" width="421.7" height="13.5" />
-                        <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13">{{old('Nombre_t')}}</text>
+                        <text transform="matrix(1 0 0 1 59.5073 228.6099)" id="svgnameback" class="st12 st13">{{old('Nombre')}}</text>
                     </g>
                 </svg>
             </div>
@@ -218,53 +218,33 @@
         <div class="field-container">
             <label for="name">Nombre</label>
             <!--INPUT-->
-            <input name="Nombre_t" id="name" type="text" value="{{old('Nombre_t')}}">
+            <input name="Nombre" id="name" type="text" value="{{old('Nombre_t')}}">
             <!-- END INPUT-->
-            @if($errors->any())
-                      
-                     
-                      {!!$errors->first('Nombre_t','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif
+           
         </div>
         <div class="field-container">
             <label for="cardnumber">Numero de tarjeta</label><span id="generatecard">Generar # Random</span>
             <!--INPUT-->
-            <input name="Numero_t" id="cardnumber" type="text"   value="{{old('Numero_t')}}">
+            <input name="Numero" id="cardnumber" type="text"   value="{{old('Numero_t')}}">
             <!--END INPUT-->
             <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
             </svg>
-            @if($errors->any())
-                      
-                     
-                      {!!$errors->first('Numero_t','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif
+          
         </div>
         <div class="field-container">
             <label for="expirationdate">Vencimiento (mm/yy)</label>
             <!--INPUT-->
-            <input name="fecha_exp" id="expirationdate" type="text"   value="{{old('fecha_exp')}}">
+            <input name="fecha" id="expirationdate" type="text"   value="{{old('fecha_exp')}}">
             <!--END INPUT-->
-            @if($errors->any())
-                      
-                     
-                      {!!$errors->first('fecha_exp','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif
+          
         </div>
         <div class="field-container">
             <label for="securitycode">Security Code</label>
             <!--INPUT-->
             <input name="cvv"  id="securitycode" type="text"  value="{{old('cvv')}}" >
             <!--END INPUT-->
-            @if($errors->any())
-                      
-                     
-                      {!!$errors->first('cvv','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif
+           
         </div>
         
         <div class="btn_div">

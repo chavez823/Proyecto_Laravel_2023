@@ -30,15 +30,15 @@ class CuponController extends Controller
 
         $request->validate([
 
-			'Nombre_t'=>['required'],
-            'Numero_t'=>['required'],
-            'fecha_exp'=>['required'],
+			'Nombre'=>['required'],
+            'Numero'=>['required'],
+            'fecha'=>['required'],
             'cvv'=>['required'],
 		],
 		[
-	'Nombre_t.required'=> 'revisa los datos de tu tarjeta',
-	'Numero_t.required'=> 'revisa los datos de tu tarjeta',
-	'fecha_exp.required'=> 'revisa los datos de tu tarjeta',
+	'Nombre.required'=> 'revisa los datos de tu tarjeta',
+	'Numero.required'=> 'revisa los datos de tu tarjeta',
+	'fecha.required'=> 'revisa los datos de tu tarjeta',
 	'cvv.required'=> 'revisa los datos de tu tarjeta',]
 	
 	
@@ -161,7 +161,7 @@ class CuponController extends Controller
                     });
                     $_SESSION['CARRITO']=array();
                     redirect()->to('/gracias')->send();
-					
+
 
     }
 
