@@ -27,6 +27,7 @@ use Illuminate\Http\Response;
 
 class UsuarioController extends Controller
 {
+public $correo;
     /**
      * Display a listing of the resource.
      */
@@ -53,30 +54,25 @@ class UsuarioController extends Controller
 
       public function login(Request $request){
 
-   
+$request->validate([
+
+'email'=>['required', 'email'],
+
+'password'=>['required'],
+
+]);
+
+
      $user= Usuario::where('Correo', $request->email )->first();
-   //  $cliente=Cliente::Where('Correo', $request->email )->Where('Token', Null )->first();
-        
-    if($request->mail== null && $request->password== null){
-        return back()->with( 'error', 'Completa los campos');
-       }
-        
-     else if ($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Cliente' && $user->Token !=null )
+  if ($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Cliente' && $user->Token !=null )
            {{
 
-             /* if(){{
-                redirect()->to('/nuevocliente/verificacion')->send();}}
-                
-              else{*/
-               // Auth::login($user);
+            
                 $request->session()->regenerate();
                 $_SESSION['session']["nombre"]= $user->Nombres;
                 $_SESSION['session']["correo"]= $request->email;
                 redirect()->to('/')->send();
-               /* $ofertas=new Inicio;
-                $data=array();
-                $data['ofertas']=$ofertas->inicio();
-                // return view('Menu.buyit',$data);*/
+            
                 
               }
               
@@ -89,23 +85,19 @@ class UsuarioController extends Controller
 
             elseif(($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Administrador' && $user->Token ==null))
 {{
-             //($user->Tipo=='Administrador')
-              //Auth::login($user);
+            
                 $request->session()->regenerate();
                 $_SESSION['session']["nombre"]= $user->Nombres;
                 $_SESSION['session']["correo"]= $request->email;
        
-               /* $ofertas=new Inicio;
-                $data=array();
-                $data['ofertas']=$ofertas->inicio();
-                // return view('Menu.buyit',$data);*/
+             
                 redirect()->to('/')->send();
             
 
 }}
 
             
-    return back()->with( 'error', 'Correo y/o  Contraseña incorrectos');
+    return back()->with( 'errorlo', 'Correo y/o  Contraseña incorrectos');
      
     
        // return view('Usuario.login' );
@@ -126,6 +118,12 @@ class UsuarioController extends Controller
 
 
       public function  cambiopassword(Request $request){
+        $request->validate([
+
+         
+          'password'=>['required'],
+          
+          ]);
 
        
 
@@ -133,7 +131,7 @@ class UsuarioController extends Controller
 
           {
             
-       $user= Usuario::where('Correo',  $_SESSION['session']["correo"] )->first();
+       $user= Usuario::where('Correo',  $_SESSION['session']["correo"] )->get();
        // $user->Dui;
         $user->update([
           'Contrasenia'=>($request->password)]);
@@ -161,25 +159,32 @@ class UsuarioController extends Controller
 
      public function recuperacion(Request $request){
 
-      $user= Usuario::where('Correo', $request->email )->first();
+      $request->validate([
 
-      $contrsenia=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+        'email'=>['required', 'email'],
+      
+        
+        ]);
+      $user= Usuario::where('Correo', $request->email )->first();
+      
+      $_SESSION['core']= $request->email;
+     $correo=$_SESSION['core'];
+      $contrasenia=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
 
       if($user != null ){{
 
         $user->update([
-          'Contrasenia'=>$contrsenia]);
+          'Contrasenia'=>$contrasenia]);
            
-               //   $useru= User::update(['Contrasenia'=>($request->password)]);
+               
 
-              // $subject="Nueva contraseña de buyit";
-              // $for=$request->email;
-             /*  Mail::raw($contrsenia , function ($message,$for) {
-                $message->from('yam182141@gmail.com', 'Laravel');
-                $message->to('jacquelinechavez623@gmail.com')->cc('bar@example.com');
+            
+              Mail::raw($contrasenia , function ($message) use($correo) {
+                $message->from('yam182141@gmail.com', 'Buyit');
+                $message->to($correo)->cc('buyit@example.com');
                // $message->attach('pdfs/prueba.pdf');
-            });*/
-           // Mail::to($request->email)->send($contrsenia);
+            });
+   
 
                
  

@@ -14,6 +14,11 @@ class EmpresaController extends Controller
         return view("admin_b.menu_buy_ad");
     }
 
+    public function menuadmin()
+    {
+        return view("admin_e.menu_ad");
+    }
+
     /**
      * Show the form for creating a new resource.
      */

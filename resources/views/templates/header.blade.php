@@ -34,7 +34,7 @@
           
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="buyit">Inicio</a>
+              <a class="nav-link" aria-current="page" href="/buyit">Inicio</a>
             </li>
 
               <li class="nav-item dropdown">
@@ -42,12 +42,12 @@
                 Categorias
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.php?c=categoria&a=belleza">Belleza</a></li>
-                <li><a class="dropdown-item" href="index.php?c=categoria&a=salud">Salud</a></li>
-                <li><a class="dropdown-item" href="index.php?c=categoria&a=restaurante">Restaurante</a></li>
-                <li><a class="dropdown-item" href="index.php?c=categoria&a=super">Otros</a></li>
+                <li><a class="dropdown-item" href="belleza">Belleza</a></li>
+                <li><a class="dropdown-item" href="salud">Salud</a></li>
+                <li><a class="dropdown-item" href="restaurante">Restaurante</a></li>
+                <li><a class="dropdown-item" href="super">Super</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="index.php?c=categoria">Principal</a></li>
+                <li><a class="dropdown-item" href="">Principal</a></li>
               </ul>
 
               <li class="nav-item">

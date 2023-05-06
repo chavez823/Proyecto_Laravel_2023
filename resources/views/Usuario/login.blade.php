@@ -55,28 +55,45 @@
 			<form action="login" method="post"> 
         @csrf
      
-                      @if(Session::has('error'))
+        @if(Session::has('errorlo'))
                         <div class='alert alert-danger' role='role'>
-                          {{session::get('error')}}
+                          {{session::get('errorlo')}}
                           </div>
                           @endif
-
 				<!-- LOGO --> 
 				<span class="login-form-title">Iniciar Sesión</span> 
 				<!--<img class="avatar"src="img/user.svg" alt="" align="center"> -->
                 <img class="avatar"src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="" align="center">
 					<!-- USUARIO --> 
 				<div class="wrap-input100"> 
-					<input class="input100" type="text" name="email" placeholder="Correo"  value="<?php //if(isset($Correo)) echo  $Correo ?>">	 
-					<span class="focus-efecto"></span> 
-				</div> 
+					<input class="input100" type="text" name="email" placeholder="Correo"  value="{{old('email')}}">	 
+					<span class="focus-efecto"></span>     
+          @if($errors->any())
+                      
+                     
+                      {!!$errors->first('email','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif      
+				</div>
+       
+       
+                      
 				<!-- CONTRASEÑA --> 
 				<div class="wrap-input100"> 
-					<input class="input100" type="password" name="password" placeholder="Contraseña" value="<?php // if(isset($Contrasenia)) echo  $Contrasenia ?>"> 
+					<input class="input100" type="password" name="password" placeholder="Contraseña" value="{{old('password')}}"> 
 					<span class="focus-efecto"></span> 
+          @if($errors->any())
+                      
+                     
+                      {!!$errors->first('password','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
 				</div>
+      
         <!---Haciendo Pruebas de popover
                 <h6>¿No tienes una cuenta?</h6>
+                 class="alert alert-danger" role="role"
+               
                 <h6>Regístrate<a href="index.php?c=cliente" class="">   aquí</a></h6>			
                 <br>
 

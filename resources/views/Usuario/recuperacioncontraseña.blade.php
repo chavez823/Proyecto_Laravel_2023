@@ -56,20 +56,7 @@
 		<div class="wrap-login"> 
 			<form action="/recuperacion" method="post"> 
       @csrf   @method('PATCH')
-      <?php
-                        if(isset($errores)){
-                            if(count($errores)>0){
-                                echo "<div class='alert alert-danger'><ul>";
-                                foreach ($errores as $error) {
-                                    echo "<li>$error</li>";
-                                }
-                                echo "</ul></div>";
-
-                            }
-                        }
-
-                            
-                    ?>
+    
                      @if(Session::has('errorcambio'))
                         <div class='alert alert-danger' role='role'>
                           {{session::get('errorcambio')}}
@@ -81,8 +68,14 @@
 				<!--<img class="avatar"src="img/user.svg" alt="" align="center"> -->
                 <img class="avatar"src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="" align="center">
 					<!-- USUARIO --> 
+          @if($errors->any())
+                      
+                     
+                      {!!$errors->first('email','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
 				<div class="wrap-input100"> 
-					<input class="input100" type="text" name="email" placeholder="Correo" value="<?php if(isset($Correo)) echo  $Correo ?>" >	 
+					<input class="input100" type="text" name="email" placeholder="Correo" value="{{old('email')}}" >	 
 					<span class="focus-efecto"></span> 
 				</div> 
 				

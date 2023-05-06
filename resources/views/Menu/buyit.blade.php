@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="css/drop.css">
     
     <!--Slider-->
-    <link rel="stylesheet" href="css/style_2_s.css">
+    <link rel="stylesheet" href="{{asset('css/style_2_s.css')}}">
+    
   </head>
 
 <body>
@@ -34,10 +35,13 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
+          <li class="nav-item">
+                <a class="nav-link" href="/Empresa/menuadmin">menuadmin e</a>
+              </li>
               <li class="nav-item">
                 <a class="nav-link" href="Categoria">Categorias</a>
               </li>
+              
           
              <li class="nav-item">
                  <a class="nav-link" href="carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
@@ -137,15 +141,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!--SLIDER-->
     <script src="https://kit.fontawesome.com/5c72b9dab8.js" crossorigin="anonymous"></script>
-    <script src="js/slider.js"></script>
-
+    <script src="{{asset('js/Slider.js')}}"></script>
+    
 
     <footer>
           <img class="logotipo-footer" src="img/Logo_sin_slogan_t.png" alt="logotipo">
           <br>    
           <p>
           © Copyright  2023 BUYIT <br>
-            Pagina Creada por<br>
+            Pagina Creada por JAM<br>
             <i class="nav-link fa-brands fa-facebook "></i>
           <i class="nav-link fa-brands fa-instagram"></i>
           <i class="nav-link fa-brands fa-twitter"></i>

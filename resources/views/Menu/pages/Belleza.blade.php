@@ -1,45 +1,35 @@
 
   @extends('templates.header')
-
+  <header>
+<link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
+</header>
     <!-- Main -->
     <!--Funcional con php-->
 
    <main> 
-    <?php
-  // $model=new OfertaModel();
-   //$listaCupones=$model->get_oferta(1); 
-
-    ?>
-      
-      <div class="profile-area">
+    
+   <div class="profile-area">
             <p class="Parrafo">LO MEJOR PARA TU CUIDADO PERSONAL</p>
             <div class="container">
               <div class="row">
     <?php
 
-    foreach($ofertas as $oferta){?>
-    <?php
-     //se crea un arreglo asociativo  y se almacena el id de oferta y se le asigna ala variable vista un numero 2, para manejarlo en el carrito y  para renderizar la misma  vista de belleza y se repite con las de mas  categorías
-   // $info = ['ID' => $cupones['ID_Oferta'], 'vista' => 2];
-   //con implode se hizo una conversion de array a string y le asignamos el separador de /
-    //$info_carrito = implode("/", $info);
-    ?>
-     
-        <div class="col-md-4">
-          <div class="card">
-            <div class="img1"><img src="<?php echo $oferta->Imagen ?>" alt=""></div><!--Fondo CARD-->
-                              
-            <div class="main-text">
-              <h1><?php echo $oferta->Titulo ?></h1>
-              <p>$<?php echo $oferta->PrecioOferta ?></p>
-              <p><?php echo $oferta->Descripcion ?></p>
-              <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>
-              </form>     
-            </div>    
-          </div>
-        </div> 
-                  <br>
-                </div>
+    foreach($ofertas as $oferta){?>                     
+      <div class="col-md-4">
+        <div class="card">
+          <div class="img1"><img src="<?php echo $oferta->Imagen ?>" alt=""></div>
+              <!--Fondo CARD-->
+              <!--<div class="img2"><img src="img/ramen_3.jpg" alt=""></div>-->         
+              <div class="main-text">
+                <h1><?php echo $oferta->Titulo ?></h1>
+                  <p>$<?php echo $oferta->PrecioOferta ?></p>
+                  <p><?php echo $oferta->Descripcion ?></p>
+                  <!-- aqui pasamos el array asociativo convertido en string osea el id oferta y la vista -->
+                  <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>                   
+              </div>    
+            </div>
+            <br>
+        </div>
     <?php
     }
     ?>
@@ -48,10 +38,6 @@
       </div>
     </div>
   </div>
-    
-      
-    
-    
     
   </main>
 

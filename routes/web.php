@@ -80,6 +80,9 @@ Route::get('/Empresa/Ofertas', [EmpresaController::class,'nuevasOfertas']);
 Route::get('/Empresa/POfertas', [EmpresaController::class,'pasadasOfertas']);
 Route::put('/Empresa/Estado/{ID_Oferta}&{id}', [EmpresaController::class,'cambiarEstado']);
 Route::get('/Empresa/Oferta/{ID_Oferta}', [EmpresaController::class,'verPropuesta']);
+Route::get('/Empresa/menuadmin', [EmpresaController::class,'menuadmin']);
+
+
 
 
 

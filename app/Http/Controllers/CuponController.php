@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Mail;
 
 class CuponController extends Controller
 {
+	
     /**
      * Display a listing of the resource.
      */
