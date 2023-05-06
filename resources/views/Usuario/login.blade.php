@@ -55,7 +55,11 @@
 			<form action="login" method="post"> 
         @csrf
      
-      
+        @if(Session::has('errorlo'))
+                        <div class='alert alert-danger' role='role'>
+                          {{session::get('errorlo')}}
+                          </div>
+                          @endif
 				<!-- LOGO --> 
 				<span class="login-form-title">Iniciar Sesión</span> 
 				<!--<img class="avatar"src="img/user.svg" alt="" align="center"> -->

@@ -54,28 +54,6 @@ public $correo;
 
       public function login(Request $request){
 
-  /* $correo=$request->mail;
-   $contraseña=$request->password;
-   $user=Usuario::find($correo);*/
-
-
-
-   /*if($user){
-    if($user->Contrasenia==/*hash('SHA256',*/// $contraseña)/*)*/{
-
-     // $request->session()->put('usuario', $user);
-     /* $_SESSION['session']["nombre"]= $user->Nombres;
-                $_SESSION['session']["correo"]= $request->email;
-      redirect()->to('/')->send();
-
-
- }
-   
-
-  }
-  return back()->with( 'error', 'Correo y/o  Contraseña incorrectos');
-*/
-
 $request->validate([
 
 'email'=>['required', 'email'],
@@ -119,7 +97,7 @@ $request->validate([
 }}
 
             
-    return back()->with( 'errors', 'Correo y/o  Contraseña incorrectos');
+    return back()->with( 'errorlo', 'Correo y/o  Contraseña incorrectos');
      
     
        // return view('Usuario.login' );

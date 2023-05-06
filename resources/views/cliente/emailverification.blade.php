@@ -82,9 +82,19 @@
                           @endif
             <div class="box">
             <input class="input" name="email" type="text" placeholder="email" value="{{old('email')}}">
-
+            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('email','<p class="alert alert-danger" role="role">:message</p> <br>' )!!}
+                      
+                        @endif
             <input class="input" name="token" type="text" placeholder="Codigo de Verificacion" value="{{old('token')}}">
-            
+            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('token','<p class="alert alert-danger" role="role">:message</p> <br>' )!!}
+                      
+                        @endif
             </div>
                 <button type="submit" class="sesion" name="verify_email">
                     vERIFICAR

@@ -103,17 +103,17 @@ return back()->with( 'errorcli', 'El Dui ya esta registrado');
 
             'email'=>['required', 'email'],
             
-            'password'=>['required'],
+            'token'=>['required'],
             
             ]);
 
-       $Token=$request->password;
+       $Token=$request->token;
       
      $Correo=$request->email;
 
-     $cliente=Cliente::where('Correo', $request->email )->first();
+     $clientes=Cliente::where('Correo', $request->email )->first();
 
-     if ($cliente != null &&  $Token===($request->password)){
+     if ($clientes != null &&  $clientes->Token===$Token){
 
         {
             $cliente=Usuario::where('Correo', $request->email )->first();
