@@ -35,9 +35,12 @@ class EmpresaController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $empresas=new Empresa;
+        $data=array();
+        $data['empresas']=$empresas->getEmpresas();
+        return view('admin_b.listaEmpresas',$data);
     }
 
     /**
@@ -45,15 +48,21 @@ class EmpresaController extends Controller
      */
     public function edit(string $id)
     {
-        return view('autor.edit');
+        $empresa=new Empresa;
+        $data=array();
+        $data['empresa']=$empresa->getEmpresas($id);
+        return view("admin_b.editarEmpresa",$data);
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request,string $id)
     {
-        //
+        $empresa = new Empresa();
+        $empresa->actualizar_empresa($id,$request->name,$request->direccion,$request->name_r,$request->telefono,$request->correo,$request->porcet,1);
+        redirect()->to('Empresa/show')->send();
     }
 
     /**
@@ -61,6 +70,32 @@ class EmpresaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $empresa = new Empresa();
+        $empresa->eliminar_empresa($id);
+        redirect()->to('Empresa/show')->send();
+    }
+    public function nuevasOfertas(){
+        $ofertas=new Empresa;
+        $data=array();
+        $data['ofertas']=$ofertas->getOfertasNuevas();
+        return view('oferta.nuevasOfertas',$data);
+    }
+    public function pasadasOfertas(){
+        $ofertas=new Empresa;
+        $data=array();
+        $data['ofertas']=$ofertas->getOfertasVerificadas();
+        return view('oferta.pasadasOfertas',$data);
+    }
+    public function cambiarEstado(Request $request,$ID_Oferta,$id){
+        $empresa = new Empresa();
+        $empresa->changeEstado($request->justificacion,$ID_Oferta,$id);
+        redirect()->to('Empresa/Ofertas')->send(); 
+    }
+    public function verPropuesta($ID_Oferta){
+        $ofertas=new Empresa;
+        $data=array();
+        $data['oferta']=$ofertas->getOferta($ID_Oferta);
+        return view('oferta.oferta',$data);
+
     }
 }

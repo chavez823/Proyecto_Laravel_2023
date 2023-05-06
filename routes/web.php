@@ -71,8 +71,15 @@ Route::patch('/nuevocliente/verificacion/verificacion', [ClienteController::clas
 Route::get('/Empresa', [EmpresaController::class, 'index']);
 Route::get('/Empresa/create', [EmpresaController::class, 'create']);
 Route::post('/Empresa/create', [EmpresaController::class,'store']);
-
-
+Route::get('Empresa/show', [EmpresaController::class,'show']);
+Route::get('/Empresa/edit/{id}', [EmpresaController::class,'edit']);
+Route::put('/Empresa/update/{id}', [EmpresaController::class,'update']);
+Route::get('/Empresa/delete/{id}', [EmpresaController::class,'destroy']);
+Route::get('/Empresa/Ofertas', [EmpresaController::class,'ofertas']);
+Route::get('/Empresa/Ofertas', [EmpresaController::class,'nuevasOfertas']);
+Route::get('/Empresa/POfertas', [EmpresaController::class,'pasadasOfertas']);
+Route::put('/Empresa/Estado/{ID_Oferta}&{id}', [EmpresaController::class,'cambiarEstado']);
+Route::get('/Empresa/Oferta/{ID_Oferta}', [EmpresaController::class,'verPropuesta']);
 
 
 
