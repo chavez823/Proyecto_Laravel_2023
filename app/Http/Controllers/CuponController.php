@@ -26,7 +26,19 @@ class CuponController extends Controller
     {
         return view('carrito.Gracias');
     }
-    public function compra_completa(){
+    public function compra_completa(Request $request){
+
+        $request->validate([
+
+			'Nombre_t'=>['required'],
+            'Numero_t'=>['required'],
+            'fecha_exp'=>['required'],
+            'cvv'=>['required'],
+		]);
+
+        
+
+		
                     $model = new Cupon();
                     $productos=$_SESSION['CARRITO'];
                     //echo var_dump($DUI=$model->getDUI(1)[0]->DUI);
