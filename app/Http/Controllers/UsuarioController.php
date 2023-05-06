@@ -186,19 +186,7 @@ $request->validate([
             });
    
 
-               
- 
-
- 
-
-
-
-
-
-
-
-
-        
+            
             redirect()->to('form')->send();
          
 
@@ -208,7 +196,7 @@ $request->validate([
          
 
    }
-   return back()->with( 'errorcambio', 'Debe completar el campo  Contraseña ');
+   return back()->with( 'errorcambio', 'Debe completar el campo');
     
    
       }
@@ -227,20 +215,7 @@ $request->validate([
 
 
 
-     
-
-
-
-
-
-
-
-
-
-      
-     
-
-
+  
     /**
      * Show the form for creating a new resource.
      */
