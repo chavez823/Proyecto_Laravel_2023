@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <title>Menu Administrativo</title>
 <!--Logo-->
-<link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
+<link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
+
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" >
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-<link rel="stylesheet" type="text/css" href="css/style_empo.css">
+<link rel="stylesheet" type="text/css" href="{{asset('css/style_empo.css')}}" >
+
 </head>
 <body>
 
@@ -21,7 +23,8 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="payment-card rounded-lg shadow bg-white text-center h-100">
           <div class="payment-card__type px-4 py-3 d-flex justify-content-center align-items-center"> 
-            <img src="img/CUPON.png" alt="Card"> 
+            <img src="{{asset('img/CUPON.png')}}" alt="Card"> 
+            
           </div>
           <div class="payment-card__info p-4">
             <h5>GESTION DE CUPONES</h5>
@@ -49,7 +52,7 @@
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="payment-card rounded-lg shadow bg-white text-center h-100">
           <div class="payment-card__type px-4 py-3 d-flex justify-content-center align-items-center"> 
-            <img src="img/empleados.png" alt="Bank"> 
+            <img src="{{asset('img/empleados.png')}}" alt="Bank">             
           </div>
           <div class="payment-card__info p-4">
             <h5>GESTION DE EMPLEADOS</h5>
