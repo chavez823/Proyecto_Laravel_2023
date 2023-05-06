@@ -45,6 +45,17 @@ class ClienteController extends Controller
     public function agregar_cliente(Request $request)
     {
         //
+        $request->validate([
+            'dui'=>['required','min:9'],
+            'name'=>['required'],
+            'apellido'=>['required'],
+            'telefono'=>['required', 'min:8'],
+            'direccion'=>['required'],
+            'email'=>['required', 'email'],
+            'password'=>['required'],
+            
+            ]);
+
         $Dui=$request->dui;
         $Nombres=$request->name; 
         $Apellidos=$request->apellido;
@@ -58,37 +69,43 @@ class ClienteController extends Controller
         $ID_Usuario=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
         $Tipo="Cliente";
         $usuario= new Usuario();
+        $cliente=Cliente::find($Dui);
+
+        if ($cliente->DUI != $Dui ){
+   
+           {
+              
+      
+            Mail::raw($Token , function ($message) use($Correo) {
+                $message->from('yam182141@gmail.com', 'Buyit');
+                $message->to($Correo)->cc('Buyit@example.com');
+                redirect()->to('/nuevocliente/verificacion/')->send();
+             
+            });
+
         $usuario->insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo);
 
         $clientes->insertarcliente($Dui,$Nombres, $Apellidos, $Correo, $Telefono, $Direccion, $ID_Usuario,$Token);
 
+ }}
+
+
+return back()->with( 'errorcli', 'El Dui ya esta registrado');
        
 
-      /* $_SESSION['registro_nuevo_cliente'] = array();
-       $_SESSION['registro_nuevo_cliente'][0] = $Dui;
-       $_SESSION['registro_nuevo_cliente'][1] = $Nombres;
-       $_SESSION['registro_nuevo_cliente'][2] = $Apellidos;
-       $_SESSION['registro_nuevo_cliente'][3] = $Contrasenia;
-       $_SESSION['registro_nuevo_cliente'][4] = $Correo;
-       $_SESSION['registro_nuevo_cliente'][5] = $Telefono;
-       $_SESSION['registro_nuevo_cliente'][6] = $Direccion;
-       $_SESSION['registro_nuevo_cliente'][7] = $Token;
-       $_SESSION['registro_nuevo_cliente'][8] = $ID_Usuario;*/
 
-      
-       Mail::raw($Token , function ($message) use($Correo) {
-        $message->from('yam182141@gmail.com', 'Buyit');
-        $message->to($Correo)->cc('Buyit@example.com');
-       // $message->attach('pdfs/prueba.pdf');
-    });
-
-       
-
-        redirect()->to('/nuevocliente/verificacion/')->send();
     }
 
 
     public function verificacion(Request $request){
+
+        $request->validate([
+
+            'email'=>['required', 'email'],
+            
+            'password'=>['required'],
+            
+            ]);
 
        $Token=$request->password;
       
@@ -120,13 +137,19 @@ class ClienteController extends Controller
 
 
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    
+    public function verclientes()
     {
         //
-        return "prueba";
+       // return "prueba";
+       $clientes=Cliente::get();
+
+       return view();
+
+        
+
+
+
 
 
 

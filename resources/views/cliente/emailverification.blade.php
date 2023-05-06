@@ -72,20 +72,7 @@
             dGRhdGU6bW9kaWZ5ADIwMjMtMDItMTNUMTM6MTU6NTArMDA6MDDR4Z0WAAAAKHRFWHRkYXRlOnRp
             bWVzdGFtcAAyMDIzLTAyLTEzVDEzOjE1OjUxKzAwOjAwIIO3fQAAAABJRU5ErkJggg=="></image>
             </svg>
-            <?php
-                        if(isset($errores)){
-                            if(count($errores)>0){
-                                echo "<div class='alert alert-danger'><ul>";
-                                foreach ($errores as $error) {
-                                    echo "<li>$error</li>";
-                                }
-                                echo "</ul></div>";
-
-                            }
-                        }
-
-                            
-                    ?>
+          
 
 
 @if(Session::has('errorveri'))
@@ -94,8 +81,9 @@
                           </div>
                           @endif
             <div class="box">
-            <input class="input" name="email" type="text" placeholder="email" value="<?php //if(isset($email)) echo  $email ?>">
-            <input class="input" name="password" type="text" placeholder="Codigo de Verificacion" value="<?php //if(isset($$verification_code)) echo  $$verification_code ?>">
+            <input class="input" name="email" type="text" placeholder="email" value="{{old('email')}}">
+
+            <input class="input" name="token" type="text" placeholder="Codigo de Verificacion" value="{{old('token')}}">
             
             </div>
                 <button type="submit" class="sesion" name="verify_email">

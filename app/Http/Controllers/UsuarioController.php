@@ -54,30 +54,47 @@ public $correo;
 
       public function login(Request $request){
 
+  /* $correo=$request->mail;
+   $contraseña=$request->password;
+   $user=Usuario::find($correo);*/
+
+
+
+   /*if($user){
+    if($user->Contrasenia==/*hash('SHA256',*/// $contraseña)/*)*/{
+
+     // $request->session()->put('usuario', $user);
+     /* $_SESSION['session']["nombre"]= $user->Nombres;
+                $_SESSION['session']["correo"]= $request->email;
+      redirect()->to('/')->send();
+
+
+ }
    
+
+  }
+  return back()->with( 'error', 'Correo y/o  Contraseña incorrectos');
+*/
+
+$request->validate([
+
+'email'=>['required', 'email'],
+
+'password'=>['required'],
+
+]);
+
+
      $user= Usuario::where('Correo', $request->email )->first();
-   //  $cliente=Cliente::Where('Correo', $request->email )->Where('Token', Null )->first();
-        
-    if($request->mail== null && $request->password== null){
-        return back()->with( 'error', 'Completa los campos');
-       }
-        
-     else if ($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Cliente' && $user->Token !=null )
+  if ($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Cliente' && $user->Token !=null )
            {{
 
-             /* if(){{
-                redirect()->to('/nuevocliente/verificacion')->send();}}
-                
-              else{*/
-               // Auth::login($user);
+            
                 $request->session()->regenerate();
                 $_SESSION['session']["nombre"]= $user->Nombres;
                 $_SESSION['session']["correo"]= $request->email;
                 redirect()->to('/')->send();
-               /* $ofertas=new Inicio;
-                $data=array();
-                $data['ofertas']=$ofertas->inicio();
-                // return view('Menu.buyit',$data);*/
+            
                 
               }
               
@@ -90,23 +107,19 @@ public $correo;
 
             elseif(($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Administrador' && $user->Token ==null))
 {{
-             //($user->Tipo=='Administrador')
-              //Auth::login($user);
+            
                 $request->session()->regenerate();
                 $_SESSION['session']["nombre"]= $user->Nombres;
                 $_SESSION['session']["correo"]= $request->email;
        
-               /* $ofertas=new Inicio;
-                $data=array();
-                $data['ofertas']=$ofertas->inicio();
-                // return view('Menu.buyit',$data);*/
+             
                 redirect()->to('/')->send();
             
 
 }}
 
             
-    return back()->with( 'error', 'Correo y/o  Contraseña incorrectos');
+    return back()->with( 'errors', 'Correo y/o  Contraseña incorrectos');
      
     
        // return view('Usuario.login' );
@@ -127,6 +140,12 @@ public $correo;
 
 
       public function  cambiopassword(Request $request){
+        $request->validate([
+
+         
+          'password'=>['required'],
+          
+          ]);
 
        
 
@@ -134,7 +153,7 @@ public $correo;
 
           {
             
-       $user= Usuario::where('Correo',  $_SESSION['session']["correo"] )->first();
+       $user= Usuario::where('Correo',  $_SESSION['session']["correo"] )->get();
        // $user->Dui;
         $user->update([
           'Contrasenia'=>($request->password)]);
@@ -162,6 +181,12 @@ public $correo;
 
      public function recuperacion(Request $request){
 
+      $request->validate([
+
+        'email'=>['required', 'email'],
+      
+        
+        ]);
       $user= Usuario::where('Correo', $request->email )->first();
       
       $_SESSION['core']= $request->email;

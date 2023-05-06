@@ -16,6 +16,7 @@
   <div class="container">  
     <div class="row">
       <h1 class="text-uppercase text-center">Menu Administrativo</h1>
+      @csrf 
       <br>
       <div class="col-md-3 col-sm-6 mb-4">
         <div class="payment-card rounded-lg shadow bg-white text-center h-100">

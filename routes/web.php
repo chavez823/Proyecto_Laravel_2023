@@ -71,6 +71,7 @@ Route::patch('/nuevocliente/verificacion/verificacion', [ClienteController::clas
 Route::get('/Empresa', [EmpresaController::class, 'index']);
 Route::get('/Empresa/create', [EmpresaController::class, 'create']);
 Route::post('/Empresa/create', [EmpresaController::class,'store']);
+Route::get('/Empresa/menuadmin', [EmpresaController::class,'menuadmin']);
 
 
 

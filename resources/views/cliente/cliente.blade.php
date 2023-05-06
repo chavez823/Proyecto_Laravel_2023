@@ -57,64 +57,95 @@
 		<div class="wrap-login"> 
 			<form action="/nuevocliente" method="post"> 
             @csrf
-      <?php
-
-
-                          if(isset($errores)){
-                            if(count($errores)>0){
-                                echo "<div class='alert alert-danger'><ul>";
-                                foreach ($errores as $error) {
-                                    echo "<li>$error</li>";
-                                }
-                                echo "</ul></div>";
-
-                            }
-                        }
-
-                            
-                    ?>
-        
+    
+            @if(Session::has('errorcli'))
+                        <div class='alert alert-danger' role='role'>
+                          {{session::get('errorcli')}}
+                          </div>
+                          @endif
 				
 				<span class="login-form-title">Crear Cuenta</span> 		
                 <div class="container_c">
                     <div class="column_1">
                         <!-- Nombre --> 
                         <div class="wrap-input100"> 
-                            <input class="input100" type="text" name="name" placeholder="Nombres" value="<?php if(isset($Nombres)) echo $Nombres?>" >	 
+                            <input class="input100" type="text" name="name" placeholder="Nombres" value="{{old('name')}}" >	 
                             <span class="focus-efecto"></span> 
+                            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('name','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
                         </div> 
                         <!--DUI-->
                         <div class="wrap-input100"> 
-                            <input class="input100" type="text" name="dui" placeholder="DUI" value="<?php if(isset($Dui)) echo $Dui ?>" > 
-                            <span class="focus-efecto"></span> 
+                            <input class="input100" type="text" name="dui" placeholder="DUI" value="{{old('dui')}}" > 
+                            <span class="focus-efecto"></span>
+                            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('dui','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
                         </div> 
                         <!--Direccion-->
                         <div class="wrap-input100"> 
-                            <input class="input100" type="text" name="direccion" placeholder="Direccion" value="<?php  if(isset($Direccion)) echo $Direccion ?>"> 
+                            <input class="input100" type="text" name="direccion" placeholder="Direccion" value="{{old('direccion')}}"> 
                             <span class="focus-efecto"></span> 
+                            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('direccion','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
                         </div> 
                         <!--contraseña-->
                         <div class="wrap-input100"> 
-                            <input class="input100" type="password" name="password" placeholder="Contraseña" value="<?php if(isset($Contrasenia)) echo $Contrasenia ?>"> 
+                            <input class="input100" type="password" name="password" placeholder="Contraseña" value="{{old('password')}}"> 
                             <span class="focus-efecto"></span> 
+                            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('password','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
                         </div> 
                     </div>		
 
                     <div class="column_2">
                         <!-- Apellidos --> 
                         <div class="wrap-input100"> 
-                            <input class="input100" type="text" name="apellido" placeholder="Apellidos" value="<?php if(isset($Apellidos)) echo $Apellidos ?>"> 
+                            <input class="input100" type="text" name="apellido" placeholder="Apellidos" value="{{old('apellido')}}"> 
                             <span class="focus-efecto"></span> 
+                            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('apellido','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
                         </div> 	
                          <!--Telefono-->
                         <div class="wrap-input100"> 
-                            <input class="input100" type="text" name="telefono" placeholder="Telefono" value="<?php if(isset($Telefono)) echo $Telefono  ?>"> 
+                            <input class="input100" type="text" name="telefono" placeholder="Telefono" value="{{old('telefono')}}"> 
                             <span class="focus-efecto"></span> 
+                            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('telefono','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
                         </div>
                          <!--email-->
                         <div class="wrap-input100"> 
-                            <input class="input100" type="text" name="email" placeholder="Email" value="<?php if(isset($Correo)) echo  $Correo ?>"> 
+                            <input class="input100" type="text" name="email" placeholder="Email" value="{{old('email')}}"> 
                             <span class="focus-efecto"></span> 
+                            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('email','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
                         </div> 
 
                     </div>

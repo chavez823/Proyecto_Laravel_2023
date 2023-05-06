@@ -52,30 +52,13 @@
 		<div class="wrap-login"> 
 			<form action="/actualizacion" method="post"> 
       @csrf   @method('PATCH')
-      <?php
-                        if(isset($errores)){
-                            if(count($errores)>0){
-                                echo "<div class='alert alert-danger'><ul>";
-                                foreach ($errores as $error) {
-                                    echo "<li>$error</li>";
-                                }
-                                echo "</ul></div>";
-
-                            }
-                        }
-
-                            
-                    ?>
+    
                      
 				<!-- LOGO --> 
 				<span class="login-form-title">Cambio de contraseña</span> 
 				<!--<img class="avatar"src="img/user.svg" alt="" align="center"> -->
                 <img class="avatar"src="https://cdn-icons-png.flaticon.com/512/3135/3135789.png" alt="" align="center">
-                @if(Session::has('error'))
-                        <div class='alert alert-danger' role='role'>
-                          {{session::get('error')}}
-                          </div>
-                          @endif
+              
 
 					<!-- USUARIO --> 
 				<!--<div class="wrap-input100"> 
@@ -83,8 +66,14 @@
 					<span class="focus-efecto"></span> 
 				</div>-->
 				<!-- CONTRASEÑA -->
+        @if($errors->any())
+                      
+                     
+                      {!!$errors->first('password','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
 				<div class="wrap-input100"> 
-					<input class="input100" type="password" name="password" placeholder="Contraseña nueva" value="<?php //if(isset($Contrasenia)) echo  $Contrasenia ?>"> 
+					<input class="input100" type="password" name="password" placeholder="Contraseña nueva" value="{{old('password')}}"> 
 					<span class="focus-efecto"></span> 
 				</div>
                
