@@ -218,14 +218,14 @@
         <div class="field-container">
             <label for="name">Nombre</label>
             <!--INPUT-->
-            <input name="Nombre" id="name" type="text" value="{{old('Nombre_t')}}">
+            <input name="Nombre" id="name" type="text" value="{{old('Nombre')}}">
             <!-- END INPUT-->
            
         </div>
         <div class="field-container">
             <label for="cardnumber">Numero de tarjeta</label><span id="generatecard">Generar # Random</span>
             <!--INPUT-->
-            <input name="Numero" id="cardnumber" type="text"   value="{{old('Numero_t')}}">
+            <input name="Numero" id="cardnumber" type="text"   value="{{old('Numero')}}">
             <!--END INPUT-->
             <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -235,7 +235,7 @@
         <div class="field-container">
             <label for="expirationdate">Vencimiento (mm/yy)</label>
             <!--INPUT-->
-            <input name="fecha" id="expirationdate" type="text"   value="{{old('fecha_exp')}}">
+            <input name="fecha" id="expirationdate" type="text"   value="{{old('fecha')}}">
             <!--END INPUT-->
           
         </div>
