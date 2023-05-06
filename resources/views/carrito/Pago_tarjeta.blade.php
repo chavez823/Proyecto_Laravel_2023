@@ -87,20 +87,8 @@
 <br>
 <br>
 <br>
-<?php
-                        if(isset($errores)){
-                            if(count($errores)>0){
-                                echo "<div class='alert alert-danger'><ul>";
-                                foreach ($errores as $error) {
-                                    echo "<li>$error</li>";
-                                }
-                                echo "</ul></div>";
 
-                            }
-                        }
 
-                            
-                    ?>
     <div class="payment-title">
 
         <h1>Informacion de pago</h1>
@@ -219,17 +207,25 @@
 <form action="/completar-compra" method="post">
     @csrf
 
-    @if(Session::has('errortarj'))
-                        <div class='alert alert-danger' role='role'>
-                          {{session::get('errortarj')}}
-                          </div>
-                          @endif
+   
+    @if(Session::has('errors'))
+                       <div class='alert alert-danger' role='role'>
+                         {{session::get('errors')}}
+                         </div>
+                         @endif
+
     <div class="form-container" id="f_orm">
         <div class="field-container">
             <label for="name">Nombre</label>
             <!--INPUT-->
             <input name="Nombre_t" id="name" type="text" value="{{old('Nombre_t')}}">
             <!-- END INPUT-->
+            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('Nombre_t','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
         </div>
         <div class="field-container">
             <label for="cardnumber">Numero de tarjeta</label><span id="generatecard">Generar # Random</span>
@@ -239,18 +235,36 @@
             <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
             </svg>
+            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('Numero_t','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
         </div>
         <div class="field-container">
             <label for="expirationdate">Vencimiento (mm/yy)</label>
             <!--INPUT-->
             <input name="fecha_exp" id="expirationdate" type="text"   value="{{old('fecha_exp')}}">
             <!--END INPUT-->
+            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('fecha_exp','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
         </div>
         <div class="field-container">
             <label for="securitycode">Security Code</label>
             <!--INPUT-->
             <input name="cvv"  id="securitycode" type="text"  value="{{old('cvv')}}" >
             <!--END INPUT-->
+            @if($errors->any())
+                      
+                     
+                      {!!$errors->first('cvv','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif
         </div>
         
         <div class="btn_div">

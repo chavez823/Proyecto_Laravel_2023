@@ -34,7 +34,15 @@ class CuponController extends Controller
             'Numero_t'=>['required'],
             'fecha_exp'=>['required'],
             'cvv'=>['required'],
-		]);
+		],
+		[
+	'Nombre_t.required'=> 'revisa los datos de tu tarjeta',
+	'Numero_t.required'=> 'revisa los datos de tu tarjeta',
+	'fecha_exp.required'=> 'revisa los datos de tu tarjeta',
+	'cvv.required'=> 'revisa los datos de tu tarjeta',]
+	
+	
+	);
 
         
 
@@ -153,6 +161,7 @@ class CuponController extends Controller
                     });
                     $_SESSION['CARRITO']=array();
                     redirect()->to('/gracias')->send();
+					
 
     }
 
