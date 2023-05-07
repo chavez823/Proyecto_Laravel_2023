@@ -171,7 +171,7 @@ class CuponController extends Controller
 			//si esta definida 
 			//if(!empty($_SESSION['session'])){
 			$model = new Cupon();
-			$DUI=$model->getDUI(1)[0]->DUI;
+			$DUI=$model->getDUI($_SESSION['session']["correo"])[0]->DUI;
 			$data['cupones'] =$model->getCupones($DUI);
 			//echo var_dump($model->getCupones($DUI));
             return view('Compras.compras',$data);
