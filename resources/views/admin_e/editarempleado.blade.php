@@ -26,10 +26,10 @@
             
             <!--OJO-->
             <div class="wrap-login_"> 
-                <form action="/Empleado/nuevo" method="post"> 
+                <form action="index.php?c=cliente&a=nuevo" method="post"> 
+                                                       
                 @csrf
-                                                    
-
+                    @method('PUT')
                     <span class="login-form-title">Registrar Empleado</span> 
                           		
                     <div class="c_">
@@ -55,7 +55,7 @@
 
                     </div>                    
                     <button type="submit" name="enviar" class="sesion_">
-                        Registrar Empleado
+                        Editar Empleado
                     </button>
                 </form> 
             </div> 

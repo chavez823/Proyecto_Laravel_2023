@@ -25,36 +25,25 @@
             
             <!--OJO-->
             <div class="wrap-login"> 
-                <form action="index.php?c=cliente&a=nuevo" method="post"> 
-                            <?php
-                            if(isset($errores)){
-                                if(count($errores)>0){
-                                    echo "<div class='alert alert-danger'><ul>";
-                                    foreach ($errores as $error) {
-                                        echo "<li>$error</li>";
-                                    }
-                                    echo "</ul></div>";
-                                }
-                            }                        
-                        ?>                                
-
+                <form action="/rubro/crear" method="post"> 
+                @csrf
+     
+               
                     <span class="login-form-title">Registrar Rubro</span> 
                           		
                     <div class="container_c">                                       
+                                                   
                         <div class="column_1">
-                            <!-- ID-RUBRO --> 
-                            <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="id_rubro" placeholder="Codigo Rubro" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
-                                <span class="focus-efecto"></span> 
-                            </div>                            
-                            
-                        </div>		
-
-                        <div class="column_2">
                             <!-- Nombre Rubro --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="name_rubro" placeholder="Nombre Rubro" value="<?php //Aqui ira el isset para los valores?>"> 
+                                <input class="input100" type="text" name="name_rubro" placeholder="Nombre Rubro" value="{{old('name_rubro')}}"> 
                                 <span class="focus-efecto"></span> 
+                                @if($errors->any())
+                      
+                     
+                      {!!$errors->first('name_rubro','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif  
                             </div>
                             
 
