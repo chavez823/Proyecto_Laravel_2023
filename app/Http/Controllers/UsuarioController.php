@@ -102,6 +102,26 @@ $request->validate([
 
 }}
 
+elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->Token ==null  && $user->Tipo=='Admnistrador_Empresa' ))
+{{
+            
+                $request->session()->regenerate();
+                $_SESSION['session']["nombre"]= $user->Nombres;
+                $_SESSION['session']["correo"]= $request->email;
+               /* $id=Usuario::join('empleado', 'usuario.ID_Usuario', '=', 'empleado.ID_Usuario')
+                ->join('empresa', 'empleado.ID_Empresa', '=', 'empresa.ID_Empresa')
+                ->select('empresa.ID_Empresa')
+                ->where('usuario.Correo', $request->email)
+                ->get();
+                $_SESSION['id_empresa']=$id[0]->ID_Empresa;*/
+       
+             
+                redirect()->to('/')->send();
+            
+
+}}
+
+
 
 
 
