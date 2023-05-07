@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color: #86A3B8;">
       <div class="container-fluid">
         <!--Logo-->
-        <a class="navbar-brand" href="buyit">
+        <a class="navbar-brand" href="../buyit">
           <img class="logotipo" src="{{asset('img/Logo_sin_slogan_t.png')}} " alt="">
         </a>
         
@@ -70,7 +70,7 @@
 
                   <li><a class="dropdown-item " href="../cupones">Ver Cupones</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li> <a class="dropdown-item " href="index.php?c=usuario&a=cambio">Ajustes</a></li>
+                  <li> <a class="dropdown-item " href="../form/cambio/contraseña">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="index.php?c=usuario&a=logout">Log out</a></li>
 

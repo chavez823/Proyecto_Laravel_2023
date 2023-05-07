@@ -62,9 +62,9 @@
 
                   <?php  } else { ?>                  
 
-                  <li><a class="dropdown-item " href="index.php?c=cupon&a=ver_cupon">Ver Cupones</a></li>
+                  <li><a class="dropdown-item " href="../cupones">Ver Cupones</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li> <a class="dropdown-item " href="index.php?c=usuario&a=cambio">Ajustes</a></li>
+                  <li> <a class="dropdown-item " href="../form/cambio/contraseña">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="index.php?c=usuario&a=logout">Log out</a></li>
 
