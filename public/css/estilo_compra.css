@@ -56,6 +56,15 @@ i.griz {
   background: #bada55;
 }
 
+.event_container .vencido {
+  background: #ffe70b;
+}
+
+.event_container .canjeados {
+  background: #ff0b0b;
+}
+
+
 
 /* Medium Devices, Tablets */
 @media only screen and (max-width: 768px) {
