@@ -92,6 +92,8 @@ Route::get('/Empresa/vercliente', [EmpresaController::class, 'vercliente']);
 Route::get('/MenuEmpresa', [OfertaController::class, 'index']);
 Route::get('/MenuEmpresa/create', [OfertaController::class, 'create']);
 
+Route::post('/MenuEmpresa/create', [OfertaController::class,'store']);
+Route::get('/Empresa/vercliente', [EmpresaController::class, 'vercliente']);
 
 
 
