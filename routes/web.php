@@ -63,8 +63,7 @@ Route::get('/gracias', [CuponController::class, 'gracias']);
 
 //Vista Ver Cupones
 Route::get('/cupones', [CuponController::class, 'ver_cupon']);
-//Route::get('/cupones', [CuponController::class, 'ver_cupon_vencido']);
-//Route::get('/cupones', [CuponController::class, 'ver_cupon_canjeado']);
+
 
 Route::get('/cupon/{id_cupon}', [CuponController::class, 'generar_cupon']);
 

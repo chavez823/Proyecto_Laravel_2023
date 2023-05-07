@@ -16,6 +16,8 @@
     <!--Propio-->
     <link rel="stylesheet" href="css/style_1.css">
     <link rel="stylesheet" href="css/drop.css">
+    <style>.altura-a-b{
+    margin-bottom: 100px }</style>
     
   </head>
   <body>
@@ -124,37 +126,67 @@
 <?php
   }
 ?>
+
+  <div class="row" style="margin-top: 10px;">
+    <div class="col-sm-12">
+      <h3 style="text-align: center; font-weight: bold;">Cupones Canjeados</h3>      
+    </div>
+  </div>
+
+  <?php
+  //Pruebas
+  foreach ($cupones as $cupon) {
+    if($cupon->Estado=="Canjeado"){
+    
+  ?>
+  <!-- Todo lo de abajo se tendra que repetir en el foreach para leer los datos de la base-->
+  
+    
+    <div class="row event_container">
+      
+      <div class="col-sm-2 event event_online" id="show-list-link1" title="Show registered guests">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-ticket" width="52" height="52" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <line x1="15" y1="5" x2="15" y2="7" />
+        <line x1="15" y1="11" x2="15" y2="13" />
+        <line x1="15" y1="17" x2="15" y2="19" />
+        <path d="M5 5h14a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-3a2 2 0 0 0 0 -4v-3a2 2 0 0 1 2 -2" />
+        </svg>        
+      </div>
+
+        <div class="col-sm-10 event-details">
+            <div class="row">
+                <div class="col-sm-5">
+                    <em>Nombre - Cupon</em>
+                    <h5><?=$cupon->Titulo?> </h5>
+                    <em><?=$cupon->Descripcion?> </em>
+                </div>
+                <div class="col-sm-2">
+                    <em>Codigo</em>
+                    <h5><?=$cupon->ID_Cupon?></h5>
+                </div>
+                <div class="col-sm-2">
+                    <em>Estado</em>
+                    <h5><?=$cupon->Estado?></h5>
+                </div>
+                <a href="/cupon/<?=$cupon->ID_Cupon?>">Generar PDF</a> 
+            </div>
+        </div>     
+    </div>
+<?php
+    }
+  }
+?>
+
+
+
     <?php
     }else{
     ?>
         <div class="alert alert-success">
            <h3>No hay cupones comprados...!</h3> 
         </div>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
+  
     <?php }?>
 
 </div><!-- end of container -->
@@ -165,8 +197,10 @@
     <script src="https://kit.fontawesome.com/5c72b9dab8.js" crossorigin="anonymous"></script>
     <script src="js/slider.js"></script>
 
-
-  <footer>
+  <div class="altura-a-b">
+    
+  </div>
+  <footer >
         <img class="logotipo-footer" src="img/Logo_sin_slogan_t.png" alt="logotipo">
         <br>    
         <p>
