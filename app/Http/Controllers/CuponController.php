@@ -26,7 +26,27 @@ class CuponController extends Controller
     {
         return view('carrito.Gracias');
     }
-    public function compra_completa(){
+    public function compra_completa(Request $request){
+
+        $request->validate([
+
+			'Nombre'=>['required'],
+            'Numero'=>['required'],
+            'fecha'=>['required'],
+            'cvv'=>['required'],
+		],
+		[
+	'Nombre.required'=> 'revisa los datos de tu tarjeta',
+	'Numero.required'=> 'revisa los datos de tu tarjeta',
+	'fecha.required'=> 'revisa los datos de tu tarjeta',
+	'cvv.required'=> 'revisa los datos de tu tarjeta',]
+	
+	
+	);
+
+        
+
+		
                     $model = new Cupon();
                     $productos=$_SESSION['CARRITO'];
                     //echo var_dump($DUI=$model->getDUI(1)[0]->DUI);
@@ -141,6 +161,7 @@ class CuponController extends Controller
                     });
                     $_SESSION['CARRITO']=array();
                     redirect()->to('/gracias')->send();
+
 
     }
 

@@ -20,7 +20,14 @@ main, .bo_dy{
 }
 
 
+.forma{
+    clip-path: polygon(0 1%, 100% 0%, 100% 66%, 50% 100%, 0 68%);
 
+
+
+
+
+}
 
 
 /*Main*/

@@ -1,4 +1,7 @@
 @extends('templates.header')
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  </head>
 <header>
 <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
 </header>
@@ -14,19 +17,26 @@
 
     foreach($ofertas as $oferta){?>                     
       <div class="col-md-4">
-        <div class="card">
-          <div class="img1"><img src="<?php echo $oferta->Imagen ?>" alt=""></div>
-              <!--Fondo CARD-->
-              <!--<div class="img2"><img src="img/ramen_3.jpg" alt=""></div>-->         
-              <div class="main-text">
-                <h1><?php echo $oferta->Titulo ?></h1>
-                  <p>$<?php echo $oferta->PrecioOferta ?></p>
-                  <p><?php echo $oferta->Descripcion ?></p>
-                  <!-- aqui pasamos el array asociativo convertido en string osea el id oferta y la vista -->
 
-                  <a href="/carrito/<?=$oferta->ID_Oferta?>&5" class="btn btn-primary">Agregar al carrito</a>                   
-              </div>    
-            </div>
+              <div class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="<?php echo $oferta->Imagen ?>">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4"><?php echo $oferta->Titulo ?><i class="material-icons right">+</i></span>
+                  <!--AQUI CAMBIAR EL ID-->
+                  <p> <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>      </p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4"><?php echo $oferta->Titulo ?><i class="material-icons right">-</i></span>
+                  <p><?php echo $oferta->Descripcion ?></p>
+                  <p>Precio Original: $<?php echo $oferta->PrecioOriginal ?></p>
+                  <p>Precio Oferta: $<?php echo $oferta->PrecioOferta ?></p>
+                  <p>Fecha de inicio: <?php echo $oferta->FechaInicio ?></p>
+                  <p>Fecha de Final: <?php echo $oferta->FechaFin ?></p>
+                </div>
+              </div>
+              
             <br>
         </div>
     <?php
@@ -44,7 +54,8 @@
     <!--SLIDER-->
     <script src="https://kit.fontawesome.com/5c72b9dab8.js" crossorigin="anonymous"></script>
     <script src="{{asset('js/slider.js')}}"></script>
-
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
     <!--Pie de la pagina-->
     @extends('templates.footer')

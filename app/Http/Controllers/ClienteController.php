@@ -116,7 +116,7 @@ return back()->with( 'errorcli', 'El Dui ya esta registrado');
      if ($clientes != null &&  $clientes->Token===$Token){
 
         {
-            $cliente=Usuario::where('Correo', $request->email )->first();
+            $cliente=Usuario::where('Correo', $request->email)->first();
              $cliente->update([
              'Token'=>/*($request->password)*/$Token]);
              redirect()->to('form')->send();

@@ -36,7 +36,7 @@ class CategoriaController extends Controller
      public function Ver_super(){
         $ofertas=new Categoria();
         $data=array();
-        $data['ofertas']=$ofertas->inicio("Super");
+        $data['ofertas']=$ofertas->inicio("otros");
      
          return view('Menu/pages/Super',$data );
      }
