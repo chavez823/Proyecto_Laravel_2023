@@ -9,6 +9,7 @@ use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\RubroController;
 
 session_start();
 
@@ -96,9 +97,19 @@ Route::post('/MenuEmpresa/create', [OfertaController::class,'store']);
 Route::get('/Empresa/vercliente', [EmpresaController::class, 'vercliente']);
 
 
-
+//Ruta empleados
 
 Route::get('/Empleado', [EmpleadoController::class, 'index']);
+Route::post('/Empleado/nuevo', [EmpleadoController::class, 'create']);
+
+//rutas rubro
+Route::get('/rubro', [RubroController::class, 'index']);
+Route::post('/rubro/crear', [RubroController::class, 'create']);
+Route::get('/rubro/editar', [RubroController::class,'edit']);
+Route::get('/rubro/vereditar/{id}', [RubroController::class,'vereditar']);
+Route::put('/rubro/update/{id}', [RubroController::class,'update']);
+Route::get('/rubro/delete/{id}', [RubroController::class,'destroy']);
+
 
 /*Route::get('/', function () {
     return view('welcome');
