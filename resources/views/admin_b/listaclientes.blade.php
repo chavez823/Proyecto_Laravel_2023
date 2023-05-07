@@ -23,13 +23,14 @@
     <table class="uk-table uk-table-divider uk-table-hover">
         <tbody>
             <tr>
-                <th width="15%" class="text-center"><strong>Nombres</strong></th>
+                <th width="5%" class="text-center"><strong>Nombres</strong></th>
                 <th width="5%" class="text-center"><strong>Apellidos</strong></th>
                 <th width="5%" class="text-center"><strong>Correo</strong></th>
                 <th width="5%" class="text-center"><strong>Telefono</strong></th>
                 <th width="15%" class="text-center"><strong>Direccion</strong></th>
                 <th width="5%" class="text-center"><strong>Cupones Canjeados</strong></th>
                 <th width="5%" class="text-center"><strong>Cupones sin canjear</strong></th>
+                <th width="5%" class="text-center"><strong>Cupones_Comprados</strong></th>
                
                
             </tr>
@@ -41,13 +42,15 @@
             ?>
                
             <tr>
-                <td width="15%" class="text-center"><?php echo $cli->Nombres?></td>
+                <td width="10%" class="text-center"><?php echo $cli->Nombres?></td>
                 <td width="5%" class="text-center"><?php echo $cli->Apellidos?></td>
                 <td width="5%" class="text-center"><?php echo $cli->Correo?></td>
                 <td width="5%" class="text-center"> <?php echo $cli->Telefono?></td>
                 <td width="15%" class="text-center"> <?php echo $cli->Direccion?></td>
                 <td width="5%" class="text-center"><?php echo $cli->canjeados?></td>
                 <td width="5%" class="text-center"><?php echo $cli->sin_canjear?></td>
+                <td width="5%" class="text-center"><?php echo $cli->total_cupones?></td>
+                
                 
                  </tr>
             <?php 

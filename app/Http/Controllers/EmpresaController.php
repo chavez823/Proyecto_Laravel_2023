@@ -134,7 +134,8 @@ class EmpresaController extends Controller
  ->join('estado_cupon', 'estado_cupon.ID_Estado_Cupon', '=', 'cupon.ID_Estado_Cupon')
  ->select('cliente.Nombres', 'cliente.Apellidos', 'cliente.DUI', 'cliente.Direccion', 'cliente.Telefono', 'cliente.Correo',
           DB::raw('SUM(CASE WHEN estado_cupon.Estado = "Canjeado" THEN 1 ELSE 0 END) as canjeados'),
-          DB::raw('SUM(CASE WHEN estado_cupon.Estado = "Sin Canjear" THEN 1 ELSE 0 END) as sin_canjear'))
+          DB::raw('SUM(CASE WHEN estado_cupon.Estado = "Sin Canjear" THEN 1 ELSE 0 END) as sin_canjear'),
+          DB::raw('COUNT(cupon.ID_Cupon) as total_cupones'))
  ->groupBy('cliente.Nombres', 'cliente.Apellidos', 'cliente.DUI')
  ->get();
 
