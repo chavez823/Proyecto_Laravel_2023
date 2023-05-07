@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 use App\Models\Empresa;
+use App\Models\Cliente;
+use App\Models\Cupon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+
 
 class EmpresaController extends Controller
 {
@@ -103,4 +107,45 @@ class EmpresaController extends Controller
         return view('oferta.oferta',$data);
 
     }
+
+
+
+    public function vercliente()
+    {
+        //
+       // return "prueba";
+     //  $clientes=Cupon::join('Cliente')->get();
+      // $clientes=Cliente::get();
+       $cliente=Cliente::join('Cupon','Cliente.DUI','=','Cupon.DUI' )     
+            ->join('Estado_cupon','Estado_cupon.ID_Estado_Cupon','=','Cupon.ID_Estado_Cupon')  
+            ->select('Cliente.*','ID_Cupon','Estado_cupon.Estado')
+            ->get();
+           // return $sentencia;
+           $data=array();
+           $data['cliente']=$cliente;
+
+
+    return view("admin_b.listaclientes", $data /*compact('clientes')*/);
+
+ //$clientes;
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 }

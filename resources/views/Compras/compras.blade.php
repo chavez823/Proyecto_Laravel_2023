@@ -3,8 +3,8 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <!--ICONO-->
-    <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
+    <!--Icono-->
+    <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Compras BUYIT</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color: #86A3B8;">
       <div class="container-fluid">
          <!--Logo-->
-        <a class="navbar-brand" href="index.php?c=inicio">
+        <a class="navbar-brand" href="/buyit">
           <img class="logotipo" src="img/Logo_sin_slogan_t.png" alt="">
         </a>
 
@@ -40,23 +40,23 @@
                 Categorias
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="index.php?c=categoria&a=belleza">Belleza</a></li>
-                <li><a class="dropdown-item" href="index.php?c=categoria&a=salud">Salud</a></li>
-                <li><a class="dropdown-item" href="index.php?c=categoria&a=restaurante">Restaurante</a></li>
-                <li><a class="dropdown-item" href="index.php?c=categoria&a=otros">Otros</a></li>
+                <li><a class="dropdown-item" href="Categoria/belleza">Belleza</a></li>
+                <li><a class="dropdown-item" href="Categoria/salud">Salud</a></li>
+                <li><a class="dropdown-item" href="Categoria/restaurante">Restaurante</a></li>
+                <li><a class="dropdown-item" href="Categoria/super">Otros</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="index.php?c=categoria">Principal</a></li>
+                <li><a class="dropdown-item" href="Categoria">Principal</a></li>
               </ul>
 
             <li class="nav-item">
-              <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>		
+              <a class="nav-link" href="carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>		
             </li>
 
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="index.php?c=usuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <?php echo  isset($_SESSION['session'])?$_SESSION['session']['nombre']:"Login" ?> <i class="fa-solid fa-user"></i></a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item active" href="index.php?c=cupon&a=ver_cupon">Ver Cupones</a></li>
+              <li><a class="dropdown-item active" href="../cupones">Ver Cupones</a></li>
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="index.php?c=categoria">Logout</a></li>
             </ul>

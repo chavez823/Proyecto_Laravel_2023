@@ -38,10 +38,10 @@
             Categorias
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item active" href="index.php?c=categoria&a=belleza">Belleza</a></li>
-            <li><a class="dropdown-item" href="index.php?c=categoria&a=salud">Salud</a></li>
-            <li><a class="dropdown-item" href="index.php?c=categoria&a=restaurante">Restaurante</a></li>
-            <li><a class="dropdown-item" href="index.php?c=categoria&a=otros">Otros</a></li>
+            <li><a class="dropdown-item active" href="Categoria/belleza">Belleza</a></li>
+            <li><a class="dropdown-item" href="Categoria/salud">Salud</a></li>
+            <li><a class="dropdown-item" href="Categoria/restaurante">Restaurante</a></li>
+            <li><a class="dropdown-item" href="Categoria/super">Otros</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="categoria">Principal</a></li>
           </ul>
@@ -62,9 +62,9 @@
 
                   <?php  } else { ?>                  
 
-                  <li><a class="dropdown-item " href="index.php?c=cupon&a=ver_cupon">Ver Cupones</a></li>
+                  <li><a class="dropdown-item " href="../cupones">Ver Cupones</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li> <a class="dropdown-item " href="index.php?c=usuario&a=cambio">Ajustes</a></li>
+                  <li> <a class="dropdown-item " href="../form/cambio/contraseña">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="index.php?c=usuario&a=logout">Log out</a></li>
 

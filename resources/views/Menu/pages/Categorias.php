@@ -24,7 +24,7 @@ include '../carrito.php';*/
     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color: #86A3B8;">
       <div class="container-fluid">
          <!--Logo-->
-        <a class="navbar-brand" href="index.php?c=inicio">
+        <a class="navbar-brand" href="buyit">
           <img class="logotipo" src="img/Logo_sin_slogan_t.png" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@ include '../carrito.php';*/
             </li>
             
             <li class="nav-item">
-                 <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
+                 <a class="nav-link" href="carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
             </li>
 
             <li class="nav-item dropdown">
@@ -52,7 +52,7 @@ include '../carrito.php';*/
 
                   <?php  } else { ?>                  
 
-                  <li><a class="dropdown-item " href="index.php?c=cupon&a=ver_cupon">Ver Cupones</a></li>
+                  <li><a class="dropdown-item " href="cupones">Ver Cupones</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li> <a class="dropdown-item " href="index.php?c=usuario&a=cambio">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>

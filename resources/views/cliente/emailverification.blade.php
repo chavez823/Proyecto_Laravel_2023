@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style_verify.css">
+    
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet"> 
 
-  <!--ICONO-->
-  <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
+    <!--Icono-->
+    <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BUYIT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!--Propio-->
-    <link rel="stylesheet" href="css/style_1.css">
-    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="{{asset('css/style_1.css')}}">
+    <link rel="stylesheet" href="{{asset('css/categories.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_verify.css')}}">
+
+
      <!--alertas-->
- <script src="js/alertify.js" type="text/javascript"></script>
+    <script src="js/alertify.js" type="text/javascript"></script>
 
 
 
-    <title>Document</title>
+    <title>Verificacion</title>
 </head>
 <body>
 
@@ -39,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="buyit">Inicio</a>
+              <a class="nav-link" aria-current="page" href="../buyit">Inicio</a>
             </li>
        
           </ul> 
@@ -71,34 +74,25 @@
             NgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMy0wMi0xM1QxMzoxNTo1MCswMDowMKC8JaoAAAAldEVY
             dGRhdGU6bW9kaWZ5ADIwMjMtMDItMTNUMTM6MTU6NTArMDA6MDDR4Z0WAAAAKHRFWHRkYXRlOnRp
             bWVzdGFtcAAyMDIzLTAyLTEzVDEzOjE1OjUxKzAwOjAwIIO3fQAAAABJRU5ErkJggg=="></image>
-            </svg>
-          
-
-
-@if(Session::has('errorveri'))
-                        <div class='alert alert-danger' role='role'>
-                          {{session::get('errorveri')}}
-                          </div>
-                          @endif
-            <div class="box">
-            <input class="input" name="email" type="text" placeholder="email" value="{{old('email')}}">
-            @if($errors->any())
-                      
-                     
-                      {!!$errors->first('email','<p class="alert alert-danger" role="role">:message</p> <br>' )!!}
-                      
-                        @endif
-            <input class="input" name="token" type="text" placeholder="Codigo de Verificacion" value="{{old('token')}}">
-            @if($errors->any())
-                      
-                     
-                      {!!$errors->first('token','<p class="alert alert-danger" role="role">:message</p> <br>' )!!}
-                      
-                        @endif
+            </svg>        
+            @if(Session::has('errorveri'))
+            <div class='alert alert-danger' role='role'>
+              {{session::get('errorveri')}}
             </div>
-                <button type="submit" class="sesion" name="verify_email">
-                    vERIFICAR
-                </button>
+            @endif
+            <div class="box">
+              <input class="input" name="email" type="text" placeholder="email" value="{{old('email')}}">
+                @if($errors->any())                                           
+                      {!!$errors->first('email','<p class="alert alert-danger" role="role">:message</p> <br>' )!!}                      
+                @endif
+              <input class="input" name="token" type="text" placeholder="Codigo de Verificacion" value="{{old('token')}}">
+                @if($errors->any())                                           
+                      {!!$errors->first('token','<p class="alert alert-danger" role="role">:message</p> <br>' )!!}                      
+                @endif
+            </div>
+            <button type="submit" class="sesion" name="verify_email">
+              VERIFICAR
+            </button>
         </form>
     </div>
     
