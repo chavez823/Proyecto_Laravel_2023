@@ -100,7 +100,7 @@ Route::get('/Empresa/vercliente', [EmpresaController::class, 'vercliente']);
 //Ruta empleados
 
 Route::get('/Empleado', [EmpleadoController::class, 'index']);
-
+Route::post('/Empleado/nuevo', [EmpleadoController::class, 'create']);
 
 //rutas rubro
 Route::get('/rubro', [RubroController::class, 'index']);
