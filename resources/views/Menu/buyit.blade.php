@@ -93,21 +93,21 @@
   </div>
   <div class=" forma carousel-inner">
     <div class="carousel-item active">
-      <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg" class="d-block w-100" alt="...">
+      <img src="https://cdn.pixabay.com/photo/2022/09/23/07/58/squid-7473908_1280.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg" class="d-block w-100" alt="...">
+      <img src="https://cdn.pixabay.com/photo/2021/04/13/17/14/food-6176244_1280.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="https://cdn.pixabay.com/photo/2020/03/22/08/43/sushi-4956246_1280.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
