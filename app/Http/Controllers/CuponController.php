@@ -126,7 +126,7 @@ class CuponController extends Controller
 							}
 							$codigo_cupon=$codigo_empresa.$num_aleatorio; 
 							echo "<td>".$codigo_cupon."</td>";
-							$DUI=$model->getDUI(1)[0]->DUI;
+							$DUI=$model->getDUI($_SESSION['session']["correo"])[0]->DUI;
 							$model->insertar_cupon($codigo_cupon,$DUI,$cupon['ID'], 2);
 							echo "</tr>";
 						}

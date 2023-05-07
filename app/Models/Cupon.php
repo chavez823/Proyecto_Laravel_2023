@@ -84,11 +84,11 @@ class Cupon extends Model
         return $empresa;
     }
 
-    public function getDUI($id=''){
+    public function getDUI($correo){
         
         $sentencia = DB::table('cliente')
             ->join('usuario', 'usuario.ID_Usuario', '=', 'cliente.ID_Usuario')
-            ->where( 'cliente.ID_Usuario', '=', $id)
+            ->where( 'cliente.Correo', '=', $correo)
             ->select('cliente.DUI')
             ->get();
         return $sentencia;        
