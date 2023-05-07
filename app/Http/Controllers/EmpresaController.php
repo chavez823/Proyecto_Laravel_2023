@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Models\Empresa;
+use App\Models\Cliente;
+
 use Illuminate\Http\Request;
+
 
 class EmpresaController extends Controller
 {
@@ -103,4 +106,38 @@ class EmpresaController extends Controller
         return view('oferta.oferta',$data);
 
     }
+
+
+
+    public function vercliente()
+    {
+        //
+       // return "prueba";
+      // $clientes=Cliente::with('cupon')->get();
+       $clientes=Cliente::get();
+
+
+      // return view('amin_b.listaclientes', $clientes);
+
+return $clientes;
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
 }
