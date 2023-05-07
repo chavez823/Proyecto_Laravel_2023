@@ -14,7 +14,7 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-    return view();
+    return view("admin_e.nuevo_empleado");
     }
 
     /**

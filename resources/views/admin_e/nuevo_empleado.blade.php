@@ -60,6 +60,13 @@
                             </div>                                            
                         </div>
 
+                         <!-- Apellido --> 
+                         <div class="wrap-input100"> 
+                                <input class="input100" type="text" name="id_empresa" placeholder="ID_EMPRESA" value="<?php //Aqui ira el isset para los valores?>"> 
+                                <span class="focus-efecto"></span> 
+                            </div>                                            
+                        </div>
+
                     </div>                    
                     <button type="submit" name="enviar" class="sesion_">
                         Registrar Rubro

@@ -116,7 +116,7 @@ class EmpresaController extends Controller
        // return "prueba";
      //  $clientes=Cupon::join('Cliente')->get();
       // $clientes=Cliente::get();
-       $cliente=Cliente::join('Cupon','Cliente.DUI','=','Cupon.DUI' )     
+/*$cliente=Cliente::join('Cupon','Cliente.DUI','=','Cupon.DUI' )     
             ->join('Estado_cupon','Estado_cupon.ID_Estado_Cupon','=','Cupon.ID_Estado_Cupon')  
             ->select('Cliente.*','ID_Cupon','Estado_cupon.Estado')
             ->get();
@@ -125,14 +125,23 @@ class EmpresaController extends Controller
            $data['cliente']=$cliente;
 
 
-    return view("admin_b.listaclientes", $data /*compact('clientes')*/);
+    return view("admin_b.listaclientes", $data /*compact('clientes')*///);*/
 
  //$clientes;
 
 
+ $cliente=Cliente::join('cupon', 'cupon.DUI', '=', 'cliente.DUI')
+ ->join('estado_cupon', 'estado_cupon.ID_Estado_Cupon', '=', 'cupon.ID_Estado_Cupon')
+ ->select('cliente.Nombres', 'cliente.Apellidos', 'cliente.DUI', 'cliente.Direccion', 'cliente.Telefono', 'cliente.Correo',
+          DB::raw('SUM(CASE WHEN estado_cupon.Estado = "Canjeado" THEN 1 ELSE 0 END) as canjeados'),
+          DB::raw('SUM(CASE WHEN estado_cupon.Estado = "Sin Canjear" THEN 1 ELSE 0 END) as sin_canjear'))
+ ->groupBy('cliente.Nombres', 'cliente.Apellidos', 'cliente.DUI')
+ ->get();
 
-
-
+//return $cliente;
+$data=array();
+           $data['cliente']=$cliente;
+return view("admin_b.listaclientes", $data);
 
 
 

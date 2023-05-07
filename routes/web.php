@@ -8,6 +8,8 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\EmpleadoController;
+
 session_start();
 
 /*
@@ -84,13 +86,17 @@ Route::put('/Empresa/Estado/{ID_Oferta}&{id}', [EmpresaController::class,'cambia
 Route::get('/Empresa/Oferta/{ID_Oferta}', [EmpresaController::class,'verPropuesta']);
 Route::get('/Empresa/menuadmin', [EmpresaController::class,'menuadmin']);
 
-
+Route::get('/Empresa/vercliente', [EmpresaController::class, 'vercliente']);
 
 //Rutas para la gestion de las ofertas
 Route::get('/MenuEmpresa', [OfertaController::class, 'index']);
 Route::get('/MenuEmpresa/create', [OfertaController::class, 'create']);
-Route::get('/Empresa/vercliente', [EmpresaController::class, 'vercliente']);
 
+
+
+
+
+Route::get('/Empleado', [EmpleadoController::class, 'index']);
 
 /*Route::get('/', function () {
     return view('welcome');

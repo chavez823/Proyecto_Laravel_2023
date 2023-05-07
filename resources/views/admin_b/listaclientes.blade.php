@@ -28,10 +28,9 @@
                 <th width="5%" class="text-center"><strong>Correo</strong></th>
                 <th width="5%" class="text-center"><strong>Telefono</strong></th>
                 <th width="15%" class="text-center"><strong>Direccion</strong></th>
-                <th width="5%" class="text-center"><strong>ID_Usuario</strong></th>
-                <th width="5%" class="text-center"><strong>Token</strong></th>
-                <th width="5%" class="text-center"><strong>ID_Cupon</strong></th>
-                <th width="5%" class="text-center"><strong>Estado_cupon</strong></th>
+                <th width="5%" class="text-center"><strong>Cupones Canjeados</strong></th>
+                <th width="5%" class="text-center"><strong>Cupones sin canjear</strong></th>
+               
                
             </tr>
            
@@ -47,10 +46,9 @@
                 <td width="5%" class="text-center"><?php echo $cli->Correo?></td>
                 <td width="5%" class="text-center"> <?php echo $cli->Telefono?></td>
                 <td width="15%" class="text-center"> <?php echo $cli->Direccion?></td>
-                <td width="5%" class="text-center"><?php echo $cli->ID_Usuario?></td>
-                <td width="5%" class="text-center"><?php echo $cli->Token?></td>
-                <td width="5%" class="text-center"> <?php echo $cli->ID_Cupon?></td>
-                <td width="5%" class="text-center"> <?php echo $cli->Estado?></td>
+                <td width="5%" class="text-center"><?php echo $cli->canjeados?></td>
+                <td width="5%" class="text-center"><?php echo $cli->sin_canjear?></td>
+                
                  </tr>
             <?php 
                 }
