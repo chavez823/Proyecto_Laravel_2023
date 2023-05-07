@@ -36,6 +36,9 @@
           
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
+                <a class="nav-link" href="/Empresa">menuadmin  buyit</a>
+              </li>
+          <li class="nav-item">
                 <a class="nav-link" href="/Empresa/menuadmin">menuadmin e</a>
               </li>
               <li class="nav-item">
