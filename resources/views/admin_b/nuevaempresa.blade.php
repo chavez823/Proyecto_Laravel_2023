@@ -27,7 +27,7 @@
             <!--OJO-->
             <div class="wrap-login"> 
                 <form action="/Empresa/create" method="post"> 
-                    @csrf
+                    @csrf       
                     @if(Session::has('errorlo'))
                         <div class='alert alert-danger' role='role'>
                           {{session::get('errorlo')}}

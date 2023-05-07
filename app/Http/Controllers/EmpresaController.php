@@ -5,6 +5,7 @@ use App\Models\Cupon;
 use App\Models\Cliente;
 use App\Models\Empresa;
 use App\Models\Usuario;
+use App\Models\Empleado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
@@ -54,6 +55,10 @@ class EmpresaController extends Controller
 		for ($i=0; $i < 2; $i++) { 
 		    $ID_Usuario .= rand(1,100);
 		}
+        $id_empleado=rand(1,100);
+		for ($i=0; $i < 2; $i++) { 
+		    $id_empleado .= rand(1,100);
+		}
         $this->correo_admin_empresa=$request->correo;
         Mail::raw('Envio de contraseña es: '.$Contrasenia, function ($message) {
             $message->from('yam182141@gmail.com', 'BuyIt'); 
@@ -62,6 +67,8 @@ class EmpresaController extends Controller
         $Tipo="Admnistrador_Empresa";
         $admin_empresa->insertarusuario($Contrasenia,$request->correo,$ID_Usuario,$request->name_r,
         $request->name_r,$Tipo);
+        Empleado::insert(['ID_Empresa'=> $request->cod_empo, "ID_Empleado"=>$id_empleado,
+            "ID_Usuario"=>$ID_Usuario, 'Tipo'=>$Tipo]);
         return view("admin_b.menu_buy_ad");
         }
         else{
