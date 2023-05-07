@@ -37,7 +37,7 @@ include '../carrito.php';*/
             </li>
             
             <li class="nav-item">
-                 <a class="nav-link" href="index.php?c=Inicio&a=mostrarCarrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
+                 <a class="nav-link" href="carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
             </li>
 
             <li class="nav-item dropdown">
@@ -52,7 +52,7 @@ include '../carrito.php';*/
 
                   <?php  } else { ?>                  
 
-                  <li><a class="dropdown-item " href="index.php?c=cupon&a=ver_cupon">Ver Cupones</a></li>
+                  <li><a class="dropdown-item " href="cupones">Ver Cupones</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li> <a class="dropdown-item " href="index.php?c=usuario&a=cambio">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>

@@ -2,9 +2,10 @@
   @extends('templates.header')
   <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--Icono-->
+  <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
   </head>
   <header>
-<link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
 </header>
     <!-- Main -->
     <!--Funcional con php-->
