@@ -138,24 +138,7 @@ return back()->with( 'errorcli', 'El Dui ya esta registrado');
 
 
     
-    public function verclientes()
-    {
-        //
-       // return "prueba";
-       $clientes=Cliente::get();
-
-       return view();
-
-        
-
-
-
-
-
-
-
-
-    }
+   
 
     /**
      * Store a newly created resource in storage.
