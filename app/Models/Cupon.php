@@ -5,10 +5,74 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-
+/**
+ * Class Cupon
+ * 
+ * @property string $ID_Cupon
+ * @property int $DUI
+ * @property int $ID_Oferta
+ * @property int $ID_Estado_Cupon
+ * 
+ * @property Cliente $cliente
+ * @property Ofertum $ofertum
+ * @property EstadoCupon $estado_cupon
+ *
+ * @package App\Models
+ */
 class Cupon extends Model
 {
+
     use HasFactory;
+	protected $table = 'cupon';
+	protected $primaryKey = 'ID_Cupon';
+	public $incrementing = false;
+	public $timestamps = false;
+
+	protected $casts = [
+		'DUI' => 'int',
+		'ID_Oferta' => 'int',
+		'ID_Estado_Cupon' => 'int'
+	];
+
+	protected $fillable = [
+		'DUI',
+		'ID_Oferta',
+		'ID_Estado_Cupon'
+	];
+
+	public function cliente()
+	{
+		return $this->belongsTo(Cliente::class, 'DUI');
+	}
+
+	public function ofertum()
+	{
+		return $this->belongsTo(Categoria::class, 'ID_Oferta');
+	}
+
+	public function estado_cupon()
+	{
+		return $this->belongsTo(EstadoCupon::class, 'ID_Estado_Cupon');
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
     public function getNombreEmpresa($id=''){
 
