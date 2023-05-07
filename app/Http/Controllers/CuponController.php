@@ -16,7 +16,8 @@ class CuponController extends Controller
     /**
      * Display a listing of the resource.
      */
-	public $correo="correo del usuario";
+	public $correo;
+	public  $archivo;
 
     public function index()
     {
@@ -151,13 +152,13 @@ class CuponController extends Controller
                     $pdf->loadHTML($html)->save('pdfs/'.$nombre_pdf.'.pdf');
                     //Envio de correo
 				
-                    $archivo = $rutaGuardado.$nombre_pdf.'pdf';
+                    $this->archivo = $rutaGuardado.$nombre_pdf.'.pdf';
 					$data='Envio del detalle de la compra';
-					
-                    Mail::raw('nota ' , function ($message) {
+					$this->correo=$_SESSION['session']["correo"];
+                    Mail::raw($data, function ($message) {
                         $message->from('yam182141@gmail.com', 'Laravel');
                         $message->to($this->correo)->cc('bar@example.com');
-                        $message->attach('pdfs/prueba.pdf');
+                        $message->attach($this->archivo);
                     });
                     $_SESSION['CARRITO']=array();
                     redirect()->to('/gracias')->send();
