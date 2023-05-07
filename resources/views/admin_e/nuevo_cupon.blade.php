@@ -26,7 +26,8 @@
             
             <!--OJO-->
             <div class="wrap-login"> 
-                <form action="index.php?c=cliente&a=nuevo" method="post"> 
+                <form action="/MenuEmpresa/create" method="post"> 
+                    @csrf
                             <?php
                             if(isset($errores)){
                                 if(count($errores)>0){

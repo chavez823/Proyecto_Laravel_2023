@@ -89,6 +89,7 @@ Route::get('/Empresa/menuadmin', [EmpresaController::class,'menuadmin']);
 //Rutas para la gestion de las ofertas
 Route::get('/MenuEmpresa', [OfertaController::class, 'index']);
 Route::get('/MenuEmpresa/create', [OfertaController::class, 'create']);
+Route::post('/MenuEmpresa/create', [OfertaController::class,'store']);
 
 /*Route::get('/', function () {
     return view('welcome');
