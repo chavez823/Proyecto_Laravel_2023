@@ -1,8 +1,10 @@
 <header>
     <!--Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     
-    
+    <!--Icono-->
+    <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
     <!--Propio-->       
     <link rel="stylesheet" href="{{asset('css/oferta_style.css')}}">
 
@@ -14,7 +16,8 @@
 	$fechaActual = date('Y-m-d');
 ?>
 
-<div class="container-login">
+<br>
+<div class="container-login" style="margin-top: 10px;">
     
         <form action="/Empresa/Estado/<?=$oferta[0]->ID_Oferta?>&<?php echo (strtotime($fechaActual)<strtotime($oferta[0]->FechaInicio)?2:3) ?>" method="post">
 			@csrf
@@ -48,7 +51,10 @@
                         <button type="submit" class="btn btn-success">
 	   		                Aceptar
 	  	                </button>        
-                          <a href="#delete<?=$oferta[0]->ID_Oferta?>" data-toggle="modal" class="btn btn-danger" aria-disabled="false">Rechazar</a>                                                                                    
+                        <!---a--- href="#delete<?=$oferta[0]->ID_Oferta?>" data-toggle="modal" class="btn btn-danger" aria-disabled="false">Rechazar</-a--->        
+                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete<?=$oferta[0]->ID_Oferta?>">
+                            Rechazar
+                        </button>                                                                                                    
                     </div>		
 
                     <div class="column_2">
@@ -82,17 +88,17 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
-			<center><h4 class="modal-title" id="myModalLabel">Escriba una justificación para el rechazo para la oferta: {{$oferta[0]->Titulo}}</h4></center>
+			<center><h4 class="modal-title" id="myModalLabel">Escriba una justificación para el rechazo para la oferta: <bold>{{$oferta[0]->Titulo}}</bold>  </h4></center>
             <center>
 				<form action="/Empresa/Estado/<?=$oferta[0]->ID_Oferta?>&5" method="post">
 				@csrf
 				@method('PUT')
 				<div class="modal-body">	
-					<input classs="form-data"type="text" id="justificacion" name="justificacion">
+					<input classs="form-data"type="text" id="justificacion" name="justificacion" placeholder="Justificacion">
 				</div>
 				</center>
 				<div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                 <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span> Confirmar</a>
 			</form>
             </div>
@@ -102,4 +108,6 @@
 <!-- Final modal -->
 <script src="{{asset('js/jquery.min.js')}}"></script>
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 @endsection
