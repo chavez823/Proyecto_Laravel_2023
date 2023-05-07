@@ -47,14 +47,12 @@ class RubroController extends Controller
       return view("admin_b.listarubros",$data );
     }
 
-    public function vereditar(Request $request, $id )
+    public function vereditar(string $id )
     {
-        $rubros=Rubro::find($id);
-
-
+        $rubros=Rubro::Where('ID_Rubro',$id)->get();
         $data=array();
         $data['rubros']=$rubros;
-        return view("admin_b.listarubros",$data );
+        return view("admin_b.editarrubro",$data );
     }
 
 
@@ -62,13 +60,17 @@ class RubroController extends Controller
  /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, string $id)
     {
         //
-        $request->validate([]);
+        $request->validate([
+'name'=>'required',
+'id'=>'required',
 
-       // $rubro=Rubro::update('ID_Rubro', )->Update()->where();
-        //redirect()->to('/Empresa')->send();
+        ]);
+
+        $rubro=Rubro::where('ID_Rubro',$id )->update(['ID_Rubro' => $request->id, 'Nombre' => $request->name  ]);
+        redirect()->to('/Empresa')->send();
 
 
 

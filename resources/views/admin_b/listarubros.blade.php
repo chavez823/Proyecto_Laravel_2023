@@ -36,7 +36,7 @@
             <tr>
                 <td width="1%" class="text-center"><?php echo $rubro->ID_Rubro?></td>
                 <td width="1%" class="text-center"><?php echo $rubro->Nombre?></td>
-                <td COLSPAN="2" width="1%"><a href="/rubro/update/<?php echo $rubro->ID_Rubro?>" class="btn btn-warning"><i class="fa-solid fa-file-pen"></i></a>
+                <td COLSPAN="2" width="1%"><a href="/rubro/vereditar/<?php echo $rubro->ID_Rubro?>" class="btn btn-warning"><i class="fa-solid fa-file-pen"></i></a>
                 <a href="/rubro/delete/<?php echo $rubro->ID_Rubro?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a></td>
             </tr>
             <?php 

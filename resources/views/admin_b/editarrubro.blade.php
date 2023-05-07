@@ -26,7 +26,7 @@
             
             <!--OJO-->
             <div class="wrap-login"> 
-                <form action="/Empresa/update/<?php echo $empresa[0]->ID_Empresa?>" method="post"> 
+                <form action="/rubro/update/<?php echo $rubros[0]->ID_Rubro?>" method="post"> 
                     @csrf
                     @method('PUT')
                                                         
@@ -37,66 +37,17 @@
                         <div class="column_1">
                             <!-- Nombre --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="name" placeholder="Nombre Empresa" value="{{@old('name',$empresa[0]->Nombre)}}" >	 
+                                <input class="input100" type="text" name="name" placeholder="Nombre Empresa" value="{{@old('name',$rubros[0]->Nombre)}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
 
                             <!-- Direccion --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="direccion" placeholder="Direccion" value="{{@old('direccion',$empresa[0]->Direccion)}}" >	 
+                                <input class="input100" type="text" name="id" placeholder="Direccion" value="{{@old('id',$rubros[0]->ID_Rubro)}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div> 
 
-                            <!--Telefono del Representante-->
-                            <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="telefono" placeholder="Telefono" value="{{@old('telefono',$empresa[0]->Telefono)}}" >	 
-                                <span class="focus-efecto"></span> 
-                            </div>
-                            
-                            <!--Rubro-->
-                            <div class="wrap-input100"> 
-                                <!--<input class="input100" type="text" name="rubro" placeholder="Rubro" value="<?php //Aqui ira el isset para los valores?>"> 
-                                <span class="focus-efecto"></span>-->
-                                <select class="input100 s_ele"  >
-                                    <option class="input100" value="Salud">Salud</option>
-                                    <span class="focus-efecto"></span>
-                                    <option class="input100" value="Belleza">Belleza</option>
-                                    <span class="focus-efecto"></span>
-                                    <option class="input100" value="Mecanica">Mecanica</option>
-                                    <span class="focus-efecto"></span>
-                                    
-                                </select>
-
-                            </div>
-                            
-                        </div>		
-
-                        <div class="column_2">
-                            <!-- Codigo Empresa --> 
-                            <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="cod_empo" placeholder="Codigo Empresa" value="{{@old('cod_empo',$empresa[0]->ID_Empresa)}}" disabled> 
-                                <span class="focus-efecto"></span> 
-                            </div>
-                            <!--Representante empresa-->
-                            <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="name_r" placeholder="Nombre Representante" value="{{@old('name_r',$empresa[0]->NombreContacto)}}"> 
-                                <span class="focus-efecto"></span> 
-                            </div>
-
-                            <!--Correo representante-->
-                            <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="correo" placeholder="Correo" value="{{@old('correo',$empresa[0]->Correo)}}"> 
-                                <span class="focus-efecto"></span> 
-                            </div>
-                            
-                            <!--Porcentaje Comision-->
-                            <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="porcet" placeholder="Porcentaje Comision" value="{{@old('porcet',$empresa[0]->PorcentajeComision)}}"> 
-                                <span class="focus-efecto"></span> 
-                            </div>
-
-                        </div>
-                    </div>                    
+                                   
                     <button type="submit" name="enviar" class="sesion">
                         Actualizar Rubro
                     </button>
