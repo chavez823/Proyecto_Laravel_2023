@@ -36,7 +36,7 @@
                         <div class="column_1">
                             <!-- Nombre Rubro --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="name_rubro" placeholder="Nombre Rubro" value=""> 
+                                <input class="input100" type="text" name="name_rubro" placeholder="Nombre Rubro" value="{{old('name_rubro')}}"> 
                                 <span class="focus-efecto"></span> 
                             </div>
                             
