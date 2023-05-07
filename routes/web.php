@@ -105,6 +105,9 @@ Route::get('/Empleado', [EmpleadoController::class, 'index']);
 //rutas rubro
 Route::get('/rubro', [RubroController::class, 'index']);
 Route::post('/rubro/crear', [RubroController::class, 'create']);
+Route::get('/rubro/editar', [RubroController::class,'edit']);
+Route::put('/rubro/update/{id}', [RubroController::class,'update']);
+Route::get('/rubro/delete/{id}', [RubroController::class,'destroy']);
 
 
 /*Route::get('/', function () {

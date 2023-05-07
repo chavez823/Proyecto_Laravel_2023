@@ -31,10 +31,90 @@ class RubroController extends Controller
       redirect()->to('/Empresa')->send();
 
     }
+ /**
+     * Show the form for editing the specified resource.
+     */
+    public function edit()
+    {
+
+  $rubros=Rubro::get();
+
+
+  $data=array();
+  $data['rubros']=$rubros;
+
+
+      return view("admin_b.listarubros",$data );
+    }
+
+    public function vereditar(Request $request, $id )
+    {
+        $rubros=Rubro::find($id);
+
+
+        $data=array();
+        $data['rubros']=$rubros;
+        return view("admin_b.listarubros",$data );
+    }
+
+
+
+ /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request)
+    {
+        //
+        $request->validate([]);
+
+       // $rubro=Rubro::update('ID_Rubro', )->Update()->where();
+        //redirect()->to('/Empresa')->send();
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+
+    {
+        $rubro = Rubro::where('ID_Rubro',$id )->delete();
+        redirect()->to('/Empresa')->send();
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Store a newly created resource in storage.
      */
+
+
+
+
+
+
+
+
+
     public function store(Request $request)
     {
         //
@@ -48,27 +128,6 @@ class RubroController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Rubro $rubro)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Rubro $rubro)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Rubro $rubro)
-    {
-        //
-    }
+   
+   
 }
