@@ -4,27 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registro</title>
-    <link rel="stylesheet" href="css/style_signup.css">
-    <!--link rel="stylesheet" href="../css/style_error.css"-->
+    <!--Icono-->
+    <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!--Google Fonst-->
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet"> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-    <!--nose de que son link-->
-    <!--alertas-->
-    <script src="js/alertify.js" type="text/javascript"></script>
-
-	  <!--ICONO-->
-	  <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BUYIT</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!--Propio-->
     <link rel="stylesheet" href="css/style_1.css">
     <link rel="stylesheet" href="css/categories.css">
-
-
+    <link rel="stylesheet" href="css/style_signup.css">
+    <!--alertas-->
+    <script src="js/alertify.js" type="text/javascript"></script>
+    
 </head>
 <body>
 <header>
