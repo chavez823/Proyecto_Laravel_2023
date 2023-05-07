@@ -65,17 +65,20 @@ class ClienteController extends Controller
         $Direccion=$request->direccion; 
         $Token = substr(number_format(time() * rand(), 0, '', ''), 0, 6);
      //  $Token = 15;
-       $clientes = new Cliente();
+      
         $ID_Usuario=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
         $Tipo="Cliente";
         $usuario= new Usuario();
-        $cliente=Cliente::find($Dui);
+        $cliente=Cliente::where('DUI', $Dui )->first();
 
-        if ($cliente->DUI != $Dui ){
+        if ($cliente == null ){
    
            {
-              
-      
+            $clientes = new Cliente();
+            $usuario->insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo);
+
+            $clientes->insertarcliente($Dui,$Nombres, $Apellidos, $Correo, $Telefono, $Direccion, $ID_Usuario,$Token);
+
             Mail::raw($Token , function ($message) use($Correo) {
                 $message->from('yam182141@gmail.com', 'Buyit');
                 $message->to($Correo)->cc('Buyit@example.com');
@@ -83,10 +86,7 @@ class ClienteController extends Controller
              
             });
 
-        $usuario->insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo);
-
-        $clientes->insertarcliente($Dui,$Nombres, $Apellidos, $Correo, $Telefono, $Direccion, $ID_Usuario,$Token);
-
+       
  }}
 
 
