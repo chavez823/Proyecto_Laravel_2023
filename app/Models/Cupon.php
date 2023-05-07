@@ -100,16 +100,54 @@ class Cupon extends Model
             'ID_Estado_Cupon'=>$ID_Estado_Cupon]
         ]);
     }
+
+    /*Para vista *Ver Cupones* */
+    /*1-Canjeado*/
+    /*2-Sin Canjear*/
+    /*3- Vencido*/
+
+    /*Comprados*/
     public function  getCupones($DUI){
         
         $sentencia = DB::table('cupon')
             ->join('cliente', 'cliente.DUI', '=', 'cupon.DUI')
-            ->join('oferta', 'oferta.ID_Oferta', '=', 'cupon.ID_Oferta')
+            ->join('oferta', 'oferta.ID_Oferta', '=', 'cupon.ID_Oferta')            
+            ->join('estado_cupon', 'estado_cupon.ID_Estado_Cupon', '=', 'cupon.ID_Estado_Cupon')
             ->where( 'cupon.DUI', '=', $DUI)
+            //->where('cupon.ID_Estado_Cupon', '=', 2)
             ->select('*')
             ->get();
         return $sentencia;       
     }
+
+    /**Canjeados **/
+    public function  getCupones_canjeados($DUI){
+        
+        $sentencia=DB::table('cupon')
+                ->join('cliente', 'cliente.DUI', '=', 'cupon.DUI')
+                ->join('oferta', 'oferta.ID_Oferta', '=', 'cupon.ID_Oferta')
+                ->where('cupon.DUI', '=', $DUI)
+                ->where('cupon.ID_Estado_Cupon', '=', 1)
+                ->select('*')
+                ->get();
+        return $sentencia;       
+    }
+
+    /** Vencidos **/
+    public function  getCupones_vencidos($DUI){
+        
+        $sentencia=DB::table('cupon')
+                ->join('cliente', 'cliente.DUI', '=', 'cupon.DUI')
+                ->join('oferta', 'oferta.ID_Oferta', '=', 'cupon.ID_Oferta')
+                ->where('cupon.DUI', '=', $DUI)
+                ->where('cupon.ID_Estado_Cupon', '=', 3)
+                ->select('*')
+                ->get();
+        return $sentencia;            
+    }
+
+
+
     public function getCupon($ID_CUPON){
 
         $sentencia = DB::table('cupon')

@@ -167,6 +167,7 @@ class CuponController extends Controller
     }
 
 
+	//Para ver cupones en vista "Ver Cupones"
 		public function ver_cupon(){
 			//si esta definida 
 			//if(!empty($_SESSION['session'])){
@@ -177,6 +178,29 @@ class CuponController extends Controller
             return view('Compras.compras',$data);
         //}
 		}
+
+		public function ver_cupon_vencido(){
+			//si esta definida 
+			//if(!empty($_SESSION['session'])){
+			$model = new Cupon();
+			$DUI=$model->getDUI($_SESSION['session']["correo"])[0]->DUI;
+			$data['vencidos'] =$model->getCupones_vencidos($DUI);
+			//echo var_dump($model->getCupones($DUI));
+            return view('Compras.compras',$data);
+        //}
+		}
+		public function ver_cupon_canjeado(){
+			//si esta definida 
+			//if(!empty($_SESSION['session'])){
+			$model = new Cupon();
+			$DUI=$model->getDUI($_SESSION['session']["correo"])[0]->DUI;
+			$data['canjeados'] =$model->getCupones_canjeados($DUI);
+			//echo var_dump($model->getCupones($DUI));
+            return view('Compras.compras',$data);
+        //}
+		}
+
+		
 		public function generar_cupon($id_cupon){
 					$model = new Cupon();
 					$cupon_detalle=$model->getCupon($id_cupon);//se obtiene el cupon mediante el id del cupon pasado por parametro

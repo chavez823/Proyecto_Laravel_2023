@@ -107,11 +107,15 @@
                 <div class="col-sm-5">
                     <em>Nombre - Cupon</em>
                     <h5><?=$cupon->Titulo?> </h5>
-                    <em><?$cupon->Descripcion?> </em>
+                    <em><?=$cupon->Descripcion?> </em>
                 </div>
                 <div class="col-sm-2">
                     <em>Codigo</em>
                     <h5><?=$cupon->ID_Cupon?></h5>
+                </div>
+                <div class="col-sm-2">
+                    <em>Estado</em>
+                    <h5><?=$cupon->Estado?></h5>
                 </div>
                 <a href="/cupon/<?=$cupon->ID_Cupon?>">Generar PDF</a> 
             </div>
