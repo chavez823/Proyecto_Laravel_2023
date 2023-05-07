@@ -31,7 +31,8 @@ class Rubro extends Model
 	];
 
 	protected $fillable = [
-		'Nombre'
+		'Nombre',
+        'ID_Rubro'
 	];
 
 	public function empresas()

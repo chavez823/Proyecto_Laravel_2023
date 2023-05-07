@@ -12,15 +12,24 @@ class RubroController extends Controller
      */
     public function index()
     {
-        //
+            return view("admin_b.nuevo_rubro");
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+       $request->validate([
+        'name_rubro' => 'required|string',
+
+       ]); 
+
+
+      $id=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+      $rubro = Rubro::insert(['ID_Rubro'=>$id, 'Nombre'=>$request->name_rubro]);
+      redirect()->to('/Empresa')->send();
+
     }
 
     /**
