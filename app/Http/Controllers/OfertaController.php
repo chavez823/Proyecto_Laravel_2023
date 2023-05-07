@@ -11,7 +11,7 @@ class OfertaController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin_e.menu_ad');
     }
 
     /**
@@ -19,7 +19,7 @@ class OfertaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin_e.nuevo_cupon');
     }
 
     /**

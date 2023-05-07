@@ -1,12 +1,13 @@
 <?php
 
-use App\Http\Controllers\CategoriaController;
-use App\Http\Controllers\ClienteController;
-use App\Http\Controllers\InicioController;
-use App\Http\Controllers\UsuarioController;
-use App\Http\Controllers\CuponController;
-use App\Http\Controllers\EmpresaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CuponController;
+use App\Http\Controllers\InicioController;
+use App\Http\Controllers\OfertaController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\EmpresaController;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CategoriaController;
 session_start();
 
 /*
@@ -69,6 +70,7 @@ Route::patch('/nuevocliente/verificacion/verificacion', [ClienteController::clas
 
 //Rutas para la gestion de la empresa
 Route::get('/Empresa', [EmpresaController::class, 'index']);
+
 Route::get('/Empresa/create', [EmpresaController::class, 'create']);
 Route::post('/Empresa/create', [EmpresaController::class,'store']);
 Route::get('Empresa/show', [EmpresaController::class,'show']);
@@ -84,7 +86,9 @@ Route::get('/Empresa/menuadmin', [EmpresaController::class,'menuadmin']);
 
 
 
-
+//Rutas para la gestion de las ofertas
+Route::get('/MenuEmpresa', [OfertaController::class, 'index']);
+Route::get('/MenuEmpresa/create', [OfertaController::class, 'create']);
 
 /*Route::get('/', function () {
     return view('welcome');
