@@ -156,7 +156,7 @@ class CuponController extends Controller
 					$data='Envio del detalle de la compra';
 					$this->correo=$_SESSION['session']["correo"];
                     Mail::raw($data, function ($message) {
-                        $message->from('yam182141@gmail.com', 'Laravel');
+                        $message->from('yam182141@gmail.com', 'BuyIt');
                         $message->to($this->correo)->cc('bar@example.com');
                         $message->attach($this->archivo);
                     });

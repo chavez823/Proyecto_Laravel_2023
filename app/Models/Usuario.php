@@ -98,7 +98,6 @@ public function insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apel
         ['Nombres'=>$Nombres,'Apellidos'=>$Apellidos,'Contrasenia'=>$Contrasenia,'Correo'=>$Correo,'ID_Usuario'=>$ID_Usuario,'Tipo'=>$Tipo, 'Token'=>Null ]
 
     ]);
-
 }
 
 	public function clientes()

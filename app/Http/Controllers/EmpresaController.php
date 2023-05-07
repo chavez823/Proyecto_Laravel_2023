@@ -1,15 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Empresa;
-use App\Models\Cliente;
 use App\Models\Cupon;
-use Illuminate\Support\Facades\DB;
+use App\Models\Cliente;
+use App\Models\Empresa;
+use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 
 class EmpresaController extends Controller
 {
+    public $correo_admin_empresa;
     /**
      * Display a listing of the resource.
      */
@@ -37,8 +40,33 @@ class EmpresaController extends Controller
     public function store(Request $request)
     {
         $empresa = new Empresa();
-        $empresa->insertar_empresa($request->cod_empo,$request->name,$request->direccion,$request->name_r,$request->telefono,$request->correo,$request->porcet,1);
+        $admin_empresa = new usuario();
+        $user= Usuario::where('Correo', $request->correo )->first();
+        if($user == null){
+        $empresa->insertar_empresa($request->cod_empo,$request->name,
+        $request->direccion,$request->name_r,$request->telefono,$request->correo,
+        $request->porcet,1);
+        $Contrasenia=rand(1,100);
+		for ($i=0; $i < 2; $i++) { 
+		    $Contrasenia .= rand(1,100);
+		}
+        $ID_Usuario=rand(1,100);
+		for ($i=0; $i < 2; $i++) { 
+		    $ID_Usuario .= rand(1,100);
+		}
+        $this->correo_admin_empresa=$request->correo;
+        Mail::raw('Envio de contraseña es: '.$Contrasenia, function ($message) {
+            $message->from('yam182141@gmail.com', 'BuyIt'); 
+            $message->to($this->correo_admin_empresa)->cc('bar@example.com');
+        });
+        $Tipo="Admnistrador_Empresa";
+        $admin_empresa->insertarusuario($Contrasenia,$request->correo,$ID_Usuario,$request->name_r,
+        $request->name_r,$Tipo);
         return view("admin_b.menu_buy_ad");
+        }
+        else{
+            return back()->with( 'errorlo', '!CORREO EN USO!');
+        }  
     }
 
     /**

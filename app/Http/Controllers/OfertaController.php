@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Oferta;
 use Illuminate\Http\Request;
 
 class OfertaController extends Controller
@@ -29,15 +29,19 @@ class OfertaController extends Controller
     {
         @dump($request->titulo);
         @dump($request->cantidad);
-        @dump($request->fecha_i);
         @dump($request->descrip);
-        @dump($request->precio_o);
-        @dump($request->fecha_f);
-        @dump($request->titulo);
-        @dump($request->imgen);
         @dump($request->detalles);
+        @dump($request->fecha_i);
+        @dump($request->fecha_f);
         @dump($request->precio_inicial);
+        @dump($request->precio_o);
+        @dump($request->imgen);
         @dump($request->fecha_limite);
+        @dump($_FILES['imagen']['name'][0]);
+
+     
+       
+        
     }
 
     /**

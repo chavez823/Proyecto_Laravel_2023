@@ -26,7 +26,7 @@
             
             <!--OJO-->
             <div class="wrap-login"> 
-                <form action="/MenuEmpresa/create" method="post"> 
+                <form action="/MenuEmpresa/create" method="post" enctype="multipart/form-data"> 
                     @csrf
                             <?php
                             if(isset($errores)){
@@ -122,7 +122,7 @@
 
                             <!-- imagen --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" name="imagen" type="file"> 
+                                <input class="input100" name="imagen[]" type="file" multiple="multiple"> 
                                 <span class="focus-efecto"></span>
                             </div>
                         </div>

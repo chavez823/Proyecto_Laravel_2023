@@ -28,6 +28,11 @@
             <div class="wrap-login"> 
                 <form action="/Empresa/create" method="post"> 
                     @csrf
+                    @if(Session::has('errorlo'))
+                        <div class='alert alert-danger' role='role'>
+                          {{session::get('errorlo')}}
+                        </div>
+                    @endif
                             <?php
                             /*if(isset($errores)){
                                 if(count($errores)>0){
