@@ -53,27 +53,21 @@ class EmpleadoController extends Controller
              
             });
 
-       
+    }
 
+    public function verempleados(){
 
+$empleados=Empleado::join('Usuario', 'usuario.ID_Usuario', '=', 'empleado.ID_Usuario')
+->join('empresa', 'empleado.ID_Empresa', '=', 'empresa.ID_Empresa')
+->select('Usuario.Nombres','Usuario.Apellidos','Usuario.Correo', 'Empleado.ID_Empleado','empresa.ID_Empresa')
+->where('empresa.ID_Empresa', $_SESSION['id_empresa'])
+->get();
 
+$data=array();
+           $data['empleados']=$empleados;
+//return view("admin_e.listaempleados.", $data);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+return $empleados;
 
 
 
