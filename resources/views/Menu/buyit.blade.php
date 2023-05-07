@@ -3,8 +3,8 @@
 
   <head>
     <meta charset="utf-8">
-    <!--ICONO-->
-    <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon">
+    <!--Icono-->
+    <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>BUYIT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -93,21 +93,21 @@
   </div>
   <div class=" forma carousel-inner">
     <div class="carousel-item active">
-      <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg" class="d-block w-100" alt="...">
+      <img src="https://cdn.pixabay.com/photo/2022/09/23/07/58/squid-7473908_1280.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>First slide label</h5>
         <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_1280.jpg" class="d-block w-100" alt="...">
+      <img src="https://cdn.pixabay.com/photo/2021/04/13/17/14/food-6176244_1280.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Second slide label</h5>
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="...">
+      <img src="https://cdn.pixabay.com/photo/2020/03/22/08/43/sushi-4956246_1280.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
