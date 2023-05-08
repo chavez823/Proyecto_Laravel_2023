@@ -38,7 +38,7 @@
           <?php if(isset($_SESSION['session'])) {
           if($_SESSION['session']['tipo'] =='Administrador') { ?>
           <li class="nav-item">
-                <a class="nav-link" href="/Empresa">Menu Administrador uyit</a>
+                <a class="nav-link" href="/Empresa">Administrativo</a>
               </li>
               <?php  } elseif($_SESSION['session']['tipo'] =='Administrador_Empresa'){ ?>  
           <li class="nav-item">
