@@ -97,12 +97,15 @@ Route::post('/MenuEmpresa/create', [OfertaController::class,'store']);
 Route::get('/Empresa/vercliente', [EmpresaController::class, 'vercliente']);
 
 
+
 //Ruta empleados
 
 Route::get('/Empleado', [EmpleadoController::class, 'index']);
 Route::post('/Empleado/nuevo', [EmpleadoController::class, 'create']);
 Route::get('/Empleado/ver', [EmpleadoController::class, 'verempleados']);
-
+Route::get('/Empleado/vereditar/{id}', [EmpleadoController::class,'vereditarempleado']);
+Route::put('/Empleado/update/{id}', [EmpleadoController::class,'update']);
+Route::get('/Empleado/delete/{id}', [EmpleadoController::class,'destroy']);
 
 //rutas rubro
 Route::get('/rubro', [RubroController::class, 'index']);

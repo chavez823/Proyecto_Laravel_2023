@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,33 +26,43 @@
             
             <!--OJO-->
             <div class="wrap-login_"> 
-                <form action="index.php?c=cliente&a=nuevo" method="post"> 
+                <form action="/Empleado/update/<?php echo $empleados[0]->ID_Empleado?>" method="post"> 
                                                        
                 @csrf
                     @method('PUT')
                     <span class="login-form-title">Registrar Empleado</span> 
                           		
-                    <div class="c_">
-                        <div class="c_ol">
-                         <!-- Nombre --> 
-                         <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="name" placeholder="Nombre" value="{{old('name')}}" >	 
-                                <span class="focus-efecto"></span> 
-                            </div>                            
-                            <!-- Correo --> 
+                    <div class="container_c">                                       
+                        <div class="column_1">
+                            <!-- Nombre --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="email" placeholder="Correo" value="{{old('email')}}" >	 
+                                <input class="input100" type="text" name="id_e" placeholder="Nombre Empresa" value="{{@old('id_e',$empleados[0]->ID_Empresa)}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
-                            <!-- Apellido --> 
+
+                            <!-- Direccion --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="apellido" placeholder="Apellido" value="{{old('apellido')}}"> 
+                                <input class="input100" type="text" name="id_emp" placeholder="Direccion" value="{{@old('id_emple',$empleados[0]->ID_Empleado)}}" >	 
                                 <span class="focus-efecto"></span> 
-                            </div>                                            
+                            </div> 
+
+                            
+                        </div>		
+
+                        <div class="column_2">
+                            <!-- Codigo Empresa --> 
+                            <div class="wrap-input100"> 
+                                <input class="input100" type="text" name="id_u" placeholder="Codigo Empresa" value="{{@old('id_u',$empleados[0]->ID_Usuario)}}" disabled> 
+                                <span class="focus-efecto"></span> 
+                            </div>
+                            <!--Representante empresa-->
+                            <div class="wrap-input100"> 
+                                <input class="input100" type="text" name="tipo" placeholder="Nombre Representante" value="{{@old('tipo',$empleados[0]->Tipo)}}"> 
+                                <span class="focus-efecto"></span> 
+                            </div>
+
+                     
                         </div>
-
-                        
-
                     </div>                    
                     <button type="submit" name="enviar" class="sesion_">
                         Editar Empleado

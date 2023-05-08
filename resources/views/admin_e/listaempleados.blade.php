@@ -17,33 +17,36 @@
   </head>
   <body >
     <div class="data">
-    <h2><strong>Empresas</strong></h2>
+    <h2><strong>Empleados</strong></h2>
     <center>
     <div class="col-sm-11 col-sm-offset-1">
     <table class="uk-table uk-table-divider uk-table-hover">
         <tbody>
             <tr>
-                <th width="15%" class="text-center"><strong>Código</strong></th>
-                <th width="5%" class="text-center"><strong>Nombre</strong></th>
-                <th width="5%" class="text-center"><strong>Contacto</strong></th>
+   
+                <th width="10%" class="text-center"><strong>Nombres</strong></th>
+                <th width="5%" class="text-center"><strong>Apellidos</strong></th>
                 <th width="5%" class="text-center"><strong>Correo</strong></th>
-                <th width="15%" class="text-center"><strong>Porcentaje</strong></th>
-                <th width="1%"></th>
-                <th width="1%"></th>
+                <th width="5%" class="text-center"><strong>ID_Empleado</strong></th>
+                <th width="5%" class="text-center"><strong>Tipo</strong></th>
+                <th width="5%" class="text-center"><strong>ID_Empresa</strong></th>
+                <th width="2%">Acciones</th>
+                
             </tr>
            
             <?php 
-                foreach ($empresas as $empresa) { 
+                foreach ($empleados as $empleado) { 
             ?>
                
             <tr>
-                <td width="15%" class="text-center"><?php echo $empresa->ID_Empresa?></td>
-                <td width="5%" class="text-center"><?php echo $empresa->Nombre?></td>
-                <td width="5%" class="text-center"><?php echo $empresa->NombreContacto?></td>
-                <td width="5%" class="text-center"> <?php echo $empresa->Correo?></td>
-                <td width="15%" class="text-center"> <?php echo $empresa->PorcentajeComision?></td>
-                <td width="1%"><a href="/Empresa/edit/<?php echo $empresa->ID_Empresa?>" class="btn btn-warning"><i class="fa-solid fa-file-pen"></i></a></td>
-                <td width="1%"><a href="/Empresa/delete/<?php echo $empresa->ID_Empresa?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a></td> 
+                <td width="10%" class="text-center"><?php echo $empleado->Nombres?></td>
+                <td width="5%" class="text-center"><?php echo $empleado->Apellidos?></td>
+                <td width="5%" class="text-center"> <?php echo $empleado->Correo?></td>
+                <td width="5%" class="text-center"> <?php echo $empleado->ID_Empleado?></td>
+                <td width="5%" class="text-center"> <?php echo $empleado->Tipo?></td>
+                <td width="5%" class="text-center"> <?php echo $empleado->ID_Empresa?></td>
+                <td COLSPAN="2" width="1%"><a href="/Empleado/vereditar/<?php echo $empleado->ID_Empleado?>" class="btn btn-warning"><i class="fa-solid fa-file-pen"></i></a>
+                <a href="/Empleado/delete/<?php echo $empleado->ID_Empleado?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a></td> 
             </tr>
             <?php 
                 }

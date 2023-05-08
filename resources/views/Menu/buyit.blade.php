@@ -35,12 +35,17 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <?php if(isset($_SESSION['session'])) {
+          if($_SESSION['session']['tipo'] =='Administrador') { ?>
           <li class="nav-item">
-                <a class="nav-link" href="/Empresa">menuadmin  buyit</a>
+                <a class="nav-link" href="/Empresa">Menu Administrador uyit</a>
               </li>
+              <?php  } else{ ?>  
           <li class="nav-item">
-                <a class="nav-link" href="/Empresa/menuadmin">menuadmin e</a>
+                <a class="nav-link" href="/Empresa/menuadmin">Menu Administrador_Empresa</a>
               </li>
+
+               <?php } }  ?>  
               <li class="nav-item">
                 <a class="nav-link" href="Categoria">Categorias</a>
               </li>

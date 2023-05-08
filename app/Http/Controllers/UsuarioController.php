@@ -89,6 +89,7 @@ $request->validate([
                 $request->session()->regenerate();
                 $_SESSION['session']["nombre"]= $user->Nombres;
                 $_SESSION['session']["correo"]= $request->email;
+                $_SESSION['session']["tipo"]= $user->Tipo;
                 $id=Usuario::join('empleado', 'usuario.ID_Usuario', '=', 'empleado.ID_Usuario')
                 ->join('empresa', 'empleado.ID_Empresa', '=', 'empresa.ID_Empresa')
                 ->select('empresa.ID_Empresa')
@@ -108,6 +109,7 @@ elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->To
                 $request->session()->regenerate();
                 $_SESSION['session']["nombre"]= $user->Nombres;
                 $_SESSION['session']["correo"]= $request->email;
+                $_SESSION['session']["tipo"]= $user->Tipo;
                 $id=Usuario::join('empleado', 'usuario.ID_Usuario', '=', 'empleado.ID_Usuario')
                 ->join('empresa', 'empleado.ID_Empresa', '=', 'empresa.ID_Empresa')
                 ->select('empresa.ID_Empresa')
