@@ -112,7 +112,7 @@
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://cdn.pixabay.com/photo/2020/03/22/08/43/sushi-4956246_1280.jpg" class="d-block w-100" alt="...">
+      <img src="https://cdn.pixabay.com/photo/2020/03/22/08/43/sushi-4956246_1280.jpg" class="d-block w-100 " alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
