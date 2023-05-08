@@ -6,7 +6,7 @@ use App\Models\Empleado;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
-
+use Illuminate\Validation\Rule;
 
 class EmpleadoController extends Controller
 {
@@ -92,10 +92,10 @@ return view("admin_e.listaempleados", $data);
     {
         //
         $request->validate([
-            'id_e'=>'required',
-'id_emp'=>'required',
-'id_u'=>'required',
-'tipo'=>'required',
+            'id_e'=>'required|numeric',
+'id_emp'=>'required|numeric',
+'id_u'=>'required|numeric',
+'tipo'=>'required|regex:/^[\pL\s\-]+$/u',
 
         ]);
 

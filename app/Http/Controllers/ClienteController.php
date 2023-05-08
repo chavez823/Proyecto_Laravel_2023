@@ -51,7 +51,7 @@ class ClienteController extends Controller
             'apellido'=>['required','regex:/^[\pL\s\-]+$/u'],
             'telefono'=>['required','numeric', 'min:8'],
             'direccion'=>['required','regex:/^[\pL\s\-]+$/u'],
-            'email'=>['required', 'email'],
+            'email'=>['required', 'email','unique:Usuario,Correo', 'unique:Cliente,Correo'],
             'password'=>['required'],
             
             ]);
