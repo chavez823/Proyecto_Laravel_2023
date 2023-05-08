@@ -40,7 +40,7 @@
           <li class="nav-item">
                 <a class="nav-link" href="/Empresa">Menu Administrador uyit</a>
               </li>
-              <?php  } else{ ?>  
+              <?php  } elseif($_SESSION['session']['tipo'] =='Administrador_Empresa'){ ?>  
           <li class="nav-item">
                 <a class="nav-link" href="/Empresa/menuadmin">Menu Administrador_Empresa</a>
               </li>
