@@ -109,10 +109,10 @@ return view("admin_e.listaempleados", $data);
        
         $empleados=Usuario::join('empleado', 'usuario.ID_Usuario', '=', 'empleado.ID_Usuario')
         ->select('empleado.ID_Empleado', 'Nombres', 'Apellidos', 'usuario.Correo', 'empleado.Tipo')
-        ->Where('ID_Empleado',$id)->update(['empleado.ID_Empleado'=>$request->id_emp,'Nombres'=> $request->nombre , 'Apellidos' => $request->apellido, 'usuario.Correo' => $request->correo, 'empleado.Tipo'=> $request->tipo ])->get();
+        ->Where('ID_Empleado',$id)->update(['empleado.ID_Empleado'=>$request->id_emp,'Nombres'=> $request->nombre , 'Apellidos' => $request->apellido, 'usuario.Correo' => $request->correo, 'empleado.Tipo'=> $request->tipo ]);
        
        
-        redirect()->to('/Empresa')->send();
+        redirect()->to('/Empresa/menuadmin')->send();
 
     }
 

@@ -81,7 +81,7 @@
                             <!-- Codigo Empresa --> 
                             <div class="wrap-input100"> 
                                 <label>Correo</label>
-                                <input class="input100" type="text" name="correo" placeholder="Correo" value="{{@old('correo',$empleados[0]->Correo)}}" disabled> 
+                                <input class="input100" type="text" name="correo" placeholder="Correo" value="{{@old('correo',$empleados[0]->Correo)}}" > 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
                       
