@@ -46,10 +46,10 @@ class ClienteController extends Controller
     {
         //
         $request->validate([
-            'dui'=>['required','min:9'],
+            'dui'=>['required','numeric','min:9','unique:Cliente,Dui'],
             'name'=>['required'],
             'apellido'=>['required'],
-            'telefono'=>['required', 'min:8'],
+            'telefono'=>['required','numeric', 'min:8'],
             'direccion'=>['required'],
             'email'=>['required', 'email'],
             'password'=>['required'],
@@ -71,9 +71,9 @@ class ClienteController extends Controller
         $usuario= new Usuario();
         $cliente=Cliente::where('DUI', $Dui )->first();
 
-        if ($cliente == null ){
+       /* if ($cliente == null ){
    
-           {
+           {*/
             $clientes = new Cliente();
             $usuario->insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo);
 
@@ -87,10 +87,10 @@ class ClienteController extends Controller
             });
 
        
- }}
+ //}}
 
 
-return back()->with( 'errorcli', 'El Dui ya esta registrado');
+//return back()->with( 'errorcli', 'El Dui ya esta registrado');
        
 
 

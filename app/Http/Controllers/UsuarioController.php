@@ -126,12 +126,12 @@ elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->To
 
 
 
+//session()->flash('errorlogin', 'Correo y/o  Contraseña incorrectos');
 
-
-            
-    return back()->with( 'errorlo', 'Correo y/o  Contraseña incorrectos');
+//redirect()->to('form')->send();
+   return back()->with( 'errorlo', 'Correo y/o  Contraseña incorrectos');
      
-    
+    //return to_route('form');
        // return view('Usuario.login' );
 
       }
