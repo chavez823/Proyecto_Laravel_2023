@@ -47,10 +47,10 @@ class ClienteController extends Controller
         //
         $request->validate([
             'dui'=>['required','numeric','min:9','unique:Cliente,Dui'],
-            'name'=>['required'],
-            'apellido'=>['required'],
+            'name'=>['required', 'regex:/^[\pL\s\-]+$/u'],
+            'apellido'=>['required','regex:/^[\pL\s\-]+$/u'],
             'telefono'=>['required','numeric', 'min:8'],
-            'direccion'=>['required'],
+            'direccion'=>['required','regex:/^[\pL\s\-]+$/u'],
             'email'=>['required', 'email'],
             'password'=>['required'],
             
