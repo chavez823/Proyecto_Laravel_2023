@@ -177,8 +177,8 @@
         </div>     
     </div>
 <?php
-    }
-  }
+    } 
+  }  
 ?>
 
 <div class="row" style="margin-top: 10px;">
@@ -192,7 +192,7 @@
   <?php
   //Pruebas
   foreach ($cupones as $cupon) {
-      if($cupon->Estado=="Sin canjear"){
+      if($cupon->Estado=="Vencido"){
   ?>
   <!-- Todo lo de abajo se tendra que repetir en el foreach para leer los datos de la base-->
   
