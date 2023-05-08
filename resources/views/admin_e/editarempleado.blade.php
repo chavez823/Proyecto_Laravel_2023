@@ -31,38 +31,76 @@
                 @csrf
                     @method('PUT')
                     <span class="login-form-title">Editar Empleado</span> 
-                          		
+                  
                     <div class="container_c">                                       
                         <div class="column_1">
                             <!-- Nombre --> 
                             <div class="wrap-input100"> 
-                                <label>Codigo Empresa</label>
-                                <input class="input100" type="text" name="id_e" placeholder="Nombre Empresa" value="{{@old('id_e',$empleados[0]->ID_Empresa)}}" >	 
+                                <label>Nombre</label>
+                                <input class="input100" type="text" name="nombre" placeholder="Nombre" value="{{@old('nombre',$empleados[0]->Nombres)}}" >	 
                                 <span class="focus-efecto"></span> 
+                                @if($errors->any())
+                      
+                     
+                      {!!$errors->first('nombre','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif   
                             </div>
 
                             <!-- Direccion --> 
                             <div class="wrap-input100"> 
-                            <label>ID Empleado</label>
-                                <input class="input100" type="text" name="id_emp" placeholder="Direccion" value="{{@old('id_emple',$empleados[0]->ID_Empleado)}}" >	 
+                            <label>Apellido</label>
+                                <input class="input100" type="text" name="apellido" placeholder="Apellido" value="{{@old('apellido',$empleados[0]->Apellidos)}}" >	 
                                 <span class="focus-efecto"></span> 
+                                @if($errors->any())
+                      
+                     
+                      {!!$errors->first('apellido','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif   
                             </div> 
 
+                                <!-- Direccion --> 
+                                <div class="wrap-input100"> 
+                            <label>ID_Empleado</label>
+                                <input class="input100" type="text" name="id_emp" placeholder="ID_Empleado" value="{{@old('id_empl',$empleados[0]->ID_Empleado)}}" >	 
+                                <span class="focus-efecto"></span> 
+                                @if($errors->any())
+                      
+                     
+                      {!!$errors->first('id_emp','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif   
+                            </div> 
+
+ 
                             
                         </div>		
 
                         <div class="column_2">
                             <!-- Codigo Empresa --> 
                             <div class="wrap-input100"> 
-                                <label>ID USUARIO</label>
-                                <input class="input100" type="text" name="id_u" placeholder="Codigo Empresa" value="{{@old('id_u',$empleados[0]->ID_Usuario)}}" disabled> 
+                                <label>Correo</label>
+                                <input class="input100" type="text" name="correo" placeholder="Correo" value="{{@old('correo',$empleados[0]->Correo)}}" disabled> 
                                 <span class="focus-efecto"></span> 
+                                @if($errors->any())
+                      
+                     
+                      {!!$errors->first('correo','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif   
                             </div>
                             <!--Representante empresa-->
                             <div class="wrap-input100"> 
                                 <label>Tipo de Empleado</label>
-                                <input class="input100" type="text" name="tipo" placeholder="Nombre Representante" value="{{@old('tipo',$empleados[0]->Tipo)}}"> 
+                                <input class="input100" type="text" name="tipo" placeholder="Tipo" value="{{@old('tipo',$empleados[0]->Tipo)}}"> 
                                 <span class="focus-efecto"></span> 
+                                @if($errors->any())
+                      
+                     
+                      {!!$errors->first('tipo','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                      
+                        @endif   
                             </div>
 
                      

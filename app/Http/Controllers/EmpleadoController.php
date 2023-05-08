@@ -49,7 +49,7 @@ class EmpleadoController extends Controller
             Mail::raw($Contrasenia , function ($message) use($Correo) {
                 $message->from('yam182141@gmail.com', 'Buyit');
                 $message->to($Correo)->cc('Buyit@example.com');
-                redirect()->to('/')->send();
+                redirect()->to('/Empresa/menuadmin')->send();
              
             });
 
@@ -75,11 +75,15 @@ return view("admin_e.listaempleados", $data);
 
     public function vereditarempleado(string $id )
     {
-        $empleados=Empleado::Where('ID_Empleado',$id)->get();
-        $data=array();
-        $data['empleados']=$empleados;
+        //$empleados=Empleado::Where('ID_Empleado',$id)->get();
+       
 
-        
+    $empleados=Usuario::join('empleado', 'usuario.ID_Usuario', '=', 'empleado.ID_Usuario')
+    ->select('empleado.ID_Empleado', 'Nombres', 'Apellidos', 'usuario.Correo', 'empleado.Tipo')
+    ->Where('ID_Empleado',$id)->get();
+    $data=array();
+    $data['empleados']=$empleados;
+//return $empleados;
        return view("admin_e.editarempleado",$data );
     }
 
@@ -92,14 +96,22 @@ return view("admin_e.listaempleados", $data);
     {
         //
         $request->validate([
-            'id_e'=>'required|numeric',
+            'nombre'=>'required|regex:/^[\pL\s\-]+$/u',
+            'apellido'=>'required|regex:/^[\pL\s\-]+$/u',
 'id_emp'=>'required|numeric',
-'id_u'=>'required|numeric',
-'tipo'=>'required|regex:/^[\pL\s\-]+$/u',
+'correo'=>'required|email',
+'tipo'=>'required',
 
         ]);
 
-        $rubro=Empleado::where('ID_Empleado',$id )->update(['ID_Empleado' => $request->id_e, 'ID_Empresa' => $request->id_emp, 'ID_Usuario' => $request->id_u,'Tipo' => $request->tipo ]);
+       // $rubro=Empleado::where('ID_Empleado',$id )->update(['ID_Empleado' => $request->id_e, 'ID_Empresa' => $request->id_emp, 'ID_Usuario' => $request->id_u,'Tipo' => $request->tipo ]);
+       
+       
+        $empleados=Usuario::join('empleado', 'usuario.ID_Usuario', '=', 'empleado.ID_Usuario')
+        ->select('empleado.ID_Empleado', 'Nombres', 'Apellidos', 'usuario.Correo', 'empleado.Tipo')
+        ->Where('ID_Empleado',$id)->update(['empleado.ID_Empleado'=>$request->id_emp,'Nombres'=> $request->nombre , 'Apellidos' => $request->apellido, 'usuario.Correo' => $request->correo, 'empleado.Tipo'=> $request->tipo ])->get();
+       
+       
         redirect()->to('/Empresa')->send();
 
     }
