@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet">
     <!--Bootstrap--> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Registrar Nueva Empresa</title>
+    <title>Editar Informacion Empelado</title>
     <!--css-->
-    <link rel="stylesheet" href="css/style_ofer.css">
+    <link rel="stylesheet" href="{{asset('css/style_ofer.css')}}">
 </head>
 <body>
     <header>
@@ -30,18 +30,20 @@
                                                        
                 @csrf
                     @method('PUT')
-                    <span class="login-form-title">Registrar Empleado</span> 
+                    <span class="login-form-title">Editar Empleado</span> 
                           		
                     <div class="container_c">                                       
                         <div class="column_1">
                             <!-- Nombre --> 
                             <div class="wrap-input100"> 
+                                <label>Codigo Empresa</label>
                                 <input class="input100" type="text" name="id_e" placeholder="Nombre Empresa" value="{{@old('id_e',$empleados[0]->ID_Empresa)}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
 
                             <!-- Direccion --> 
                             <div class="wrap-input100"> 
+                            <label>ID Empleado</label>
                                 <input class="input100" type="text" name="id_emp" placeholder="Direccion" value="{{@old('id_emple',$empleados[0]->ID_Empleado)}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div> 
@@ -52,11 +54,13 @@
                         <div class="column_2">
                             <!-- Codigo Empresa --> 
                             <div class="wrap-input100"> 
+                                <label>ID USUARIO</label>
                                 <input class="input100" type="text" name="id_u" placeholder="Codigo Empresa" value="{{@old('id_u',$empleados[0]->ID_Usuario)}}" disabled> 
                                 <span class="focus-efecto"></span> 
                             </div>
                             <!--Representante empresa-->
                             <div class="wrap-input100"> 
+                                <label>Tipo de Empleado</label>
                                 <input class="input100" type="text" name="tipo" placeholder="Nombre Representante" value="{{@old('tipo',$empleados[0]->Tipo)}}"> 
                                 <span class="focus-efecto"></span> 
                             </div>
@@ -64,7 +68,7 @@
                      
                         </div>
                     </div>                    
-                    <button type="submit" name="enviar" class="sesion_">
+                    <button type="submit" name= "enviar" class="sesion_">
                         Editar Empleado
                     </button>
                 </form> 
