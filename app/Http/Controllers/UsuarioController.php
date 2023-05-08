@@ -71,6 +71,7 @@ $request->validate([
                 $request->session()->regenerate();
                 $_SESSION['session']["nombre"]= $user->Nombres;
                 $_SESSION['session']["correo"]= $request->email;
+                $_SESSION['session']["tipo"]= $user->Tipo;
                 redirect()->to('/')->send();
             
                 
