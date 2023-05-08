@@ -167,6 +167,7 @@ class CuponController extends Controller
     }
 
 
+	//Para ver cupones en vista "Ver Cupones"
 		public function ver_cupon(){
 			//si esta definida 
 			//if(!empty($_SESSION['session'])){
@@ -177,6 +178,8 @@ class CuponController extends Controller
             return view('Compras.compras',$data);
         //}
 		}
+
+		
 		public function generar_cupon($id_cupon){
 					$model = new Cupon();
 					$cupon_detalle=$model->getCupon($id_cupon);//se obtiene el cupon mediante el id del cupon pasado por parametro
