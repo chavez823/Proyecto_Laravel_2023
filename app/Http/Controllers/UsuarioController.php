@@ -104,7 +104,7 @@ $request->validate([
 
 }}
 
-elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->Token ==null  && $user->Tipo=='Admnistrador_Empresa' ))
+elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->Token ==null  && $user->Tipo=='Administrador_Empresa' ))
 {{
             
                 $request->session()->regenerate();
