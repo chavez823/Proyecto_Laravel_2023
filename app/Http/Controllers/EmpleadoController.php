@@ -59,59 +59,77 @@ class EmpleadoController extends Controller
 
 $empleados=Empleado::join('Usuario', 'usuario.ID_Usuario', '=', 'empleado.ID_Usuario')
 ->join('empresa', 'empleado.ID_Empresa', '=', 'empresa.ID_Empresa')
-->select('Usuario.Nombres','Usuario.Apellidos','Usuario.Correo', 'Empleado.ID_Empleado','empresa.ID_Empresa')
+->select('Usuario.Nombres','Usuario.Apellidos','Usuario.Correo', 'Empleado.ID_Empleado', 'Empleado.Tipo','empresa.ID_Empresa')
 ->where('empresa.ID_Empresa', $_SESSION['id_empresa'])
 ->get();
 
 $data=array();
            $data['empleados']=$empleados;
-//return view("admin_e.listaempleados.", $data);
+return view("admin_e.listaempleados", $data);
 
-return $empleados;
-
-
+//return $empleados;
 
 
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function vereditarempleado(string $id )
     {
-        //
+        $empleados=Empleado::Where('ID_Empleado',$id)->get();
+        $data=array();
+        $data['empleados']=$empleados;
+
+        
+       return view("admin_e.editarempleado",$data );
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Empleado $empleado)
-    {
-        //
-    }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Empleado $empleado)
-    {
-        //
-    }
 
-    /**
+ /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Empleado $empleado)
+   public function update(Request $request, string $id)
     {
         //
+        $request->validate([
+            'id_e'=>'required',
+'id_emp'=>'required',
+'id_u'=>'required',
+'tipo'=>'required',
+
+        ]);
+
+        $rubro=Empleado::where('ID_Empleado',$id )->update(['ID_Empleado' => $request->id_e, 'ID_Empresa' => $request->id_emp, 'ID_Usuario' => $request->id_u,'Tipo' => $request->tipo ]);
+        redirect()->to('/Empresa')->send();
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Empleado $empleado)
+    public function destroy(string $id)
+
     {
-        //
+        $rubro =Empleado::where('ID_Empleado',$id )->delete();
+        redirect()->to('/')->send();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
 }

@@ -26,20 +26,10 @@
             
             <!--OJO-->
             <div class="wrap-login"> 
-                <form action="/Empresa/update/<?php echo $empresa[0]->ID_Empresa?>" method="post"> 
+                <form action="/Empresa/update/<?php echo $empleado[0]->ID_Empresa?>" method="post"> 
                     @csrf
                     @method('PUT')
-                            <?php
-                            /*if(isset($errores)){
-                                if(count($errores)>0){
-                                    echo "<div class='alert alert-danger'><ul>";
-                                    foreach ($errores as $error) {
-                                        echo "<li>$error</li>";
-                                    }
-                                    echo "</ul></div>";
-                                }
-                            }      */                  
-                        ?>                                
+                                                        
 
                     <span class="login-form-title">Actualizar Empresa</span> 
                           		

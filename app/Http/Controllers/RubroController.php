@@ -72,16 +72,6 @@ class RubroController extends Controller
         $rubro=Rubro::where('ID_Rubro',$id )->update(['ID_Rubro' => $request->id, 'Nombre' => $request->name  ]);
         redirect()->to('/Empresa')->send();
 
-
-
-
-
-
-
-
-
-
-
     }
 
     /**
