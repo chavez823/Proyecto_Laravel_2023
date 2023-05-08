@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CuponController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+/*Abarca todos las solicitudes HTPP referente a las api's */
+//Route::apiResource('ticket',CuponController::class);
+
+Route::get('ticket/{id}', [CuponController::class, 'show']);
+
+/*Se pasa 2 parametros para identificar a cual cupon se le va a actualizar el estado*/
+Route::put('ticket/{id}/{estado}/', [CuponController::class, 'update']);

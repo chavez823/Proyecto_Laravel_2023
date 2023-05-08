@@ -9,6 +9,7 @@ use Hamcrest\Core\HasToString;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\DB;
 
 class CuponController extends Controller
 {
@@ -263,51 +264,33 @@ class CuponController extends Controller
 					return $pdf->stream();		
 		}
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+
+
+
+    /** PARA LA API *****/
+    /* Display the specified resource.*/
+    public function show(Cupon $cupon,$id)
     {
-        //
+        $sentencia=DB::table('cupon')            
+            ->join('estado_cupon','estado_cupon.ID_Estado_Cupon','=','cupon.ID_Estado_Cupon')     
+            ->select('ID_Cupon','DUI','ID_Oferta','estado_cupon.Estado')
+            ->where('ID_Cupon',$id)
+            ->get();
+            return $sentencia;
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Cupon $cupon)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Cupon $cupon)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cupon $cupon)
+	public function update($id,$estado)
     {
-        //
+        $sentencia = DB::table('cupon')
+                        ->where('ID_Cupon', $id)                        
+                        ->update(['ID_Estado_Cupon' => $estado]);
+        return $sentencia;
+        
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Cupon $cupon)
-    {
-        //
-    }
+
 }
