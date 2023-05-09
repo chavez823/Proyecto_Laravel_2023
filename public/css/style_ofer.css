@@ -306,3 +306,22 @@ body{
   transition-duration: 400ms;
   transition-property: width, left;
 }
+
+.select_f{
+  margin-top: 150px;
+  margin-left: 550px;
+  margin-right: 550px;
+  margin-bottom: -340px;
+}
+
+.btn_buscar{
+position: relative;
+margin-left: 430px;
+margin-top: -65px;
+border-radius: 10px;
+width: 150px;
+}
+
+.altura-a-b{
+  margin-top: 50px;
+}
