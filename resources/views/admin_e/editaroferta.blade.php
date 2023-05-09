@@ -106,6 +106,20 @@
                         <div class="column_2">
                             <!-- Codigo Empresa --> 
                             <div class="wrap-input100"> 
+                                <input class="input100" type="text" name="justificacion" placeholder="Codigo Oferta"  disabled value="{{@old('justificacion', $ofertas[0]->Justificacion)}}" > 
+                                <span class="focus-efecto"></span> 
+                           
+                            </div>
+
+
+
+
+
+
+
+
+
+                            <div class="wrap-input100"> 
                                 <input class="input100" type="text" name="cod_o" placeholder="Codigo Oferta" value="{{@old('cod_o', $ofertas[0]->ID_Oferta)}}" > 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
@@ -156,10 +170,7 @@
                     <button type="submit" name="enviar" class="sesion">
                         Actualizar oferta
                     </button>
- <br>
- <br>
- 
-                   
+
                     
                 </form> 
                 <button type="submit" name="enviar" class="sesion">
