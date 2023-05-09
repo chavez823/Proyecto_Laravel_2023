@@ -49,6 +49,7 @@ Route::patch('/recuperacion', [UsuarioController::class, 'recuperacion']);
 Route::get('form/cambio/contraseña', [UsuarioController::class, 'cambiocontraseña']);
 Route::patch('/actualizacion', [UsuarioController::class, 'cambiopassword']);
 Route::get('Categoria', [CategoriaController::class, 'categorias']);
+Route::post('Categoria', [CategoriaController::class, 'categorias']);
 /*Route::get('Categoria/belleza', [CategoriaController::class, 'Ver_belleza']);
 Route::get('Categoria/salud', [CategoriaController::class, 'Ver_salud']);
 Route::get('Categoria/restaurante', [CategoriaController::class, 'Ver_restaurante']);
