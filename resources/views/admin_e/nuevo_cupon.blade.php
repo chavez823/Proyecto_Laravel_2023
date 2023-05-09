@@ -26,7 +26,7 @@
             
             <!--OJO-->
             <div class="wrap-login"> 
-                <form action="/MenuEmpresa/create" method="post" enctype="multipart/form-data"> 
+                <form action="/MenuEmpresa/create" method="post"> 
                     @csrf
                             <?php
                             if(isset($errores)){
@@ -53,31 +53,31 @@
                             <!-- Cantidad --> 
                              <!-- Titulo --> 
                              <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="titulo" placeholder="Titulo Oferta" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
+                                <input class="input100" type="text" name="titulo" placeholder="Titulo Oferta" value="{{old('titulo')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="cantidad" placeholder="Cantidad" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
+                                <input class="input100" type="text" name="cantidad" placeholder="Cantidad" value="{{old('Cantidad')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>                               
                             
 
                             <!-- Fecha Inicio --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="date" name="fecha_i" placeholder="Fecha Inicio (dd/mm/yyyy)" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
+                                <input class="input100" type="date" name="fecha_i" placeholder="Fecha Inicio (dd/mm/yyyy)" value="{{old('fecha_i')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
                              <!--Rubro - Categoria -->
                              <div class="wrap-input100"> 
-                                <select class="input100 s_ele"  >
+                                <select class="input100 s_ele" name="rubro" >
                                     <option class="input100" value="" disabled>Rubro</option>
                                     <span class="focus-efecto"></span>
-                                    <option class="input100" value="Salud">Salud</option>
-                                    <span class="focus-efecto"></span>
-                                    <option class="input100" value="Belleza">Belleza</option>
-                                    <span class="focus-efecto"></span>
-                                    <option class="input100" value="Mecanica">Mecanica</option>
-                                    <span class="focus-efecto"></span>
+                                    @foreach ($rubros as $rubro)
+                                        <option class="input100" value="{{$rubro->Nombre}}" {{old('rubro')==$rubro->Nombre?'selected':''}} >
+                                        {{$rubro->Nombre}}
+                                        </option>
+                                        <span class="focus-efecto"></span>   
+                                    @endforeach  
                                 </select>
                             </div>
                             
@@ -104,25 +104,25 @@
 
                             <!-- Descripcion --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="descrip" placeholder="Descripcion" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
+                                <input class="input100" type="text" name="descrip" placeholder="Descripcion" value="{{old('descrip')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
                              <!-- Precio oferta --> 
                              <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="precio_o" placeholder="Precio Oferta" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
+                                <input class="input100" type="text" name="precio_o" placeholder="Precio Oferta" value="{{old('precio_o')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
 
                             <!-- Fecha Final --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="date" name="fecha_f" placeholder="Fecha Final (dd/mm/yyyy)" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
+                                <input class="input100" type="date" name="fecha_f" placeholder="Fecha Final (dd/mm/yyyy)" value="{{old('fecha_f')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
                            
 
                             <!-- imagen --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" name="imagen[]" type="file" multiple="multiple"> 
+                                <input class="input100" name="imagen" type="text" placeholder="Link de Imagen" value="{{old('imagen')}}"> 
                                 <span class="focus-efecto"></span>
                             </div>
                         </div>
