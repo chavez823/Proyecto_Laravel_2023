@@ -20,7 +20,7 @@ class CategoriaController extends Controller
      
    
 
-        $categoria=Rubro::join('empresa', 'empresa.ID_Rubro', '=', 'rubro.ID_Rubro')->get();
+        $categoria=Rubro::get();
     
        // $ofertas=Categoria::/*Where('Categoria', 'like', '%$c%')->*/get();
     
@@ -32,9 +32,9 @@ class CategoriaController extends Controller
       public function m(string $id){
 
 
-     $ofertas=Oferta::Where('ID_Empresa', $id)->get();
+     $ofertas=Categoria::Where('Categoria', $id)->get();
 
-     return view('Menu/pages/Super',compact( 'ofertas') );
+     return view('Menu/pages/Super', compact( 'ofertas') );
 
 
   }

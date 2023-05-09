@@ -25,7 +25,7 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">Categoria</h5>
-    <p class="card-text"><a href="Categoria/ofertas/<?php $oferta->ID_Empresa?>" ><?php echo $oferta->Nombre_Rubro  ?></a></p>
+    <p class="card-text"><a href="Categoria/ofertas/<?php $oferta->Nombre_Rubro?>" ><?php echo $oferta->Nombre_Rubro  ?></a></p>
     
   </div>
 </div>
