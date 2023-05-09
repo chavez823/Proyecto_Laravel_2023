@@ -18,8 +18,9 @@
     <title>BUYIT</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <!--Propio-->
-    <link rel="stylesheet" href="css/style_1.css">
-    <link rel="stylesheet" href="css/categories.css">
+    <link rel="stylesheet" href="{{asset('css/style_1.css')}}">
+    <link rel="stylesheet" href="{{asset('css/categories.css')}}">
+    <link rel="stylesheet" href="{{asset('css/style_login.css')}}">
 
 
 
@@ -41,7 +42,7 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
           <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="buyit">Inicio</a>
+              <a class="nav-link" aria-current="page" href="../buyit">Inicio</a>
             </li>
           
           </ul> 
