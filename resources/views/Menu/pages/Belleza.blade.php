@@ -14,11 +14,14 @@
     <!--Funcional con php-->
     
 <div class="select_f">
-  <form action="" method="post">
+  <form action="Categoria/filtrar" method="post">
+
+  @csrf
+     
+   
     <div class="wrap-input100"> 
         <select class="input100 s_ele" name="categ" >
           @foreach ($categoria as $cate)
-          <option class="input100"   value="" >Todas</option>
           <option class="input100"   value="">{{$cate->Nombre}}</option>
           <span class="focus-efecto"></span>   
           @endforeach                                    
@@ -36,6 +39,13 @@
               <div class="row">
     <?php
 
+/*if(!isset($filtrado)){
+$ofer=$ofertas;
+}
+else{
+  $ofer=$filtrado;
+
+}*/
     foreach($ofertas as $oferta){?>                     
       <div class="col-md-4">
 
@@ -61,8 +71,8 @@
             <br>
         </div>
     <?php
-    }
-    ?>
+    }?>
+   
     <!-- Ofrecemos -->
       <div class="altura-a-b"></div>
       </div>

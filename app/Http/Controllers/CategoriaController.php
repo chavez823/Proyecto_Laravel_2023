@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use App\Models\Oferta;
 use App\Models\Rubro;
 use Illuminate\Http\Request;
+
 
 class CategoriaController extends Controller
 {
@@ -13,15 +15,54 @@ class CategoriaController extends Controller
      */ 
 
 
+     public function p(){
+
+     
+   
+
+        $categoria=Rubro::join('empresa', 'empresa.ID_Rubro', '=', 'rubro.ID_Rubro')->get();
+    
+       // $ofertas=Categoria::/*Where('Categoria', 'like', '%$c%')->*/get();
+    
+        return view('Menu/pages/salud',compact( 'categoria') );
+    
+    
+      }
+
+      public function m(string $id){
+
+
+     $ofertas=Oferta::Where('ID_Empresa', $id)->get();
+
+     return view('Menu/pages/Super',compact( 'ofertas') );
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   public function categorias(){
 
      
-    $ofertas=Categoria::get();
+   
 
     $categoria=Rubro::get();
 
-    return view('Menu/pages/Belleza',compact('ofertas', 'categoria') );
+    $ofertas=Categoria::/*Where('Categoria', 'like', '%$c%')->*/get();
 
+    return view('Menu/pages/Belleza',compact('ofertas', 'categoria') );
 
   }
 
@@ -34,23 +75,24 @@ class CategoriaController extends Controller
  
      $categoria=Rubro::get();
  
- $request->validate([
-     'categ' => 'required'
- ]);
+
+     $request->validate([
+        'categ' => 'required'
+    ]);
+    $c=$request->categ;
  
- if($request->categ =='Todas'){
-     $ofertas=Categoria::get();
+ $filtrar=Categoria::Where('Categoria', 'like', '%$c%')->get();
+/*
+     else{
+        return back()->with( 'errorl', 'No hay ofertas con esa categoria por el momento');
+
+     }*/
+
  
- }
- 
- else{
- 
-     $ofertas=Categoria::where('Categoria')->get();
- }
+ return $filtrar;
  
  
- 
-     return view('Menu/pages/Belleza',compact('ofertas', 'categoria') );
+   //  return view('Menu/pages/Belleza',compact('filtrado') );
  
  
  

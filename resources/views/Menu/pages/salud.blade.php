@@ -16,28 +16,19 @@
               <div class="row">
     <?php
 
-    foreach($ofertas as $oferta){?>                     
+    foreach($categoria as $oferta){?>                     
       <div class="col-md-4">
         
       <div class="card">
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="<?php echo $oferta->Imagen ?>">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4"><?php echo $oferta->Titulo ?><i class="material-icons right">+</i></span>
-              <!--AQUI CAMBIAR EL ID-->
-              <p> <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>      </p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4"><?php echo $oferta->Titulo ?><i class="material-icons right">-</i></span>
-              <p><?php echo $oferta->Descripcion ?></p>
-              <p>Precio Original: $<?php echo $oferta->PrecioOriginal ?></p>
-              <p>Precio Oferta: $<?php echo $oferta->PrecioOferta ?></p>
-              <p>Fecha de inicio: <?php echo $oferta->FechaInicio ?></p>
-              <p>Fecha de Final: <?php echo $oferta->FechaFin ?></p>
-            </div>
-          </div>
-
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Categoria</h5>
+    <p class="card-text"><a href="Categoria/ofertas/<?php $oferta->ID_Empresa?>" ><?php echo $oferta->Nombre_Rubro  ?></a></p>
+    
+  </div>
+</div>
             <br>
         </div>
     <?php
