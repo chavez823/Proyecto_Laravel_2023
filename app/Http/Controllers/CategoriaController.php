@@ -13,12 +13,31 @@ class CategoriaController extends Controller
      */ 
 
 
-  public function categorias(){
+  public function categorias(Request $request){
 
      
-    $ofertas=Categoria::get();
+   // $ofertas=Categoria::get();
 
     $categoria=Rubro::get();
+
+
+
+
+$request->validate([
+    'categ' => 'required'
+]);
+
+if($request->categ =='Todas'){
+    $ofertas=Categoria::get();
+
+}
+
+else{
+
+    $ofertas=Categoria::where('Categoria')->get();
+}
+
+
 
     return view('Menu/pages/Belleza',compact('ofertas', 'categoria') );
 

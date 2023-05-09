@@ -18,6 +18,7 @@
     <div class="wrap-input100"> 
         <select class="input100 s_ele" name="categ" >
           @foreach ($categoria as $cate)
+          <option class="input100"   value="" >Todas</option>
           <option class="input100"   value="">{{$cate->Nombre}}</option>
           <span class="focus-efecto"></span>   
           @endforeach                                    
