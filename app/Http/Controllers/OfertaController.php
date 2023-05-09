@@ -85,6 +85,44 @@ class OfertaController extends Controller
 
 
 
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Request $request, string $id)
+    {
+      $request->validate([
+
+        'name' => 'required',
+        'descripcion'=> 'required',
+        'detalles'=> 'required',
+        'categ'=> 'required',
+        'precio_o'=> 'required',
+        'cod_o'=> 'required',
+        'fecha_i'=> 'required',
+        'fecha_f'=> 'required',
+        'precio_ofer'=> 'required',
+      ]);
+
+$ofertas=/*DB::table('oferta')*/Oferta::
+/*->select('oferta.*', 'cupon.*')
+->*/leftJoin('cupon', 'cupon.ID_Oferta', '=', 'oferta.ID_Oferta')
+->update(['oferta.ID_Oferta' =>$request->cod_o, 'cupon.ID_Oferta' =>$request->cod_o, 'oferta.Descripcion'=> $request->descripcion, 'oferta.Titulo' =>$request->name, 'oferta.Detalles' =>$request->detalles,  'oferta.Categoria' =>$request->categ, 'oferta.FechaInicio' =>$request->fecha_i,'oferta.FechaFin' =>$request->fecha_f, 'oferta.PrecioOriginal' =>$request->precio_o, 'oferta.PrecioOferta' =>$request->precio_ofer, 'oferta.ID_EstadoOferta' =>1, 'oferta.FechaLimite' =>$request->fecha_f,]);
+redirect()->to('/Empresa/menuadmin')->send();
+
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(string $id)
+    {
+        $ofertas=Oferta::where('ID_Oferta', $id)->delete();
+       // return redirect()->back();
+       redirect()->to('/Empresa/menuadmin')->send();
+    }
+
+ 
+
 
 
 
@@ -105,23 +143,6 @@ class OfertaController extends Controller
     {
         //
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
-
 
 
 
