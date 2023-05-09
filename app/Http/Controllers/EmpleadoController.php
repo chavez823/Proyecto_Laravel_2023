@@ -108,8 +108,8 @@ return view("admin_e.listaempleados", $data);
        
        
         $empleados=Usuario::join('empleado', 'usuario.ID_Usuario', '=', 'empleado.ID_Usuario')
-        ->select('empleado.ID_Empleado', 'Nombres', 'Apellidos', 'usuario.Correo', 'empleado.Tipo')
-        ->Where('ID_Empleado',$id)->update(['empleado.ID_Empleado'=>$request->id_emp,'Nombres'=> $request->nombre , 'Apellidos' => $request->apellido, 'usuario.Correo' => $request->correo, 'empleado.Tipo'=> $request->tipo ]);
+        ->select('empleado.ID_Empleado', 'Nombres', 'Apellidos', 'usuario.Correo', 'empleado.Tipo','usuario.Tipo')
+        ->Where('ID_Empleado',$id)->update(['empleado.ID_Empleado'=>$request->id_emp,'Nombres'=> $request->nombre , 'Apellidos' => $request->apellido, 'usuario.Correo' => $request->correo, 'empleado.Tipo'=> $request->tipo,  'usuario.Tipo'=> $request->tipo ]);
        
        
         redirect()->to('/Empresa/menuadmin')->send();
@@ -122,8 +122,14 @@ return view("admin_e.listaempleados", $data);
     public function destroy(string $id)
 
     {
+        
+
+
+
         $rubro =Empleado::where('ID_Empleado',$id )->delete();
-        redirect()->to('/')->send();
+
+        
+        redirect()->to('/Empresa/menuadmin')->send();
     }
 
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\RubroController;
+use App\Models\Oferta;
 
 session_start();
 
@@ -118,6 +119,12 @@ Route::put('/rubro/update/{id}', [RubroController::class,'update']);
 Route::get('/rubro/delete/{id}', [RubroController::class,'destroy']);
 
 
+
+//ofertas
+Route::get('/Oferta', [OfertaController::class, 'verofertas']);
+Route::get('/Oferta/vereditar/{id}', [OfertaController::class,'vereditar']);
+Route::put('/Oferta/update/{id}', [OfertaController::class,'update']);
+Route::get('/Oferta/delete/{id}', [OfertaController::class,'destroy']);
 /*Route::get('/', function () {
     return view('welcome');
 });*/

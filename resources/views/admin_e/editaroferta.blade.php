@@ -26,30 +26,30 @@
             
             <!--OJO-->
             <div class="wrap-login"> 
-                <form action="/Empresa/update/<?php echo $empleado[0]->ID_Empresa?>" method="post"> 
+                <form action="/Empresa/update/<?php echo $ofertas[0]->ID_Oferta?>" method="post"> 
                     @csrf
                     @method('PUT')
                                                         
 
-                    <span class="login-form-title">Actualizar Empresa</span> 
+                    <span class="login-form-title">Actualizar Oferta</span> 
                           		
                     <div class="container_c">                                       
                         <div class="column_1">
                             <!-- Nombre --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="name" placeholder="Nombre Empresa" value="{{@old('name',$empresa[0]->Nombre)}}" >	 
+                                <input class="input100" type="text" name="name" placeholder="Nombre Oferta" value="{{@old('name', $ofertas[0]->Titulo)}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
 
                             <!-- Direccion --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="direccion" placeholder="Direccion" value="{{@old('direccion',$empresa[0]->Direccion)}}" >	 
+                                <input class="input100" type="text" name="descripcion" placeholder="Descripcion" value="{{@old('descripcion',$ofertas[0]->Descripcion )}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div> 
 
                             <!--Telefono del Representante-->
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="telefono" placeholder="Telefono" value="{{@old('telefono',$empresa[0]->Telefono)}}" >	 
+                                <input class="input100" type="text" name="detalles" placeholder="Detalles" value="{{@old('detalles', $ofertas[0]->Detalles)}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
                             
@@ -58,15 +58,17 @@
                                 <!--<input class="input100" type="text" name="rubro" placeholder="Rubro" value="<?php //Aqui ira el isset para los valores?>"> 
                                 <span class="focus-efecto"></span>-->
                                 <select class="input100 s_ele"  >
-                                    <option class="input100" value="Salud">Salud</option>
+                                    @foreach ($categoria as $cate)
+                                    <option class="input100"   value="{{$ofertas[0]->Categoria}} ">{{$cate->Nombre}}</option>
                                     <span class="focus-efecto"></span>
-                                    <option class="input100" value="Belleza">Belleza</option>
-                                    <span class="focus-efecto"></span>
-                                    <option class="input100" value="Mecanica">Mecanica</option>
-                                    <span class="focus-efecto"></span>
-                                    
+                                 @endforeach
                                 </select>
 
+                            </div>
+                             <!--Porcentaje Comision-->
+                             <div class="wrap-input100"> 
+                                <input class="input100" type="text" name="precio_o" placeholder="Precio Original" value="{{@old('precio_o',$ofertas[0]->PrecioOriginal)}}"> 
+                                <span class="focus-efecto"></span> 
                             </div>
                             
                         </div>		
@@ -74,32 +76,41 @@
                         <div class="column_2">
                             <!-- Codigo Empresa --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="cod_empo" placeholder="Codigo Empresa" value="{{@old('cod_empo',$empresa[0]->ID_Empresa)}}" disabled> 
+                                <input class="input100" type="text" name="cod_o" placeholder="Codigo Oferta" value="{{@old('cod_o', $ofertas[0]->ID_Oferta)}}" disabled> 
                                 <span class="focus-efecto"></span> 
                             </div>
                             <!--Representante empresa-->
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="name_r" placeholder="Nombre Representante" value="{{@old('name_r',$empresa[0]->NombreContacto)}}"> 
+                                <input class="input100" type="date" name="fecha_i" placeholder="Fecha Inicio" value="{{@old('fecha_i', $ofertas[0]->FechaInicio)}}"> 
                                 <span class="focus-efecto"></span> 
                             </div>
 
                             <!--Correo representante-->
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="correo" placeholder="Correo" value="{{@old('correo',$empresa[0]->Correo)}}"> 
+                                <input class="input100" type="date" name="fecha_f" placeholder="Fecha Fin" value="{{@old('fecha_f' , $ofertas[0]->FechaFin)}}"> 
                                 <span class="focus-efecto"></span> 
                             </div>
                             
                             <!--Porcentaje Comision-->
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="porcet" placeholder="Porcentaje Comision" value="{{@old('porcet',$empresa[0]->PorcentajeComision)}}"> 
+                                <input class="input100" type="text" name="precio_ofer" placeholder="Precio Oferta" value="{{@old('precio_ofer' , $ofertas[0]->PrecioOferta)}}"> 
                                 <span class="focus-efecto"></span> 
                             </div>
 
                         </div>
                     </div>                    
                     <button type="submit" name="enviar" class="sesion">
-                        Actualizar Empresa
+                        Actualizar oferta
                     </button>
+
+                    <button type="submit" name="enviar" class="sesion">
+                        <a href="">
+                        <span>Eliminar</span> 
+
+                        </a>
+                    </button>
+
+                    
                 </form> 
             </div> 
         </div>
