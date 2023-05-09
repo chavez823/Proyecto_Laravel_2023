@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Oferta;
+use App\Models\Rubro;
 use Illuminate\Http\Request;
 
 class OfertaController extends Controller
@@ -43,6 +44,51 @@ class OfertaController extends Controller
        
         
     }
+       public function verofertas(){
+      //  $ofertas = Oferta::leftJoin('estado_oferta', 'oferta.ID_EstadoOferta', '=', 'estado_oferta.ID_EstadoOferta')->select('oferta.Titulo', 'estado_oferta.Nombre')->where('ID_Empresa', $_SESSION['id_empresa'])
+   // ->whereColumn('oferta.ID_EstadoOferta', '=', 'estado_oferta.ID_EstadoOferta')
+    //->get();
+    $ofertas=Oferta::leftJoin('estado_oferta', 'oferta.ID_EstadoOferta', '=', 'estado_oferta.ID_EstadoOferta')
+    ->whereColumn('oferta.ID_EstadoOferta', '=', 'estado_oferta.ID_EstadoOferta')
+    ->where('oferta.ID_Empresa', $_SESSION['id_empresa'])
+    ->get();
+
+
+
+        $data=array();
+        $data['ofertas']=$ofertas;
+      //  return $ofertas;
+       return view('admin_e.listaofertas', $data);
+       /* DB::table('usuario')
+    ->select('usuario.ID_Usuario', 'empleado.*', 'oferta.*')
+    ->leftJoin('empleado', 'empleado.ID_Usuario', '=', 'usuario.ID_Usuario')
+    ->join('oferta', 'oferta.ID_Empresa', '=', 'empleado.ID_Empresa')
+    ->get();*/
+
+       }
+
+       public function vereditar(string $id )
+       {
+        $ofertas=Oferta::leftJoin('estado_oferta', 'oferta.ID_EstadoOferta', '=', 'estado_oferta.ID_EstadoOferta')
+        ->whereColumn('oferta.ID_EstadoOferta', '=', 'estado_oferta.ID_EstadoOferta')
+/*select('oferta.*', 'rubro.Nombre')
+    ->leftJoin('empresa', 'oferta.ID_Empresa', '=', 'empresa.ID_Empresa')
+    ->leftJoin('rubro', 'empresa.ID_Rubro', '=', 'rubro.ID_Rubro')*/
+        ->where('oferta.ID_Oferta', $id)
+        ->get();
+      //  $data=array();
+       // $data['ofertas']=$ofertas;
+         // return $ofertas;
+         $categoria=Rubro::get();
+           return view("admin_e.editaroferta",compact('ofertas','categoria') );
+       }
+
+
+
+
+
+
+
 
     /**
      * Display the specified resource.
@@ -75,4 +121,17 @@ class OfertaController extends Controller
     {
         //
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
