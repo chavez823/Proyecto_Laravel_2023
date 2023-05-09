@@ -11,7 +11,7 @@
 
    <main> 
    <div class="profile-area">
-            <p class="Parrafo">LOS MEJORES DESCUENTOS ES SUPERMERCADOS</p>
+            <p class="Parrafo">LAS MEJORES OFERTAS SOLO PARA TI</p>
             <div class="container">
               <div class="row">
     <?php

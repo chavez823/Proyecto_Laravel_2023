@@ -27,7 +27,7 @@ class RubroController extends Controller
 
 
       $id=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
-      $rubro = Rubro::insert(['ID_Rubro'=>$id, 'Nombre'=>$request->name_rubro]);
+      $rubro = Rubro::insert(['ID_Rubro'=>$id, 'Nombre_Rubro'=>$request->name_rubro]);
       redirect()->to('/Empresa')->send();
 
     }
