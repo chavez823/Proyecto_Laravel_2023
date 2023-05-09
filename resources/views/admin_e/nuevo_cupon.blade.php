@@ -28,18 +28,15 @@
             <div class="wrap-login"> 
                 <form action="/MenuEmpresa/create" method="post"> 
                     @csrf
-                            <?php
-                            if(isset($errores)){
-                                if(count($errores)>0){
-                                    echo "<div class='alert alert-danger'><ul>";
-                                    foreach ($errores as $error) {
-                                        echo "<li>$error</li>";
-                                    }
-                                    echo "</ul></div>";
-                                }
-                            }                        
-                        ?>                                
-
+                    @if($errors->all())
+                        <div class="alert alert-danger">
+                            <ul>
+                            @foreach($errors->all() as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                            </ul>
+                        </div>
+                    @endif                               
                     <span class="login-form-title">Registrar Nueva Oferta</span> 
                           		
                     <div class="container_c">                                       
@@ -57,7 +54,7 @@
                                 <span class="focus-efecto"></span> 
                             </div>
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="cantidad" placeholder="Cantidad" value="{{old('Cantidad')}}" >	 
+                                <input class="input100" type="text" name="cantidad" placeholder="Cantidad" value="{{old('cantidad')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>                               
                             
@@ -115,7 +112,7 @@
 
                             <!-- Fecha Final --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="date" name="fecha_f" placeholder="Fecha Final (dd/mm/yyyy)" value="{{old('fecha_f')}}" >	 
+                                <input class="input100" type="date" name="fecha_f" placeholder="Fecha Final" value="{{old('fecha_f')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
                            
@@ -131,7 +128,7 @@
 
                             <!-- Detalles --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="detalles" placeholder="Detalles de Oferta" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
+                                <input class="input100" type="text" name="detalles" placeholder="Detalles de Oferta" value="{{old('detalles')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
 
@@ -156,12 +153,12 @@
                             </div> --> 
                             <!-- Precio Original --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="precio_inicial" placeholder="Precio Original" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
+                                <input class="input100" type="text" name="precio_inicial" placeholder="Precio Original" value="{{old('precio_inicial')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
                            <!-- Fecha Limite --> 
                            <div class="wrap-input100"> 
-                            <input class="input100" type="date" name="fecha_limite" placeholder="Fecha Limite (dd/mm/yyyy)" value="<?php //if(isset($Nombres)) echo $Nombres?>" >	 
+                            <input class="input100" type="date" name="fecha_limite" placeholder="Fecha Limite" value="{{old('fecha_limite')}}" >	 
                             <span class="focus-efecto"></span> 
                             </div>
 

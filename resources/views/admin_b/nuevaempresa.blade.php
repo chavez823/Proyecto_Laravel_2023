@@ -33,6 +33,15 @@
                           {{session::get('errorlo')}}
                         </div>
                     @endif
+                    @if($errors->all())
+                        <div class="alert alert-danger">
+                            <ul>
+                            @foreach($errors->all() as $err)
+                                <li>{{$err}}</li>
+                            @endforeach
+                            </ul>
+                        </div>
+                    @endif
                             <?php
                             /*if(isset($errores)){
                                 if(count($errores)>0){
@@ -71,14 +80,15 @@
                             <div class="wrap-input100"> 
                                 <!--<input class="input100" type="text" name="rubro" placeholder="Rubro" value="<?php //Aqui ira el isset para los valores?>"> 
                                 <span class="focus-efecto"></span>-->
-                                <select class="input100 s_ele"  >
+                                <select class="input100 s_ele" name="rubro" >
                                     <option class="input100" value="Salud">Salud</option>
                                     <span class="focus-efecto"></span>
-                                    <option class="input100" value="Belleza">Belleza</option>
-                                    <span class="focus-efecto"></span>
-                                    <option class="input100" value="Mecanica">Mecanica</option>
-                                    <span class="focus-efecto"></span>
-                                    
+                                    @foreach ($rubros as $rubro)
+                                        <option class="input100" value="{{$rubro->Nombre}}" {{old('rubro')==$rubro->Nombre?'selected':''}} >
+                                        {{$rubro->Nombre}}
+                                        </option>
+                                        <span class="focus-efecto"></span>   
+                                    @endforeach  
                                 </select>
 
                             </div>

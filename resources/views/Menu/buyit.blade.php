@@ -138,24 +138,34 @@
             <p class="Parrafo">NUESTRAS MEJORES OFERTAS</p>
             <div class="container">
               <div class="row">
-    <?php
-             
-               foreach($ofertas as $oferta){?>
-        
-          
-                <div class="col-md-4">
-                  <div class="card">
-                    <div class="img1"><img src="<?php echo $oferta->Imagen ?>" alt=""></div><!--Fondo CARD-->
-                                      
-                    <div class="main-text">
-                      <h1><?php echo $oferta->Titulo ?></h1>
-                      <p>$<?php echo $oferta->PrecioOferta ?></p>
-                      <p><?php echo $oferta->Descripcion ?></p>
-                      <a href="/carrito/<?=$oferta->ID_Oferta?>&1" class="btn btn-primary">Agregar al carrito</a>
-                      </form>     
-                    </div>    
-                  </div>
-                </div> 
+    <?php   
+               foreach($ofertas as $oferta){
+                $FechaInicio = strtotime($oferta->FechaInicio);
+                $FechaFin = strtotime($oferta->FechaFin);
+                $FechaActual = date('d-m-Y');
+                if($FechaFin > strtotime($FechaActual))
+                { ?>
+                  <div class="col-md-4">
+                    <div class="card">
+                      <div class="img1"><img src="<?php echo $oferta->Imagen ?>" alt=""></div><!--Fondo CARD-->               
+                        <div class="main-text">
+                        <h1><?php echo $oferta->Titulo ?></h1>
+                        <p>$<?php echo $oferta->PrecioOferta ?></p>
+                        <p><?php echo $oferta->Descripcion ?></p>
+                        <a href="/carrito/<?=$oferta->ID_Oferta?>&1" class="btn btn-primary">Agregar al carrito</a>
+                        </form>     
+                      </div>    
+                    </div>
+                  </div> 
+                <?php 
+                    }
+                  else {
+                    DB::table('oferta')
+                    ->where('ID_Oferta','=',$oferta->ID_Oferta)
+                    ->update(['ID_EstadoOferta' => '4']);
+                  }
+                
+                ?>
     <?php
    }
     ?>
