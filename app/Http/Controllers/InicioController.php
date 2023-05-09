@@ -57,7 +57,7 @@ class InicioController extends Controller
             {
                 redirect()->to('/')->send();
             }else if($vista=='2'){
-                redirect()->to('Categoria/belleza')->send();
+                redirect()->to('Categoria')->send();
             }else if($vista=='3'){
                 redirect()->to('Categoria/restaurante')->send();
             }else if($vista=='4'){
@@ -87,7 +87,7 @@ class InicioController extends Controller
                 if($vista==1){
                     redirect()->to('/')->send();
                 }else if($vista=='2'){
-                    redirect()->to('Categoria/belleza')->send();
+                    redirect()->to('Categoria')->send();
                 }else if($vista=='3'){
                     redirect()->to('Categoria/restaurante')->send();
                 }else if($vista=='4'){
@@ -117,7 +117,7 @@ class InicioController extends Controller
             if($vista==1){
                 redirect()->to('/')->send();
             }else if($vista=='2'){
-                redirect()->to('Categoria/belleza')->send();
+                redirect()->to('Categoria')->send();
             }else if($vista=='3'){
                 redirect()->to('Categoria/restaurante')->send();
             }else if($vista=='4'){
