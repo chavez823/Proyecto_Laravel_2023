@@ -128,8 +128,8 @@ class OfertaController extends Controller
 
 $ofertas=/*DB::table('oferta')*/Oferta::
 /*->select('oferta.*', 'cupon.*')
-->*/leftJoin('cupon', 'cupon.ID_Oferta', '=', 'oferta.ID_Oferta')
-->update(['oferta.ID_Oferta' =>$request->cod_o, 'cupon.ID_Oferta' =>$request->cod_o, 'oferta.Descripcion'=> $request->descripcion, 'oferta.Titulo' =>$request->name, 'oferta.Detalles' =>$request->detalles,  'oferta.Categoria' =>$request->categ, 'oferta.FechaInicio' =>$request->fecha_i,'oferta.FechaFin' =>$request->fecha_f, 'oferta.PrecioOriginal' =>$request->precio_o, 'oferta.PrecioOferta' =>$request->precio_ofer, 'oferta.ID_EstadoOferta' =>1, 'oferta.FechaLimite' =>$request->fecha_f,]);
+->*//*leftJoin('cupon', 'cupon.ID_Oferta', '=', 'oferta.ID_Oferta')->*/where('oferta.ID_Oferta', $id)
+->update(['oferta.ID_Oferta' =>$request->cod_o, /*'cupon.ID_Oferta' =>$request->cod_o,*/ 'oferta.Descripcion'=> $request->descripcion, 'oferta.Titulo' =>$request->name, 'oferta.Detalles' =>$request->detalles,  'oferta.Categoria' =>$request->categ, 'oferta.FechaInicio' =>$request->fecha_i,'oferta.FechaFin' =>$request->fecha_f, 'oferta.PrecioOriginal' =>$request->precio_o, 'oferta.PrecioOferta' =>$request->precio_ofer, 'oferta.ID_EstadoOferta' => '1', 'oferta.FechaLimite' =>$request->fecha_f,]);
 redirect()->to('/Empresa/menuadmin')->send();
 
     }
@@ -139,7 +139,7 @@ redirect()->to('/Empresa/menuadmin')->send();
      */
     public function destroy(string $id)
     {
-        $ofertas=Oferta::where('ID_Oferta', $id)->delete();
+        $ofertas=Oferta::where('ID_Oferta', $id)->update(['oferta.ID_EstadoOferta' => '6']);
        // return redirect()->back();
        redirect()->to('/Empresa/menuadmin')->send();
     }

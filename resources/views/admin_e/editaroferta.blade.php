@@ -159,15 +159,16 @@
  <br>
  <br>
  
-                    <button type="submit" name="enviar" class="sesion">
-                        <a href="">
-                        <span>Eliminar</span> 
+                   
+                    
+                </form> 
+                <button type="submit" name="enviar" class="sesion">
+                        <a href="/Oferta/delete/<?php echo $ofertas[0]->ID_Oferta?>">
+                        <span>Descartar</span> 
 
                         </a>
                     </button>
 
-                    
-                </form> 
             </div> 
         </div>
     </main>
