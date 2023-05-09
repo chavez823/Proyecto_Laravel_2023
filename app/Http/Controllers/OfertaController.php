@@ -31,19 +31,19 @@ class OfertaController extends Controller
      */
     public function store(Request $request)
     {
-        /*@dump($request->titulo);
-        @dump($request->cantidad);
-        @dump($request->descrip);
-        @dump($request->detalles);
-        @dump($request->fecha_i);
-        @dump($request->fecha_f);
-        @dump($request->precio_inicial);
-        @dump($request->precio_o);
-        @dump($request->fecha_limite);
-        @dump($_FILES['imagen']['name'][0]);
-        @dump($_FILES['imagen']['tmp_name'][0]);
-        @dump($_FILES['imagen']);
-        @dump($_SESSION['id_empresa']);*/
+        $request->validate([
+            'titulo' => 'required',
+            'descrip'=> 'required',
+            'detalles'=> 'required',
+            'rubro'=> 'required',
+            'precio_o'=> 'required|numeric|min:0.1',
+            'fecha_i'=> 'required|date',
+            'fecha_f'=> 'required|date|fecha_mayor:fecha_i',
+            'precio_inicial'=> 'required|numeric|min:0.1',
+            'fecha_limite'=>'required|date',
+            'cantidad'=>'required|integer|min:1',
+            'imagen'=>'required'
+          ]);
         $ID_Oferta=rand(1,100);
 		for ($i=0; $i < 2; $i++) { 
 		    $ID_Oferta .= rand(1,100);

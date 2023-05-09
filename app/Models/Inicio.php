@@ -38,6 +38,11 @@ public function get_promo($id='')
 
 		}
 
+public function estadoVencido(){
+
+    return "Aqui estoy";
+}
+
     
 
 
