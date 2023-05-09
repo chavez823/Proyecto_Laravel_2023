@@ -111,14 +111,6 @@
                            
                             </div>
 
-
-
-
-
-
-
-
-
                             <div class="wrap-input100"> 
                                 <input class="input100" type="text" name="cod_o" placeholder="Codigo Oferta" value="{{@old('cod_o', $ofertas[0]->ID_Oferta)}}" > 
                                 <span class="focus-efecto"></span> 
@@ -166,15 +158,16 @@
                             </div>
 
                         </div>
-                    </div>                    
+                    </div>
+                                      
                     <button type="submit" name="enviar" class="sesion">
                         Actualizar oferta
                     </button>
 
                     
                 </form> 
-                <button type="submit" name="enviar" class="sesion">
-                        <a href="/Oferta/delete/<?php echo $ofertas[0]->ID_Oferta?>">
+                <button type="submit" name="enviar" class="btn_descartar">
+                        <a class="btn_des_a" href="/Oferta/delete/<?php echo $ofertas[0]->ID_Oferta?>">
                         <span>Descartar</span> 
 
                         </a>
