@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Cupon;
+use App\Models\Rubro;
 use App\Models\Cliente;
 use App\Models\Empresa;
 use App\Models\Usuario;
@@ -32,7 +33,10 @@ class EmpresaController extends Controller
      */
     public function create()
     {
-        return view("admin_b.nuevaempresa");
+        $rubros=Rubro::get();
+        $data=array();
+        $data['rubros']=$rubros;
+        return view("admin_b.nuevaempresa",$data);
     }
 
     /**
@@ -44,6 +48,16 @@ class EmpresaController extends Controller
         $admin_empresa = new usuario();
         $user= Usuario::where('Correo', $request->correo )->first();
         if($user == null){
+            $request->validate([
+                'name' => 'required',
+                'direccion'=> 'required',
+                'telefono'=> 'required',
+                'rubro'=> 'required',
+                'cod_empo'=> 'required|regex:/^[EMP]\d{3}$/',
+                'name_r'=> 'required|string',
+                'correo'=> 'required|email',
+                'porcet'=> 'required|numeric|min:0.05|max:0.5',
+              ]);
         $empresa->insertar_empresa($request->cod_empo,$request->name,
         $request->direccion,$request->name_r,$request->telefono,$request->correo,
         $request->porcet,1);

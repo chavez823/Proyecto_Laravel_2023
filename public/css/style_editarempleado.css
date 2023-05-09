@@ -5,10 +5,9 @@
     font-family: 'Baloo 2', cursive; 
     } 
     
-
 body{
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg stroke='%23CCC' stroke-width='0' %3E%3Crect fill='%23F5F5F5' x='-60' y='-60' width='110' height='240'/%3E%3C/g%3E%3C/svg%3E");
-  }
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg stroke='%23CCC' stroke-width='0' %3E%3Crect fill='%23F5F5F5' x='-60' y='-60' width='110' height='240'/%3E%3C/g%3E%3C/svg%3E");
+}
     
     input { 
     outline: none; 
@@ -36,17 +35,17 @@ body{
     } 
     
      
-    
-    .wrap-login { 
-    width: 650px; 
+
+
+    .wrap-login_{
+      width: 650px; 
     background: whitesmoke;
     border-radius: 20px; 
     overflow: hidden; 
     display: flex;
     padding: 77px 55px 53px 55px; 
-    -webkit-box-shadow: 25px 40px 28px 0px rgba(0, 0, 0, 0.38); 
-        
-    } 
+    -webkit-box-shadow: 25px 40px 28px 0px rgba(0, 0, 0, 0.38);
+    }
     
 
     /*COLUMNAS*/
@@ -54,12 +53,21 @@ body{
         display: flex;
     }
 
+    .c_{
+      display: flex;
+      justify-content: center; /* Centra horizontalmente el contenido */
+      align-items: center; /* Centra verticalmente el contenido */    
+    }
+
+    .c_ol{
+      text-align: center;
+    }
+
 
     .column_1, .column_2 {
         flex-basis: 50%; /* Ambas columnas tendrán un ancho del 50% del contenedor */
         padding: 40px; /* Opcional, añade un poco de espacio entre el contenido y los bordes de la columna */
-      }
-                                                     
+      }                                          
     
     /*----Formulario de user y password----*/ 
     
@@ -201,8 +209,10 @@ body{
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: color;
-    margin-left:65px;
+    margin-left:375px;
   }
+
+  
   
   .sesion:focus,
   .sesion:hover {
@@ -229,16 +239,20 @@ body{
     transition-property: width, left;
   }
 
+  /*Select*/
 .s_ele{
     border: none;
     outline: none;
 }
 
 
+/*Columnas nuevas*/
+.column_1_, .column_2_ {
+  flex-basis: 50%; /* Ambas columnas tendrán un ancho del 50% del contenedor */
+  padding: 40px; /* Opcional, añade un poco de espacio entre el contenido y los bordes de la columna */
+}
 
-
-
-.btn_descartar {
+.sesion_ {
   font-size: 18px;
   color: #000000;
   font-family: inherit;
@@ -252,30 +266,27 @@ body{
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
-  margin-top:550px ;
-}
-
-.btn_des_a{
-  text-decoration: none;
-  color: #000000;
+  margin-left:190px;
 }
 
 
-.btn_descartar:focus,
-.btn_descartar:hover {
+
+.sesion_:focus,
+.sesion_:hover {
   color: #090909;
 }
 
-.btn_descartar:focus:after,
-.btn_descartar:hover:after {
+.sesion_:focus:after,
+.sesion_:hover:after {
   width: 100%;
-
+  left: 0%;
 }
 
-.btn_descartar:after {
+.sesion_:after {
   content: "";
   pointer-events: none;
   bottom: -2px;
+  left: 50%;
   position: absolute;
   width: 0%;
   height: 2px;
@@ -285,8 +296,21 @@ body{
   transition-property: width, left;
 }
 
-.boton_{
-  margin-top: -647px;
-  margin-bottom: 50px;
-  margin-left: 850px;
+.select_f{
+  margin-top: 150px;
+  margin-left: 550px;
+  margin-right: 550px;
+  margin-bottom: -340px;
+}
+
+.btn_buscar{
+position: relative;
+margin-left: 430px;
+margin-top: -65px;
+border-radius: 10px;
+width: 150px;
+}
+
+.altura-a-b{
+  margin-top: 50px;
 }
