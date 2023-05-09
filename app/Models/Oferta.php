@@ -34,6 +34,7 @@ class Oferta extends Model
 {
     use HasFactory;
 
+   
 
 
 
@@ -87,8 +88,8 @@ class Oferta extends Model
 	{
 		return $this->hasMany(Cupon::class, 'ID_Oferta');
 	}
-    public function insertOferta($ID_Oferta='',$Titulo,$Categoria='',$CantLimite,$Descripcion,$Detalles,
-    $FechaInicio,$FechaFin,$PrecioOriginal,$PrecioOferta,$Imagen='',$ID_Empresa='EMP001',$ID_EstadoOferta=1,$FechaLimite){
+    public function insertOferta($ID_Oferta,$Titulo,$Categoria,$CantLimite,$Descripcion,$Detalles,
+    $FechaInicio,$FechaFin,$PrecioOriginal,$PrecioOferta,$Imagen,$ID_Empresa,$ID_EstadoOferta,$FechaLimite){
         DB::table('oferta')->insert([
             ['ID_Oferta' => $ID_Oferta, 
             'Titulo' => $Titulo,
@@ -98,7 +99,7 @@ class Oferta extends Model
             'Detalles'=>$Detalles,
             'FechaInicio'=>$FechaInicio,
             'FechaFin'=>$FechaFin,
-            'PrecioOrginal'=>$PrecioOriginal,
+            'PrecioOriginal'=>$PrecioOriginal,
             'PrecioOferta'=>$PrecioOferta,
             'Imagen'=>$Imagen,
             'ID_Empresa'=>$ID_Empresa,

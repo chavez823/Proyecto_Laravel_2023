@@ -94,9 +94,7 @@ Route::get('/Empresa/menuadmin', [EmpresaController::class,'menuadmin']);
 
 Route::get('/Empresa/vercliente', [EmpresaController::class, 'vercliente']);
 
-//Rutas para la gestion de las ofertas
-Route::get('/MenuEmpresa', [OfertaController::class, 'index']);
-Route::get('/MenuEmpresa/create', [OfertaController::class, 'create']);
+
 
 Route::post('/MenuEmpresa/create', [OfertaController::class,'store']);
 Route::get('/Empresa/vercliente', [EmpresaController::class, 'vercliente']);
@@ -130,3 +128,33 @@ Route::get('/Oferta/delete/{id}', [OfertaController::class,'destroy']);
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Rutas para la gestion de las ofertas
+Route::get('/MenuEmpresa', [OfertaController::class, 'index']);
+Route::get('/MenuEmpresa/create', [OfertaController::class, 'create']);
