@@ -33,8 +33,9 @@ class CategoriaController extends Controller
 
 
      $ofertas=Categoria::Where('Categoria', $id)->get();
+//return $id;
 
-     return view('Menu/pages/Super', compact( 'ofertas') );
+    return view('Menu/pages/Super', compact( 'ofertas') );
 
 
   }
