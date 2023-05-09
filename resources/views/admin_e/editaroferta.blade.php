@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet">
     <!--Bootstrap--> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Registrar Nueva Empresa</title>
+    <title>Actualizar Oferta</title>
     <!--css-->
     <link rel="stylesheet" href="{{asset('css/style_emp.css')}}">
 </head>
@@ -106,6 +106,12 @@
                         <div class="column_2">
                             <!-- Codigo Empresa --> 
                             <div class="wrap-input100"> 
+                                <input class="input100" type="text" name="justificacion" placeholder="Codigo Oferta"  disabled value="{{@old('justificacion', $ofertas[0]->Justificacion)}}" > 
+                                <span class="focus-efecto"></span> 
+                           
+                            </div>
+
+                            <div class="wrap-input100"> 
                                 <input class="input100" type="text" name="cod_o" placeholder="Codigo Oferta" value="{{@old('cod_o', $ofertas[0]->ID_Oferta)}}" > 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
@@ -152,25 +158,25 @@
                             </div>
 
                         </div>
-                    </div>                    
+                    </div>
+                                      
                     <button type="submit" name="enviar" class="sesion">
                         Actualizar oferta
                     </button>
- <br>
- <br>
- 
-                   
                     
                 </form> 
-                <button type="submit" name="enviar" class="sesion">
-                        <a href="/Oferta/delete/<?php echo $ofertas[0]->ID_Oferta?>">
-                        <span>Descartar</span> 
-
-                        </a>
-                    </button>
-
+                
             </div> 
+            
         </div>
+        <div class="boton_">
+            <button type="submit" name="enviar" class="btn_descartar">
+                <a class="btn_des_a" href="/Oferta/delete/<?php echo $ofertas[0]->ID_Oferta?>">
+                    <span>Descartar</span> 
+                </a>
+            </button>
+        </div>
+        
     </main>
 
 

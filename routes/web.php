@@ -48,11 +48,12 @@ Route::get('form/recuperacioncontraseña', [UsuarioController::class, 'recuperac
 Route::patch('/recuperacion', [UsuarioController::class, 'recuperacion']);
 Route::get('form/cambio/contraseña', [UsuarioController::class, 'cambiocontraseña']);
 Route::patch('/actualizacion', [UsuarioController::class, 'cambiopassword']);
-Route::get('Categoria', [CategoriaController::class, 'index']);
-Route::get('Categoria/belleza', [CategoriaController::class, 'Ver_belleza']);
+Route::get('Categoria', [CategoriaController::class, 'categorias']);
+Route::post('Categoria', [CategoriaController::class, 'categorias']);
+/*Route::get('Categoria/belleza', [CategoriaController::class, 'Ver_belleza']);
 Route::get('Categoria/salud', [CategoriaController::class, 'Ver_salud']);
 Route::get('Categoria/restaurante', [CategoriaController::class, 'Ver_restaurante']);
-Route::get('Categoria/super', [CategoriaController::class, 'Ver_super']);
+Route::get('Categoria/super', [CategoriaController::class, 'Ver_super']);*/
 
 Route::get('/carrito/{id}&{vista}', [InicioController::class, 'carrito']);
 Route::get('/restar/{ID}', [InicioController::class, 'restar']);

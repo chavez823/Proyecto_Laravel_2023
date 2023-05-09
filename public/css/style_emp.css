@@ -45,7 +45,7 @@ body{
     display: flex;
     padding: 77px 55px 53px 55px; 
     -webkit-box-shadow: 25px 40px 28px 0px rgba(0, 0, 0, 0.38); 
-    
+        
     } 
     
 
@@ -201,7 +201,7 @@ body{
     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
     transition-duration: 400ms;
     transition-property: color;
-    margin-left:210px;
+    margin-left:65px;
   }
   
   .sesion:focus,
@@ -232,4 +232,61 @@ body{
 .s_ele{
     border: none;
     outline: none;
+}
+
+
+
+
+
+.btn_descartar {
+  font-size: 18px;
+  color: #000000;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+  margin-top:550px ;
+}
+
+.btn_des_a{
+  text-decoration: none;
+  color: #000000;
+}
+
+
+.btn_descartar:focus,
+.btn_descartar:hover {
+  color: #090909;
+}
+
+.btn_descartar:focus:after,
+.btn_descartar:hover:after {
+  width: 100%;
+
+}
+
+.btn_descartar:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #000000;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.boton_{
+  margin-top: -647px;
+  margin-bottom: 50px;
+  margin-left: 850px;
 }

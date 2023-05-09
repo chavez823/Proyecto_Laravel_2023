@@ -2,16 +2,34 @@
   @extends('templates.header')
   <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   <!--Fonts-->
+   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poiret+One&display=swap" rel="stylesheet">
   <!--Icono-->
+  <link rel="stylesheet" href="css/style_ofer.css">
   <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
   </head>
   <header>
 </header>
     <!-- Main -->
     <!--Funcional con php-->
-
+    
+<div class="select_f">
+  <form action="" method="post">
+    <div class="wrap-input100"> 
+        <select class="input100 s_ele" name="categ" >
+          @foreach ($categoria as $cate)
+          <option class="input100"   value="" >Todas</option>
+          <option class="input100"   value="">{{$cate->Nombre}}</option>
+          <span class="focus-efecto"></span>   
+          @endforeach                                    
+        </select>        
+    </div>
+    <button class="btn_buscar sesion">Buscar</button>
+  </form>
+</div>
    <main> 
     
+   <div class="altura-a-b"></div>
    <div class="profile-area">
             <p class="Parrafo">LO MEJOR PARA TU CUIDADO PERSONAL</p>
             <div class="container">
@@ -52,7 +70,11 @@
   </div>
     
   </main>
-
+  
+  
+                                   
+                             
+  
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!--SLIDER-->

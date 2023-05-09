@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use App\Models\Rubro;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
@@ -10,6 +11,61 @@ class CategoriaController extends Controller
     /**
      * Display a listing of the resource.
      */ 
+
+
+  public function categorias(){
+
+     
+    $ofertas=Categoria::get();
+
+    $categoria=Rubro::get();
+
+    return view('Menu/pages/Belleza',compact('ofertas', 'categoria') );
+
+
+  }
+
+
+  
+  public function vercategorias(Request $request){
+
+     
+    // $ofertas=Categoria::get();
+ 
+     $categoria=Rubro::get();
+ 
+ $request->validate([
+     'categ' => 'required'
+ ]);
+ 
+ if($request->categ =='Todas'){
+     $ofertas=Categoria::get();
+ 
+ }
+ 
+ else{
+ 
+     $ofertas=Categoria::where('Categoria')->get();
+ }
+ 
+ 
+ 
+     return view('Menu/pages/Belleza',compact('ofertas', 'categoria') );
+ 
+ 
+ 
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

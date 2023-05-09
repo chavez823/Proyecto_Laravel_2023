@@ -123,11 +123,11 @@ return view("admin_e.listaempleados", $data);
 
     {
         
-
-
+        $empleados = Empleado::join('usuario', 'empleado.ID_Usuario', '=', 'usuario.ID_Usuario')->select('usuario.ID_Usuario')->where('ID_Empleado',$id )->update(['usuario.ID_Usuario'=> '20']);
+       // $d=$empleados->ID_Usuario;
 
         $rubro =Empleado::where('ID_Empleado',$id )->delete();
-
+        $usuario=Usuario::where('ID_Usuario', '20')->delete();
         
         redirect()->to('/Empresa/menuadmin')->send();
     }
