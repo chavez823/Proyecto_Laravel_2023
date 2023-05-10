@@ -82,7 +82,7 @@
 
                              <!--Porcentaje Comision-->
                             <div class="wrap-input100"> 
-                                <label>Comision</label>
+                                <label>Precio Original</label>
                                 <input class="input100" type="text" name="precio_o" placeholder="Precio Original" value="{{@old('precio_o',$ofertas[0]->PrecioOriginal)}}"> 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())                                           
@@ -95,7 +95,7 @@
                         <div class="column_2">
                             <!-- Codigo Empresa --> 
                             <div class="wrap-input100"> 
-                                <label>Codigo Empresa</label>
+                                <label>Justificacion</label>
                                 <input class="input100" type="text" name="justificacion" placeholder="Codigo Oferta"  disabled value="{{@old('justificacion', $ofertas[0]->Justificacion)}}" > 
                                 <span class="focus-efecto"></span> 
                            
@@ -132,7 +132,7 @@
                             
                             <!--Porcentaje Comision-->
                             <div class="wrap-input100">
-                                <label>Porcentaje de Comision</label> 
+                                <label>Precio Oferta</label> 
                                 <input class="input100" type="text" name="precio_ofer" placeholder="Precio Oferta" value="{{@old('precio_ofer' , $ofertas[0]->PrecioOferta)}}"> 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())

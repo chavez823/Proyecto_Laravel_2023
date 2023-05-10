@@ -119,11 +119,11 @@ class OfertaController extends Controller
         'descripcion'=> 'required',
         'detalles'=> 'required',
         'categ'=> 'required',
-        'precio_o'=> 'required',
+        'precio_o'=> 'required|min:0.1',
         'cod_o'=> 'required',
-        'fecha_i'=> 'required',
-        'fecha_f'=> 'required',
-        'precio_ofer'=> 'required',
+        'fecha_i'=> 'required|date',
+        'fecha_f'=> 'required|date|fecha_mayor:fecha_i',
+        'precio_ofer'=> 'required|min:0.1',
       ]);
 
 $ofertas=/*DB::table('oferta')*/Oferta::
