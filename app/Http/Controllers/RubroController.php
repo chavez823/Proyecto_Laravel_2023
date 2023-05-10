@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Rubro;
+use App\Models\Oferta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RubroController extends Controller
 {
@@ -68,8 +70,18 @@ class RubroController extends Controller
 'id'=>'required',
 
         ]);
+        $r=Rubro::where('ID_Rubro', $id)->get();
+   $c=$r[0]->Nombre_Rubro;
 
-        $rubro=Rubro::where('ID_Rubro',$id )->update(['ID_Rubro' => $request->id, 'Nombre' => $request->name  ]);
+ //   DB::table('rubro')->where('ID_Rubro','=',$id)
+    
+ //  ->update(['ID_EstadoOferta' => '4']);
+
+
+       
+        $oferta=Oferta::where('Categoria', $c)->update(['Categoria' => $request->name]);
+
+        $rubro=Rubro::where('ID_Rubro',$id )->update(['ID_Rubro' => $request->id, 'Nombre_Rubro' => $request->name  ]);
         redirect()->to('/Empresa')->send();
 
     }

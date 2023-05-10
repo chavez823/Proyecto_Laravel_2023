@@ -89,7 +89,7 @@ class Oferta extends Model
 		return $this->hasMany(Cupon::class, 'ID_Oferta');
 	}
     public function insertOferta($ID_Oferta,$Titulo,$Categoria,$CantLimite,$Descripcion,$Detalles,
-    $FechaInicio,$FechaFin,$PrecioOriginal,$PrecioOferta,$Imagen,$ID_Empresa,$ID_EstadoOferta,$FechaLimite){
+    $FechaInicio,$FechaFin,$PrecioOriginal,$PrecioOferta,$Imagen,$ID_Empresa,$ID_EstadoOferta){
         DB::table('oferta')->insert([
             ['ID_Oferta' => $ID_Oferta, 
             'Titulo' => $Titulo,
@@ -104,7 +104,7 @@ class Oferta extends Model
             'Imagen'=>$Imagen,
             'ID_Empresa'=>$ID_Empresa,
             'ID_EstadoOferta'=>$ID_EstadoOferta,
-            'FechaLimite'=>$FechaLimite
+            'FechaLimite'=>$FechaFin
             ]
         ]);
 

@@ -31,7 +31,7 @@ class CategoriaController extends Controller
 
       public function m(string $id){
 
-
+       $_SESSION['catgoria']=$id;
      $ofertas=Categoria::Where('Categoria', $id)->get();
 //return $id;
 

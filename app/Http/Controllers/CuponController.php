@@ -284,9 +284,9 @@ class CuponController extends Controller
      * Update the specified resource in storage.
      */
 	public function update($id,$estado)
-    {
+    {   
         $sentencia = DB::table('cupon')
-                        ->where('ID_Cupon', $id)                        
+                        ->where('ID_Cupon', $id)                                            
                         ->update(['ID_Estado_Cupon' => $estado]);
         return $sentencia;
         

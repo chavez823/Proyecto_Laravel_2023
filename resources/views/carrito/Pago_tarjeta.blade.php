@@ -93,6 +93,25 @@
     <div class="payment-title">
 
         <h1>Informacion de pago</h1>
+        @if($errors->all())
+
+<div class="alert alert-danger">
+
+<ul>
+
+@foreach($errors->all() as $err)
+
+ <li>{{$err}}</li>
+
+ @endforeach
+
+ </ul>
+
+ </div>
+
+@endif
+
+
     </div>
 
    
@@ -208,12 +227,9 @@
 <form action="/completar-compra" method="post">
     @csrf
 
-   
-    @if(Session::has('errors'))
-                       <div class='alert alert-danger' role='role'>
-                         {{session::get('errors')}}
-                         </div>
-                         @endif
+ 
+
+
 
     <div class="form-container" id="f_orm">
         <div class="field-container">

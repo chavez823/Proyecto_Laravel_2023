@@ -81,7 +81,7 @@
 				</div> 
 				
                 <h6>¿No tienes una cuenta?</h6>
-                <h6>Regístrate<a href="index.php?c=cliente" class="">   aquí</a>
+                <h6>Regístrate<a href="nuevocliente" class="">   aquí</a>
 	            </h6>				
                 <button class="sesion">
                     Ingresar
