@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -62,7 +61,7 @@
 
 <?php 
     //Comprueba si tiene algo el carrito
-   // if(sizeof($cupones) == 0) {
+    if(sizeof($cupones)>0) {
     
       //echo var_dump($_SESSION['CARRITO']);
 ?>
@@ -81,6 +80,11 @@
   //Pruebas
   foreach ($cupones as $cupon) {
       if($cupon->Estado=="Sin canjear"){
+        $FechaInicio = strtotime($cupon->FechaInicio);
+        $FechaFin = strtotime($cupon->FechaFin);
+        $FechaActual = date('d-m-Y');
+        if($FechaFin > strtotime($FechaActual))
+  { 
   ?>
   <!-- Todo lo de abajo se tendra que repetir en el foreach para leer los datos de la base-->
   
@@ -117,7 +121,13 @@
         </div>     
     </div>
 <?php
+  }else {
+                      DB::table('cupon')
+                      ->where('ID_Cupon','=',$cupon->ID_Cupon)
+                      ->update(['ID_Estado_Cupon' => '3']);
+  }
       }
+      
   }
 ?>
 
@@ -227,13 +237,13 @@
 
 
     <?php
-   // }else{
+    }else{
     ?>
         <div class="alert alert-success">
            <h3>No hay cupones comprados...!</h3> 
         </div>
   
-    <?php //}?>
+    <?php }?>
 
 </div><!-- end of container -->
 
