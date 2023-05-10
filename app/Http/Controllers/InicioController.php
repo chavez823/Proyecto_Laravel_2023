@@ -29,7 +29,7 @@ class InicioController extends Controller
         $inicio = new Inicio();
         $promo=$inicio->get_promo($id);
         
-        
+        if(!empty($_SESSION['session'])){
         $ID=$id;
 		$NOMBRE=$promo[0]->Titulo;
 	    $DESCRIPCION=$promo[0]->Descripcion;
@@ -131,6 +131,10 @@ class InicioController extends Controller
             }
             
         }
+    }
+    else{
+        redirect()->to('form')->send();
+    }
 
 
     }

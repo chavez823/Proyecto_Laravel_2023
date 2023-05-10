@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -82,6 +81,11 @@
   //Pruebas
   foreach ($cupones as $cupon) {
       if($cupon->Estado=="Sin canjear"){
+        $FechaInicio = strtotime($cupon->FechaInicio);
+        $FechaFin = strtotime($cupon->FechaFin);
+        $FechaActual = date('d-m-Y');
+        if($FechaFin > strtotime($FechaActual))
+  { 
   ?>
   <!-- Todo lo de abajo se tendra que repetir en el foreach para leer los datos de la base-->
   
@@ -118,7 +122,13 @@
         </div>     
     </div>
 <?php
+  }else {
+                      DB::table('cupon')
+                      ->where('ID_Cupon','=',$cupon->ID_Cupon)
+                      ->update(['ID_Estado_Cupon' => '3']);
+  }
       }
+      
   }
 ?>
 
