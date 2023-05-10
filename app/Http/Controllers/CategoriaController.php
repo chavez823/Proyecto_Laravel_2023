@@ -24,7 +24,7 @@ class CategoriaController extends Controller
     
        // $ofertas=Categoria::/*Where('Categoria', 'like', '%$c%')->*/get();
     
-        return view('Menu/pages/salud',compact( 'categoria') );
+        return view('Menu/pages/categorias',compact( 'categoria') );
     
     
       }
@@ -35,7 +35,7 @@ class CategoriaController extends Controller
      $ofertas=Categoria::Where('Categoria', $id)->get();
 //return $id;
 
-    return view('Menu/pages/Super', compact( 'ofertas') );
+    return view('Menu/pages/ofertas', compact( 'ofertas') );
 
 
   }
