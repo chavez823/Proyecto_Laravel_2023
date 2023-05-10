@@ -1,57 +1,57 @@
 
-    @extends('templates.header')
+@extends('templates.header')
 
-    <!-- Main -->
-    <!--Funcional con php-->
-    <head>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <!--Icono-->
-    <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
-    </head>
+<!-- Main -->
+<!--Funcional con php-->
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--Icono-->
+<link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
+<link rel="css" href="{{asset('css/n_categorias.css')}}">
+</head>
 
-   <main> 
-   <div class="profile-area">
-            <p class="Parrafo">LO MEJOR PARA TU SALUD</p>
-            <div class="container">
-              <div class="row">
-    <?php
+<main> 
+<div class="profile-area">
+        <p class="Parrafo">LO MEJOR PARA TU SALUD</p>
+        <div class="container">
+          <div class="row">
+<?php
 
-    foreach($categoria as $oferta){?>                     
-      <div class="col-md-4">
-        
-      <div class="card">
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">Categoria</h5>
-    <a href="Categoria/ofertas/<?php echo $oferta->Nombre_Rubro?>" ><?php echo $oferta->Nombre_Rubro  ?></a>
-    
+foreach($categoria as $oferta){?>                     
+      <div class="col-md-4">                
+        <div class="card">
+            <div class="card-header">
+              Featured
+            </div>
+          <div class="card-body">
+            <h5 class="card-title">Categoria</h5>
+            <a href="Categoria/ofertas/<?php echo $oferta->Nombre_Rubro?>" ><?php echo $oferta->Nombre_Rubro  ?></a>
+
+          </div>
+        </div>
+            <br>
+      </div>
+<?php
+}
+?>
+<!-- Ofrecemos -->
+  <div class="altura-a-b"></div>
   </div>
 </div>
-            <br>
-        </div>
-    <?php
-    }
-    ?>
-    <!-- Ofrecemos -->
-      <div class="altura-a-b"></div>
-      </div>
-    </div>
-  </div>
-  </main>
+</div>
+</main>
 
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <!--SLIDER-->
-    <script src="https://kit.fontawesome.com/5c72b9dab8.js" crossorigin="anonymous"></script>
-    <script src="{{asset('js/slider.js')}} "></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <!--Pie de la pagina-->
-        @extends('templates.footer')
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+<!--SLIDER-->
+<script src="https://kit.fontawesome.com/5c72b9dab8.js" crossorigin="anonymous"></script>
+<script src="{{asset('js/slider.js')}} "></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-  <!--Pie de la pagina-->
+<!--Pie de la pagina-->
+    @extends('templates.footer')
+</body>
+
+<!--Pie de la pagina-->
 </html>
