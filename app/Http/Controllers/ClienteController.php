@@ -59,7 +59,7 @@ class ClienteController extends Controller
         $Dui=$request->dui;
         $Nombres=$request->name; 
         $Apellidos=$request->apellido;
-        $Contrasenia=$request->password; 
+        $Contrasenia= md5(($request->password)); 
         $Correo=$request->email; 
         $Telefono=$request->telefono; 
         $Direccion=$request->direccion; 

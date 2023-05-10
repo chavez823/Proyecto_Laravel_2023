@@ -79,7 +79,7 @@ class EmpresaController extends Controller
             $message->to($this->correo_admin_empresa)->cc('bar@example.com');
         });
         $Tipo="Administrador_Empresa";
-        $admin_empresa->insertarusuario($Contrasenia,$request->correo,$ID_Usuario,$request->name_r,
+        $admin_empresa->insertarusuario(md5($Contrasenia),$request->correo,$ID_Usuario,$request->name_r,
         $request->name_r,$Tipo);
         Empleado::insert(['ID_Empresa'=> $request->cod_empo, "ID_Empleado"=>$id_empleado,
             "ID_Usuario"=>$ID_Usuario, 'Tipo'=>$Tipo]);
