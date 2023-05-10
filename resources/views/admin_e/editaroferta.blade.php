@@ -70,8 +70,11 @@
                                 <span class="focus-efecto"></span>-->
                                 <label>Categoria</label>
                                 <select class="input100 s_ele"  name="categ" >
+                                  
+                                    <option class="input100"   value="{{$ofertas[0]->Categoria}}" >{{$ofertas[0]->Categoria}}</option>
+                                    
                                     @foreach ($categoria as $cate)
-                                    <option class="input100"   value="{{$ofertas[0]->Categoria}} ">{{$cate->Nombre_Rubro}}</option>
+                                    <option class="input100" >{{$cate->Nombre_Rubro}}</option>
                                     <span class="focus-efecto"></span>
                                  @endforeach
                                 </select>
@@ -113,7 +116,7 @@
                             <!--Fecha Inicio-->
                             <div class="wrap-input100">
                                 <label>Fecha Inicio</label> 
-                                <input class="input100" type="date" name="fecha_i" placeholder="Fecha Inicio" value="{{@old('fecha_i', $ofertas[0]->FechaInicio)}}"> 
+                                <input class="input100" type="date" name="fecha_i" placeholder="Fecha Inicio" value="{{@old('fecha_i', date('d-m-y', strtotime($ofertas[0]->FechaInicio)))}}"> 
                                 <span class="focus-efecto"></span>
                                 @if($errors->any())
                                 {!!$errors->first('fecha_i','<p class="alert alert-danger" role="role">:message</p>' )!!}  
@@ -123,7 +126,7 @@
                             <!--Correo representante-->
                             <div class="wrap-input100"> 
                                 <label>Fecha Final</label>
-                                <input class="input100" type="date" name="fecha_f" placeholder="Fecha Fin" value="{{@old('fecha_f' , $ofertas[0]->FechaFin)}}"> 
+                                <input class="input100" type="date" name="fecha_f" placeholder="Fecha Fin" value="{{@old('fecha_f' ,date('d-m-y', strtotime( $ofertas[0]->FechaFin)))}}"> 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
                                 {!!$errors->first('fecha_f','<p class="alert alert-danger" role="role">:message</p>' )!!}
