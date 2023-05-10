@@ -16,9 +16,14 @@
               <div class="row">
     <?php
 
-    foreach($ofertas as $oferta){?>                     
+    foreach($ofertas as $oferta){
+                $FechaInicio = strtotime($oferta->FechaInicio);
+                $FechaFin = strtotime($oferta->FechaFin);
+                $FechaActual = date('d-m-Y');
+                if($FechaFin > strtotime($FechaActual))
+            { 
+      ?>                     
       <div class="col-md-4">
-
               <div class="card">
                 <div class="card-image waves-effect waves-block waves-light">
                   <img class="activator" src="<?php echo $oferta->Imagen ?>">
@@ -37,9 +42,15 @@
                   <p>Fecha de Final: <?php echo $oferta->FechaFin ?></p>
                 </div>
               </div>
-              
             <br>
         </div>
+        <?php 
+          }else {
+                DB::table('oferta')
+                ->where('ID_Oferta','=',$oferta->ID_Oferta)
+                ->update(['ID_EstadoOferta' => '4']);
+          }
+        ?>
     <?php
     }
     ?>
