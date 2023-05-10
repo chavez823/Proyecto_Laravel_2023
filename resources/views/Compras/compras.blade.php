@@ -132,19 +132,11 @@
   }
 ?>
 
-  <?php
-  if($cupones->ID_Estado_Cupon !=2){    
-  ?>
-
   <div class="row" style="margin-top: 10px;">
     <div class="col-sm-12">
       <h3 style="text-align: center; font-weight: bold;">Cupones Canjeados</h3>      
     </div>
   </div>
-  <?php }
-  else{ echo "<h1>Vacio</h1>";
-  }?>
-
 
   <?php
   //Pruebas
