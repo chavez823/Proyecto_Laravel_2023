@@ -62,7 +62,7 @@
 
 <?php 
     //Comprueba si tiene algo el carrito
-    if(sizeof($cupones) == 0) {
+    if(sizeof($cupones)>0) {
     
       //echo var_dump($_SESSION['CARRITO']);
 ?>
