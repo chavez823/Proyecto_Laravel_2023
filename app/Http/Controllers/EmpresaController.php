@@ -53,7 +53,7 @@ class EmpresaController extends Controller
                 'direccion'=> 'required',
                 'telefono'=> 'required',
                 'rubro'=> 'required',
-                'cod_empo'=> 'required|regex:/^[EMP]\d{3}$/',
+                'cod_empo'=> 'required|regex:/^EMP\d{3}$/',
                 'name_r'=> 'required|string',
                 'correo'=> 'required|email',
                 'porcet'=> 'required|numeric|min:0.05|max:0.5',

@@ -70,8 +70,8 @@
                                     <option class="input100" value="" disabled>Rubro</option>
                                     <span class="focus-efecto"></span>
                                     @foreach ($rubros as $rubro)
-                                        <option class="input100" value="{{$rubro->Nombre}}" {{old('rubro')==$rubro->Nombre?'selected':''}} >
-                                        {{$rubro->Nombre}}
+                                        <option class="input100" value="{{$rubro->Nombre_Rubro}}" {{old('rubro')==$rubro->Nombre_Rubro?'selected':''}} >
+                                        {{$rubro->Nombre_Rubro}}
                                         </option>
                                         <span class="focus-efecto"></span>   
                                     @endforeach  
