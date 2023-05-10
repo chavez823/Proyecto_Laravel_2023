@@ -19,7 +19,7 @@
             <line x1="4" y1="12" x2="8" y2="8" />
             <line x1="20" y1="4" x2="20" y2="20" />
           </svg></a>
-    </div>
+</div>
 <section class="main-content">
   <div class="container">  
     <div class="row">
