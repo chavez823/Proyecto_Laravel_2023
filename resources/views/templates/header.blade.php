@@ -38,7 +38,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="Categoria">Categorias</a>
+                <a class="nav-link" href="http://127.0.0.1:8000/Categoria">Categorias</a>
               </li>
 
               <li class="nav-item">

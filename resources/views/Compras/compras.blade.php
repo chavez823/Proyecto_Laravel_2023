@@ -51,7 +51,12 @@
             <ul class="dropdown-menu">
               <li><a class="dropdown-item active" href="../cupones">Ver Cupones</a></li>
                <li> <a class="dropdown-item " href="../form/cambio/contraseña">Ajustes</a></li>
-              <li><a class="dropdown-item" href="index.php?c=categoria">Logout</a></li>
+               <li> <form action="logout" method="post">
+                    @csrf
+                   
+                    <a href="#" onclick="this.closest('form' ).submit()">Logout</a>
+                 
+                  </form></li>
             </ul>
           </li>
         </ul>
