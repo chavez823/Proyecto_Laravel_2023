@@ -22,7 +22,7 @@
     <nav class="navbar navbar-expand-lg  fixed-top" style="background-color: #86A3B8;">
       <div class="container-fluid">
         <!--Logo-->
-        <a class="navbar-brand" href="../buyit">
+        <a class="navbar-brand" href="http://127.0.0.1:8000/buyit">
           <img class="logotipo" src="{{asset('img/Logo_sin_slogan_t.png')}} " alt="">
         </a>
         
@@ -34,7 +34,7 @@
           
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="/buyit">Inicio</a>
+              <a class="nav-link" aria-current="page" href="http://127.0.0.1:8000/buyit">Inicio</a>
             </li>
 
             <li class="nav-item">
@@ -42,7 +42,7 @@
               </li>
 
               <li class="nav-item">
-                 <a class="nav-link" href="carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
+                 <a class="nav-link" href="http://127.0.0.1:8000/carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
               </li>
               
 
