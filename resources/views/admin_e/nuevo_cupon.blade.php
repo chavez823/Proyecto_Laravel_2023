@@ -157,10 +157,10 @@
                                 <span class="focus-efecto"></span> 
                             </div>
                            <!-- Fecha Limite --> 
-                           <div class="wrap-input100"> 
+                          <!-- <div class="wrap-input100"> 
                             <input class="input100" type="date" name="fecha_limite" placeholder="Fecha Limite" value="{{old('fecha_limite')}}" >	 
                             <span class="focus-efecto"></span> 
-                            </div>
+                            </div>-->
 
                             
 

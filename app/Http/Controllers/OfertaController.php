@@ -41,7 +41,7 @@ class OfertaController extends Controller
             'fecha_i'=> 'required|date',
             'fecha_f'=> 'required|date|fecha_mayor:fecha_i',
             'precio_inicial'=> 'required|numeric|min:0.1',
-            'fecha_limite'=>'required|date',
+           
             'cantidad'=>'required|integer|min:1',
             'imagen'=>'required'
           ]);
@@ -63,8 +63,7 @@ class OfertaController extends Controller
         $request->precio_o,
         $request->imagen,
         $_SESSION['id_empresa'],
-        '1',
-        $request->fecha_limite);
+        '1',);
         return view("admin_e.menu_ad");
   
     }

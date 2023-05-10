@@ -77,7 +77,7 @@
                                 <span class="focus-efecto"></span>-->
                                 <select class="input100 s_ele"  name="categ" >
                                     @foreach ($categoria as $cate)
-                                    <option class="input100"   value="{{$ofertas[0]->Categoria}} ">{{$cate->Nombre}}</option>
+                                    <option class="input100"   value="{{$ofertas[0]->Categoria}} ">{{$cate->Nombre_Rubro}}</option>
                                     <span class="focus-efecto"></span>
                                  @endforeach
                                 </select>

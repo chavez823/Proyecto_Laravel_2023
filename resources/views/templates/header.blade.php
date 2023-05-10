@@ -37,21 +37,12 @@
               <a class="nav-link" aria-current="page" href="/buyit">Inicio</a>
             </li>
 
-              <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorias
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="belleza">Belleza</a></li>
-                <li><a class="dropdown-item" href="salud">Salud</a></li>
-                <li><a class="dropdown-item" href="restaurante">Restaurante</a></li>
-                <li><a class="dropdown-item" href="super">Super</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="../Categoria">Principal</a></li>
-              </ul>
+            <li class="nav-item">
+                <a class="nav-link" href="Categoria">Categorias</a>
+              </li>
 
               <li class="nav-item">
-                 <a class="nav-link" href="../carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
+                 <a class="nav-link" href="carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>			  
               </li>
               
 
