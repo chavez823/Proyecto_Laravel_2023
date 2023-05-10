@@ -63,7 +63,12 @@
                   <li><hr class="dropdown-divider"></li>
                   <li> <a class="dropdown-item " href="../form/cambio/contraseña">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="index.php?c=usuario&a=logout">Log out</a></li>
+                  <li> <form action="logout" method="post">
+                    @csrf
+                   
+                    <a href="#" onclick="this.closest('form' ).submit()">Logout</a>
+                 
+                  </form></li>
 
                   <?php } ?>
                 </ul>

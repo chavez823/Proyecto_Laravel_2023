@@ -3,8 +3,7 @@
 
 <!-- Main -->
 <!--Funcional con php-->
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<head> 
   <!--Icono-->
 <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
 <link rel="stylesheet"  href="{{asset('css/n_categorias.css')}}">
