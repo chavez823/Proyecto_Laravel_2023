@@ -7,29 +7,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <!--Icono-->
 <link rel="shortcut icon" href="{{asset('img/icono.ico')}}" type="image/x-icon">
-<link rel="css" href="{{asset('css/n_categorias.css')}}">
+<link rel="stylesheet"  href="{{asset('css/n_categorias.css')}}">
 </head>
 
 <main> 
-<div class="profile-area">
+
         <p class="Parrafo">LO MEJOR PARA TU SALUD</p>
-        <div class="container">
           <div class="row">
 <?php
 
 foreach($categoria as $oferta){?>                     
       <div class="col-md-4">                
-        <div class="card">
-            <div class="card-header">
-              Featured
+        <div class="courses-container">
+          <div class="course">
+            <div class="course-preview">
+              <img class="imagen_" src="{{asset('img/Logo_sin_slogan_t.png')}}" >
             </div>
-          <div class="card-body">
-            <h5 class="card-title">Categoria</h5>
-            <a href="Categoria/ofertas/<?php echo $oferta->Nombre_Rubro?>" ><?php echo $oferta->Nombre_Rubro  ?></a>
-
+            <div class="course-info">			
+              <h6>Categoria: </h6>
+              <h2><?php echo $oferta->Nombre_Rubro  ?></h2>
+              <a class="btn" href="Categoria/ofertas/<?php echo $oferta->Nombre_Rubro?>">Compra ya</a>
+            </div>
           </div>
         </div>
-            <br>
       </div>
 <?php
 }
@@ -37,8 +37,8 @@ foreach($categoria as $oferta){?>
 <!-- Ofrecemos -->
   <div class="altura-a-b"></div>
   </div>
-</div>
-</div>
+
+
 </main>
 
 
@@ -46,8 +46,7 @@ foreach($categoria as $oferta){?>
 <!--SLIDER-->
 <script src="https://kit.fontawesome.com/5c72b9dab8.js" crossorigin="anonymous"></script>
 <script src="{{asset('js/slider.js')}} "></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 
 <!--Pie de la pagina-->
     @extends('templates.footer')
