@@ -34,7 +34,7 @@
             
             <!--OJO-->
             <div class="wrap-login"> 
-                <form action="/Empresa/update/<?php echo $empleado[0]->ID_Empresa?>" method="post"> 
+                <form action="/Empresa/update/<?php echo $empresa[0]->ID_Empresa?>" method="post"> 
                     @csrf
                     @method('PUT')
                                                         
