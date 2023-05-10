@@ -31,7 +31,13 @@
                 <div class="card-content">
                   <span class="card-title activator grey-text text-darken-4"><?php echo $oferta->Titulo ?><i class="material-icons right">+</i></span>
                   <!--AQUI CAMBIAR EL ID-->
-                  <p> <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>      </p>
+
+                  <?php if(!isset($_SESSION['session'])) { ?>
+                    <p> <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>      </p>
+                            <?php  }     else{
+   if($_SESSION['session']['tipo'] =='Cliente') {
+    ?>
+                        <p> <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>      </p> <?php }}  ?>
                 </div>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4"><?php echo $oferta->Titulo ?><i class="material-icons right">-</i></span>

@@ -152,7 +152,12 @@
                         <h1><?php echo $oferta->Titulo ?></h1>
                         <p>$<?php echo $oferta->PrecioOferta ?></p>
                         <p><?php echo $oferta->Descripcion ?></p>
-                        <a href="/carrito/<?=$oferta->ID_Oferta?>&1" class="btn btn-primary">Agregar al carrito</a>
+                        <?php if(!isset($_SESSION['session'])) { ?>
+                            <a href="/carrito/<?=$oferta->ID_Oferta?>&1" class="btn btn-primary">Agregar al carrito</a>
+                            <?php  }     else{
+   if($_SESSION['session']['tipo'] =='Cliente') {
+    ?>
+                        <a href="/carrito/<?=$oferta->ID_Oferta?>&1" class="btn btn-primary">Agregar al carrito</a> <?php   }}  ?>
                         </form>     
                       </div>    
                     </div>
