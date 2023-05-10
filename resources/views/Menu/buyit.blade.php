@@ -80,10 +80,7 @@
                    
                     <a href="#" onclick="this.closest('form' ).submit()">Logout</a>
                  
-                  </form>
-                    
-                  
-
+                  </form></li>
                   <?php } ?>
                 </ul>
               </li> 

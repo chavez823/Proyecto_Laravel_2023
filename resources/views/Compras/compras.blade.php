@@ -38,18 +38,9 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             
-              <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorias
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="Categoria/belleza">Belleza</a></li>
-                <li><a class="dropdown-item" href="Categoria/salud">Salud</a></li>
-                <li><a class="dropdown-item" href="Categoria/restaurante">Restaurante</a></li>
-                <li><a class="dropdown-item" href="Categoria/super">Otros</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="Categoria">Principal</a></li>
-              </ul>
+          <li class="nav-item">
+                <a class="nav-link" href="Categoria">Categorias</a>
+              </li>
 
             <li class="nav-item">
               <a class="nav-link" href="carrito"><i class="fa-solid fa-cart-shopping"></i> (<?php echo (empty($_SESSION['CARRITO'])?0:array_sum(array_column($_SESSION['CARRITO'],"CANTIDAD")));?>)</a>		
@@ -60,7 +51,7 @@
             <?php echo  isset($_SESSION['session'])?$_SESSION['session']['nombre']:"Login" ?> <i class="fa-solid fa-user"></i></a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item active" href="../cupones">Ver Cupones</a></li>
-              <li><hr class="dropdown-divider"></li>
+               <li> <a class="dropdown-item " href="../form/cambio/contraseña">Ajustes</a></li>
               <li><a class="dropdown-item" href="index.php?c=categoria">Logout</a></li>
             </ul>
           </li>
@@ -69,15 +60,15 @@
     </div>
 </nav>
 
-
-
-<div class="container">
 <?php 
     //Comprueba si tiene algo el carrito
-    if(sizeof($cupones)> 0) {
+    if(sizeof($cupones)>0) {
     
       //echo var_dump($_SESSION['CARRITO']);
 ?>
+
+<div class="container">
+
   <div class="row" style="margin-top: 10px;">
     <div class="col-sm-12">
       <h3 style="text-align: center; font-weight: bold;">Cupones Disponibles</h3>      
