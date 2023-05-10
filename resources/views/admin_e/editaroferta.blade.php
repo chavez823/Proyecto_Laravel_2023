@@ -93,10 +93,10 @@
                         </div>		
 
                         <div class="column_2">
-                            <!-- Codigo Empresa --> 
+                            <!-- Justificacion --> 
                             <div class="wrap-input100"> 
                                 <label>Justificacion</label>
-                                <input class="input100" type="text" name="justificacion" placeholder="Codigo Oferta"  disabled value="{{@old('justificacion', $ofertas[0]->Justificacion)}}" > 
+                                <textarea class="input100" type="text" name="justificacion" disabled>{{@old('justificacion', $ofertas[0]->Justificacion)}} </textarea>
                                 <span class="focus-efecto"></span> 
                            
                             </div>
@@ -136,11 +136,8 @@
                                 <input class="input100" type="text" name="precio_ofer" placeholder="Precio Oferta" value="{{@old('precio_ofer' , $ofertas[0]->PrecioOferta)}}"> 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
-                      
-                     
-                      {!!$errors->first('precio_ofer','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif    
+                                {!!$errors->first('precio_ofer','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                                @endif    
                             </div>
 
                         </div>
