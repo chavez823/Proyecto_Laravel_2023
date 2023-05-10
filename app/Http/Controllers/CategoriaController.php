@@ -32,7 +32,7 @@ class CategoriaController extends Controller
       public function m(string $id){
 
        $_SESSION['catgoria']=$id;
-     $ofertas=Categoria::Where('Categoria', $id)->get();
+     $ofertas=Categoria::Where('Categoria', $id)->where('ID_EstadoOferta','=', '3')->get();
 //return $id;
 
     return view('Menu/pages/ofertas', compact( 'ofertas') );

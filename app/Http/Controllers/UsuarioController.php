@@ -64,7 +64,7 @@ $request->validate([
 
 
      $user= Usuario::where('Correo', $request->email )->first();
-  if ($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Cliente' && $user->Token !=null )
+  if ($user != null && $user->Contrasenia=== md5(($request->password)) && $user->Tipo=='Cliente' && $user->Token !=null )
            {{
 
             
@@ -78,13 +78,13 @@ $request->validate([
               }
               
             }
-            else if ($user != null && $user->Contrasenia===($request->password) && $user->Tipo=='Cliente' && $user->Token ==null )
+            else if ($user != null && $user->Contrasenia===md5(($request->password)) && $user->Tipo=='Cliente' && $user->Token ==null )
             {{
               redirect()->to('/nuevocliente/verificacion')->send();}}
  
 
 
-            elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->Token ==null  && $user->Tipo=='Administrador' ))
+            elseif(($user != null && $user->Contrasenia===md5(($request->password)) &&  $user->Token ==null  && $user->Tipo=='Administrador' ))
 {{
             
                 $request->session()->regenerate();
@@ -104,7 +104,7 @@ $request->validate([
 
 }}
 
-elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->Token ==null  && $user->Tipo=='Administrador_Empresa' ))
+elseif(($user != null && $user->Contrasenia===md5(($request->password)) &&  $user->Token ==null  && $user->Tipo=='Administrador_Empresa' ))
 {{
             
                 $request->session()->regenerate();
@@ -159,14 +159,10 @@ elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->To
 
        
 
-        if ($request->password != null ){
-
-          {
-            
-       $user= Usuario::where('Correo',  $_SESSION['session']["correo"] )->get();
-       // $user->Dui;
-        $user->update([
-          'Contrasenia'=>($request->password)]);
+      
+          $contra=md5($request->password);
+       $user= Usuario::where('Correo',  $_SESSION['session']["correo"] )->update([
+          'Contrasenia'=>$contra]);
            
                //   $useru= User::update(['Contrasenia'=>($request->password)]);
 
@@ -176,13 +172,10 @@ elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->To
          
 
     
-          }
+          
 
          
 
-   }
-   return back()->with( 'error', 'Debe completar el campo  Contraseña ');
-    
    
     
 
@@ -197,18 +190,13 @@ elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->To
       
         
         ]);
-      $user= Usuario::where('Correo', $request->email )->first();
+        $contrasenia=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
+       
+      $user= Usuario::where('Correo', $request->email )->update([
+        'Contrasenia'=>md5($contrasenia)]);
       
-      $_SESSION['core']= $request->email;
-     $correo=$_SESSION['core'];
-      $contrasenia=substr(number_format(time() * rand(), 0, '', ''), 0, 6);
-
-      if($user != null ){{
-
-        $user->update([
-          'Contrasenia'=>$contrasenia]);
-           
-               
+     $correo=$request->email;
+          
 
             
               Mail::raw($contrasenia , function ($message) use($correo) {
@@ -227,11 +215,7 @@ elseif(($user != null && $user->Contrasenia===($request->password) &&  $user->To
 
          
 
-   }
-   return back()->with( 'errorcambio', 'Debe completar el campo');
-    
-   
-      }
+  
 
 
 

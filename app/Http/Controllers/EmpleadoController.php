@@ -43,7 +43,7 @@ class EmpleadoController extends Controller
         $Tipo="empleado_api";
         $usuario= new Usuario();
        
-            $usuario->insertarusuario($Contrasenia,$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo);
+            $usuario->insertarusuario(md5($Contrasenia),$Correo,$ID_Usuario,$Nombres, $Apellidos,$Tipo);
             $empleado=Empleado::insert(['ID_Empresa'=> $_SESSION['id_empresa'], "ID_Empleado"=>$id_empleado, "ID_Usuario"=>$ID_Usuario, 'Tipo'=>$Tipo]);
 
             Mail::raw($Contrasenia , function ($message) use($Correo) {

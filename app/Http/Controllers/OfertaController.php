@@ -43,7 +43,7 @@ class OfertaController extends Controller
             'precio_inicial'=> 'required|numeric|min:0.1',
            
             'cantidad'=>'required|integer|min:1',
-            'imagen'=>'required'
+            'imagen'=>'required|url'
           ]);
         $ID_Oferta=rand(1,100);
 		for ($i=0; $i < 2; $i++) { 
