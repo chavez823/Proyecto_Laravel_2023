@@ -60,15 +60,15 @@
     </div>
 </nav>
 
-
-
-<div class="container">
 <?php 
     //Comprueba si tiene algo el carrito
    // if(sizeof($cupones) == 0) {
     
       //echo var_dump($_SESSION['CARRITO']);
 ?>
+
+<div class="container">
+
   <div class="row" style="margin-top: 10px;">
     <div class="col-sm-12">
       <h3 style="text-align: center; font-weight: bold;">Cupones Disponibles</h3>      

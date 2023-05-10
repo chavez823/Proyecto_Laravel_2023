@@ -62,7 +62,12 @@
                   <li><hr class="dropdown-divider"></li>
                   <li> <a class="dropdown-item " href="../form/cambio/contraseña">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="index.php?c=usuario&a=logout">Log out</a></li>
+                  <li> <form action="logout" method="post">
+                    @csrf
+                   
+                    <a href="#" onclick="this.closest('form' ).submit()">Logout</a>
+                 
+                  </form></li>
 
                   <?php } ?>
                 </ul>
@@ -78,28 +83,17 @@
 <br>
 <br>
 
-
     <div class="payment-title">
 
         <h1>Informacion de pago</h1>
-        @if($errors->all())
 
-<div class="alert alert-danger">
-
-<ul>
-
-@foreach($errors->all() as $err)
-
- <li>{{$err}}</li>
-
- @endforeach
-
- </ul>
-
- </div>
-
-@endif
-
+            @if($errors->all())
+            <div class="alert alert-danger errores_">         
+                @foreach($errors->all() as $err)
+                <li>{{$err}}</li>
+                @endforeach
+            </div>
+            @endif
 
     </div>
 
