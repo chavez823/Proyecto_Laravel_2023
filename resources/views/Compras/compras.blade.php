@@ -65,7 +65,7 @@
 <div class="container">
 <?php 
     //Comprueba si tiene algo el carrito
-    if(sizeof($cupones) == 0) {
+   // if(sizeof($cupones) == 0) {
     
       //echo var_dump($_SESSION['CARRITO']);
 ?>
@@ -227,13 +227,13 @@
 
 
     <?php
-    }else{
+   // }else{
     ?>
         <div class="alert alert-success">
            <h3>No hay cupones comprados...!</h3> 
         </div>
   
-    <?php }?>
+    <?php //}?>
 
 </div><!-- end of container -->
 
