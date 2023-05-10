@@ -61,22 +61,11 @@
 
                             <!-- Fecha Inicio --> 
                             <div class="wrap-input100"> 
+                                <label>Fecha Inicio</label>
                                 <input class="input100" type="date" name="fecha_i" placeholder="Fecha Inicio (dd/mm/yyyy)" value="{{old('fecha_i')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
-                             <!--Rubro - Categoria -->
-                             <div class="wrap-input100"> 
-                                <select class="input100 s_ele" name="rubro" >
-                                    <option class="input100" value="" disabled>Rubro</option>
-                                    <span class="focus-efecto"></span>
-                                    @foreach ($rubros as $rubro)
-                                        <option class="input100" value="{{$rubro->Nombre_Rubro}}" {{old('rubro')==$rubro->Nombre_Rubro?'selected':''}} >
-                                        {{$rubro->Nombre_Rubro}}
-                                        </option>
-                                        <span class="focus-efecto"></span>   
-                                    @endforeach  
-                                </select>
-                            </div>
+                             
                             
                             <!-- Estado oferta -->
                             <!-- Llenado a partir de un modelo                             
@@ -112,6 +101,7 @@
 
                             <!-- Fecha Final --> 
                             <div class="wrap-input100"> 
+                                <label>Fecha Final</label>
                                 <input class="input100" type="date" name="fecha_f" placeholder="Fecha Final" value="{{old('fecha_f')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
@@ -170,7 +160,20 @@
                                 <span class="focus-efecto"></span> 
                             </div>-->
                             
-                            
+                            <!--Rubro - Categoria -->
+                            <div class="wrap-input100"> 
+                                <label>Categoria </label>
+                                <select class="input100 s_ele" name="rubro" >
+                                    <option class="input100" value="" disabled>Rubro</option>
+                                    <span class="focus-efecto"></span>
+                                    @foreach ($rubros as $rubro)
+                                        <option class="input100" value="{{$rubro->Nombre_Rubro}}" {{old('rubro')==$rubro->Nombre_Rubro?'selected':''}} >
+                                        {{$rubro->Nombre_Rubro}}
+                                        </option>
+                                        <span class="focus-efecto"></span>   
+                                    @endforeach  
+                                </select>
+                            </div>
 
 
                         </div>

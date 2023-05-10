@@ -37,68 +37,57 @@
                         <div class="column_1">
                             <!-- Nombre --> 
                             <div class="wrap-input100"> 
+                                <label>Nombre</label>
                                 <input class="input100" type="text" name="name" placeholder="Nombre Oferta" value="{{@old('name', $ofertas[0]->Titulo)}}" >	 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
-                      
-                     
-                      {!!$errors->first('name','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif    
+                                {!!$errors->first('name','<p class="alert alert-danger" role="role">:message</p>' )!!}                    @endif    
                             </div>
 
-                            <!-- Direccion --> 
+                            <!-- Descripcion --> 
                             <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="descripcion" placeholder="Descripcion" value="{{@old('descripcion',$ofertas[0]->Descripcion )}}" >	 
+                                <label>Descripcion</label>
+                                <textarea class="input100" type="text" name="descripcion" placeholder="Descripcion" value="" >{{@old('descripcion',$ofertas[0]->Descripcion )}}</textarea> 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
-                      
-                     
-                      {!!$errors->first('descripcion','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif    
+                                {!!$errors->first('descripcion','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                                @endif    
                             </div> 
 
-                            <!--Telefono del Representante-->
-                            <div class="wrap-input100"> 
+                            <!--Detalles-->
+                            <div class="wrap-input100">
+                                <label>Detalles</label> 
                                 <input class="input100" type="text" name="detalles" placeholder="Detalles" value="{{@old('detalles', $ofertas[0]->Detalles)}}" >	 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
-                      
-                     
-                      {!!$errors->first('detalles','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif    
+                                {!!$errors->first('detalles','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                                @endif    
                             </div>
                             
                             <!--Rubro-->
                             <div class="wrap-input100"> 
                                 <!--<input class="input100" type="text" name="rubro" placeholder="Rubro" value="<?php //Aqui ira el isset para los valores?>"> 
                                 <span class="focus-efecto"></span>-->
+                                <label>Categoria</label>
                                 <select class="input100 s_ele"  name="categ" >
                                     @foreach ($categoria as $cate)
                                     <option class="input100"   value="{{$ofertas[0]->Categoria}} ">{{$cate->Nombre_Rubro}}</option>
                                     <span class="focus-efecto"></span>
                                  @endforeach
                                 </select>
-                                @if($errors->any())
-                      
-                     
-                      {!!$errors->first('categ','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif    
-
+                                @if($errors->any())                                         
+                                {!!$errors->first('categ','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                                @endif    
                             </div>
+
                              <!--Porcentaje Comision-->
-                             <div class="wrap-input100"> 
+                            <div class="wrap-input100"> 
+                                <label>Comision</label>
                                 <input class="input100" type="text" name="precio_o" placeholder="Precio Original" value="{{@old('precio_o',$ofertas[0]->PrecioOriginal)}}"> 
                                 <span class="focus-efecto"></span> 
-                                @if($errors->any())
-                      
-                     
-                      {!!$errors->first('precio_o','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif    
+                                @if($errors->any())                                           
+                                {!!$errors->first('precio_o','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                                @endif    
                             </div>
                             
                         </div>		
@@ -106,47 +95,44 @@
                         <div class="column_2">
                             <!-- Codigo Empresa --> 
                             <div class="wrap-input100"> 
+                                <label>Codigo Empresa</label>
                                 <input class="input100" type="text" name="justificacion" placeholder="Codigo Oferta"  disabled value="{{@old('justificacion', $ofertas[0]->Justificacion)}}" > 
                                 <span class="focus-efecto"></span> 
                            
                             </div>
-
+                            <!--Codigo Oferta-->
                             <div class="wrap-input100"> 
+                                <label>Codigo Oferta</label>
                                 <input class="input100" type="text" name="cod_o" placeholder="Codigo Oferta" value="{{@old('cod_o', $ofertas[0]->ID_Oferta)}}" > 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
-                      
-                     
-                      {!!$errors->first('cod_o','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif    
+                                {!!$errors->first('cod_o','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                                @endif    
                             </div>
-                            <!--Representante empresa-->
-                            <div class="wrap-input100"> 
+
+                            <!--Fecha Inicio-->
+                            <div class="wrap-input100">
+                                <label>Fecha Inicio</label> 
                                 <input class="input100" type="date" name="fecha_i" placeholder="Fecha Inicio" value="{{@old('fecha_i', $ofertas[0]->FechaInicio)}}"> 
                                 <span class="focus-efecto"></span>
                                 @if($errors->any())
-                      
-                     
-                      {!!$errors->first('fecha_i','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif     
+                                {!!$errors->first('fecha_i','<p class="alert alert-danger" role="role">:message</p>' )!!}  
+                                @endif     
                             </div>
 
                             <!--Correo representante-->
                             <div class="wrap-input100"> 
+                                <label>Fecha Final</label>
                                 <input class="input100" type="date" name="fecha_f" placeholder="Fecha Fin" value="{{@old('fecha_f' , $ofertas[0]->FechaFin)}}"> 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
-                      
-                     
-                      {!!$errors->first('fecha_f','<p class="alert alert-danger" role="role">:message</p>' )!!}
-                      
-                        @endif    
+                                {!!$errors->first('fecha_f','<p class="alert alert-danger" role="role">:message</p>' )!!}
+                                @endif    
                             </div>
                             
                             <!--Porcentaje Comision-->
-                            <div class="wrap-input100"> 
+                            <div class="wrap-input100">
+                                <label>Porcentaje de Comision</label> 
                                 <input class="input100" type="text" name="precio_ofer" placeholder="Precio Oferta" value="{{@old('precio_ofer' , $ofertas[0]->PrecioOferta)}}"> 
                                 <span class="focus-efecto"></span> 
                                 @if($errors->any())
