@@ -62,6 +62,7 @@
 
                   <li><a class="dropdown-item " href="/cupones">Ver Cupones</a></li>
                   <?php } ?>
+
                   <li><hr class="dropdown-divider"></li>
                   <li> <a class="dropdown-item " href="../form/cambio/contraseña">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>
