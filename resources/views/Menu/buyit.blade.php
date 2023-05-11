@@ -98,7 +98,7 @@
   </div>
   <div class=" forma carousel-inner">
     <div class="carousel-item active">
-      <img src="https://cdn.pixabay.com/photo/2022/09/23/07/58/squid-7473908_1280.jpg" class="d-block w-100" alt="...">
+      <img src="https://cdn.pixabay.com/photo/2017/06/29/19/57/sushi-2455981_1280.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
      
      
@@ -127,6 +127,10 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
+</div>
+
+<div style="text-align: center; margin-left:-80px;margin-top:20px;">
+  <img  src="img/Logo_sin_slogan_t.png">
 </div>
 
 

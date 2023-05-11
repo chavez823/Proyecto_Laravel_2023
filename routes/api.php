@@ -23,3 +23,4 @@ Route::get('ticket/{id}', [CuponController::class, 'show']);
 
 /*Se pasa 2 parametros para identificar a cual cupon se le va a actualizar el estado*/
 Route::put('ticket/{id}/{estado}/', [CuponController::class, 'update']);
+

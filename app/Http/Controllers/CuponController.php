@@ -269,6 +269,7 @@ class CuponController extends Controller
 
     /** PARA LA API *****/
     /* Display the specified resource.*/
+	
     public function show(Cupon $cupon,$id)
     {
         $sentencia=DB::table('cupon')            
