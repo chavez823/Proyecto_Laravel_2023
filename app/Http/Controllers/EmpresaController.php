@@ -181,10 +181,12 @@ class EmpresaController extends Controller
 
  $cliente=Cliente::join('cupon', 'cupon.DUI', '=', 'cliente.DUI')
  ->join('estado_cupon', 'estado_cupon.ID_Estado_Cupon', '=', 'cupon.ID_Estado_Cupon')
+ ->join('oferta', 'oferta.ID_Oferta', '=', 'cupon.ID_Oferta')
  ->select('cliente.Nombres', 'cliente.Apellidos', 'cliente.DUI', 'cliente.Direccion', 'cliente.Telefono', 'cliente.Correo',
           DB::raw('SUM(CASE WHEN estado_cupon.Estado = "Canjeado" THEN 1 ELSE 0 END) as canjeados'),
           DB::raw('SUM(CASE WHEN estado_cupon.Estado = "Sin Canjear" THEN 1 ELSE 0 END) as sin_canjear'),
-          DB::raw('COUNT(cupon.ID_Cupon) as total_cupones'))
+          DB::raw('COUNT(cupon.ID_Cupon) as total_cupones'),
+          DB::raw('SUM(oferta.PrecioOferta) as total_ingresos'))
  ->groupBy('cliente.Nombres', 'cliente.Apellidos', 'cliente.DUI')
  ->get();
 

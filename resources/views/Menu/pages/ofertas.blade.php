@@ -37,7 +37,7 @@
                             <?php  } else{
    if($_SESSION['session']['tipo'] =='Cliente') {
     ?>
-                        <p> <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>      </p> <?php }}  ?>
+                <p> <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>      </p> <?php }}  ?>
                 </div>
                 <div class="card-reveal">
                   <span class="card-title grey-text text-darken-4"><?php echo $oferta->Titulo ?><i class="material-icons right">-</i></span>

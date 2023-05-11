@@ -40,6 +40,7 @@
                 <th width="5%" class="text-center"><strong>Cupones Canjeados</strong></th>
                 <th width="5%" class="text-center"><strong>Cupones sin canjear</strong></th>
                 <th width="5%" class="text-center"><strong>Cupones_Comprados</strong></th>
+                <th width="5%" class="text-center"><strong>Total_Ingresos</strong></th>
                
                
             </tr>
@@ -59,6 +60,7 @@
                 <td width="5%" class="text-center"><?php echo $cli->canjeados?></td>
                 <td width="5%" class="text-center"><?php echo $cli->sin_canjear?></td>
                 <td width="5%" class="text-center"><?php echo $cli->total_cupones?></td>
+                <td width="5%" class="text-center">$<?php echo round($cli->total_ingresos,2)?></td>
                 
                 
                  </tr>
