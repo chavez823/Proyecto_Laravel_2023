@@ -53,10 +53,7 @@
                                 <input class="input100" type="text" name="titulo" placeholder="Titulo Oferta" value="{{old('titulo')}}" >	 
                                 <span class="focus-efecto"></span> 
                             </div>
-                            <div class="wrap-input100"> 
-                                <input class="input100" type="text" name="cantidad" placeholder="Cantidad" value="{{old('cantidad')}}" >	 
-                                <span class="focus-efecto"></span> 
-                            </div>                               
+                                                          
                             
 
                             <!-- Fecha Inicio --> 

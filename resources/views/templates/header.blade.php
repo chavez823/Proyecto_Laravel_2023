@@ -57,9 +57,12 @@
                   <li> <a class="dropdown-item " href="form"> Login</a></li>
                   <li><hr class="dropdown-divider"></li>
 
-                  <?php  } else { ?>                  
+                  <?php  } else { 
+                    if($_SESSION['session']['tipo'] =='Cliente'){?>                  
 
-                  <li><a class="dropdown-item " href="../cupones">Ver Cupones</a></li>
+                  <li><a class="dropdown-item " href="/cupones">Ver Cupones</a></li>
+                  <?php } ?>
+
                   <li><hr class="dropdown-divider"></li>
                   <li> <a class="dropdown-item " href="../form/cambio/contraseña">Ajustes</a></li>
                   <li><hr class="dropdown-divider"></li>
