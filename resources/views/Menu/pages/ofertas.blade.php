@@ -34,7 +34,7 @@
 
                   <?php if(!isset($_SESSION['session'])) { ?>
                     <p> <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>      </p>
-                            <?php  }     else{
+                            <?php  } else{
    if($_SESSION['session']['tipo'] =='Cliente') {
     ?>
                         <p> <a href="/carrito/<?=$oferta->ID_Oferta?>&2" class="btn btn-primary">Agregar al carrito</a>      </p> <?php }}  ?>
@@ -51,7 +51,11 @@
             <br>
         </div>
         <?php 
-          }else {
+          }elseif ($FechaInicio <= strtotime($FechaActual)) 
+          DB::table('oferta')
+          ->where('ID_Oferta','=',$oferta->ID_Oferta)
+          ->update(['ID_EstadoOferta' => '3']);
+          else {
                 DB::table('oferta')
                 ->where('ID_Oferta','=',$oferta->ID_Oferta)
                 ->update(['ID_EstadoOferta' => '4']);
